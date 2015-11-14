@@ -15,6 +15,8 @@ namespace KoreanRomanisation
         protected int NumberOfMedialJamo = 21;
         protected int NumberOfFinalJamo = 28;
 
+        public bool PreserveNonKoreanCharacters { get; set; }
+
         public int[] JamoCodes(int CharacterCode)
         {
             if (CharacterCode >= FirstCode && CharacterCode <= LastCode)
