@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<romanisation name="Revised Romanisation">
+  
+  <rule jamo="ㄱ" romanisation="g" />
+  <rule jamo="ㄱ " romanisation="k" />
+  <rule jamo="ㄱㄱ" romanisation="kg" />
+  <rule jamo="ㄱㄴ" romanisation="ngn" />
+  <rule jamo="ㄱㄷ" romanisation="kd" />
+  <rule jamo="ㄱㄹ" romanisation="ngn" />
+  <rule jamo="ㄱㅁ" romanisation="ngm" />
+  <rule jamo="ㄱㅂ" romanisation="kb" />
+  <rule jamo="ㄱㅅ" romanisation="ks" />
+  <rule jamo="ㄱㅈ" romanisation="kj" />
+  <rule jamo="ㄱㅊ" romanisation="kch" />
+  <rule jamo="ㄱㅋ" romanisation="k-k" />
+  <rule jamo="ㄱㅌ" romanisation="kt" />
+  <rule jamo="ㄱㅍ" romanisation="kp" />
+  <rule jamo="ㄱㅎ" romanisation="k" />
+    													
+  <rule jamo="ㄲ" romanisation="kk" />
+  <rule jamo="ㄲ " romanisation="k" />
+  
+  <rule jamo="ㄴ" romanisation="n" />
+  <rule jamo="ㄴㄱ" romanisation="n-g" />
+  <rule jamo="ㄴㄹ" romanisation="ll" />
+  <rule jamo="ㄴㅎ" romanisation="n" />
+  
+  <rule jamo="ㄷ" romanisation="d" />
+  <rule jamo="ㄷ " romanisation="t" />
+  <rule jamo="ㄷㄱ" romanisation="tg" />
+  <rule jamo="ㄷㄴ" romanisation="nn" />
+  <rule jamo="ㄷㄷ" romanisation="td" />
+  <rule jamo="ㄷㄹ" romanisation="nn" />
+  <rule jamo="ㄷㅁ" romanisation="nm" />
+  <rule jamo="ㄷㅂ" romanisation="tb" />
+  <rule jamo="ㄷㅅ" romanisation="ts" />
+  <rule jamo="ㄷㅈ" romanisation="tj" />
+  <rule jamo="ㄷㅊ" romanisation="tch" />
+  <rule jamo="ㄷㅋ" romanisation="tk" />
+  <rule jamo="ㄷㅌ" romanisation="t-t" />
+  <rule jamo="ㄷㅍ" romanisation="tp" />
+  <rule jamo="ㄷㅎ" romanisation="t" />
+  
+  <rule jamo="ㄸ" romanisation="tt" />
+  <rule jamo="ㄸ " romanisation="t" />
+  
+  <rule jamo="ㄹ" romanisation="r" />
+  <rule jamo="ㄹ " romanisation="l" />
+  <rule jamo="ㄹㄱ" romanisation="lg" />
+  <rule jamo="ㄹㄴ" romanisation="ll" />
+  <rule jamo="ㄹㄷ" romanisation="ld" />
+  <rule jamo="ㄹㄹ" romanisation="ll" />
+  <rule jamo="ㄹㅁ" romanisation="lm" />
+  <rule jamo="ㄹㅂ" romanisation="lb" />
+  <rule jamo="ㄹㅅ" romanisation="ls" />
+  <rule jamo="ㄹㅈ" romanisation="lj" />
+  <rule jamo="ㄹㅊ" romanisation="lch" />
+  <rule jamo="ㄹㅋ" romanisation="lk" />
+  <rule jamo="ㄹㅌ" romanisation="lt" />
+  <rule jamo="ㄹㅍ" romanisation="lp" />
+  <rule jamo="ㄹㅎ" romanisation="r" />
+  
+  <rule jamo="ㅁ" romanisation="m" />
+  <rule jamo="ㅁㄹ" romanisation="mn" />
+  
+  <rule jamo="ㅂ" romanisation="b" />
+  <rule jamo="ㅂ " romanisation="p" />
+  <rule jamo="ㅂㄱ" romanisation="pg" />
+  <rule jamo="ㅂㄴ" romanisation="mn" />
+  <rule jamo="ㅂㄷ" romanisation="pd" />
+  <rule jamo="ㅂㄹ" romanisation="mn" />
+  <rule jamo="ㅂㅁ" romanisation="mm" />
+  <rule jamo="ㅂㅂ" romanisation="pb" />
+  <rule jamo="ㅂㅅ" romanisation="ps" />
+  <rule jamo="ㅂㅈ" romanisation="pj" />
+  <rule jamo="ㅂㅊ" romanisation="pch" />
+  <rule jamo="ㅂㅋ" romanisation="pk" />
+  <rule jamo="ㅂㅌ" romanisation="pt" />
+  <rule jamo="ㅂㅍ" romanisation="p-p" />
+  <rule jamo="ㅂㅎ" romanisation="p" />
+  
+  <rule jamo="ㅃ" romanisation="pp" />
+  <rule jamo="ㅃ" romanisation="p" />
+  
+  <rule jamo="ㅅ" romanisation="s" />
+  <rule jamo="ㅅ " romanisation="t" />
+  <rule jamo="ㅅㄱ" romanisation="tg" />
+  <rule jamo="ㅅㄴ" romanisation="nn" />
+  <rule jamo="ㅅㄷ" romanisation="td" />
+  <rule jamo="ㅅㄹ" romanisation="nn" />
+  <rule jamo="ㅅㅁ" romanisation="nm" />
+  <rule jamo="ㅅㅂ" romanisation="tb" />
+  <rule jamo="ㅅㅅ" romanisation="ss" />
+  <rule jamo="ㅅㅈ" romanisation="tj" />
+  <rule jamo="ㅅㅊ" romanisation="tch" />
+  <rule jamo="ㅅㅋ" romanisation="tk" />
+  <rule jamo="ㅅㅌ" romanisation="t-t" />
+  <rule jamo="ㅅㅍ" romanisation="tp" />
+  <rule jamo="ㅅㅎ" romanisation="t" />
+  
+  <rule jamo="ㅆ" romanisation="ss" />
+  <rule jamo="ㅆ " romanisation="t" />
+  
+  <rule jamo="ㅇ" romanisation="" />
+  <rule jamo="ㅇ " romanisation="ng" />
+  <rule jamo="ㅇㅇ" romanisation="ng-" />
+  <rule jamo="ㅇㄱ" romanisation="ngg" />
+  <rule jamo="ㅇㄴ" romanisation="ngn" />
+  <rule jamo="ㅇㄷ" romanisation="ngd" />
+  <rule jamo="ㅇㄹ" romanisation="ngn" />
+  <rule jamo="ㅇㅁ" romanisation="ngm" />
+  <rule jamo="ㅇㅂ" romanisation="ngb" />
+  <rule jamo="ㅇㅅ" romanisation="ngs" />
+  <rule jamo="ㅇㅈ" romanisation="ngj" />
+  <rule jamo="ㅇㅊ" romanisation="ngch" />
+  <rule jamo="ㅇㅋ" romanisation="ngk" />
+  <rule jamo="ㅇㅌ" romanisation="ngt" />
+  <rule jamo="ㅇㅍ" romanisation="ngp" />
+  <rule jamo="ㅇㅎ" romanisation="ng-" />
+  
+  <rule jamo="ㅈ" romanisation="j" />
+  <rule jamo="ㅈ " romanisation="t" />
+  <rule jamo="ㅈㄱ" romanisation="tg" />
+  <rule jamo="ㅈㄴ" romanisation="nn" />
+  <rule jamo="ㅈㄷ" romanisation="td" />
+  <rule jamo="ㅈㄹ" romanisation="nn" />
+  <rule jamo="ㅈㅁ" romanisation="nm" />
+  <rule jamo="ㅈㅂ" romanisation="tb" />
+  <rule jamo="ㅈㅅ" romanisation="ts" />
+  <rule jamo="ㅈㅈ" romanisation="jj" />
+  <rule jamo="ㅈㅊ" romanisation="tch" />
+  <rule jamo="ㅈㅋ" romanisation="tk" />
+  <rule jamo="ㅈㅌ" romanisation="t-t" />
+  <rule jamo="ㅈㅍ" romanisation="tp" />
+  <rule jamo="ㅈㅎ" romanisation="ch" />
+  
+  <rule jamo="ㅉ" romanisation="jj" />
+  <rule jamo="ㅉ " romanisation="t" />
+  
+  <rule jamo="ㅊ" romanisation="ch" />
+  <rule jamo="ㅊ " romanisation="t" />
+  <rule jamo="ㅊㄱ" romanisation="tg" />
+  <rule jamo="ㅊㄴ" romanisation="nn" />
+  <rule jamo="ㅊㄷ" romanisation="td" />
+  <rule jamo="ㅊㄹ" romanisation="nn" />
+  <rule jamo="ㅊㅁ" romanisation="nm" />
+  <rule jamo="ㅊㅂ" romanisation="tb" />
+  <rule jamo="ㅊㅅ" romanisation="ts" />
+  <rule jamo="ㅊㅈ" romanisation="tj" />
+  <rule jamo="ㅊㅊ" romanisation="tch" />
+  <rule jamo="ㅊㅋ" romanisation="tk" />
+  <rule jamo="ㅊㅌ" romanisation="t-t" />
+  <rule jamo="ㅊㅍ" romanisation="tp" />
+  <rule jamo="ㅊㅎ" romanisation="ch" />  													
+  
+  <rule jamo="ㅋ" romanisation="k" />
+  <rule jamo="ㅋ " romanisation="k" />
+  
+  <rule jamo="ㅌ" romanisation="t" />
+  <rule jamo="ㅌ " romanisation="t" />
+  <rule jamo="ㅌㄴ" romanisation="nn" />
+  <rule jamo="ㅌㄹ" romanisation="nn" />
+  <rule jamo="ㅌㅁ" romanisation="nm" />
+  <rule jamo="ㅌㅌ" romanisation="t-t" />
+  <rule jamo="ㅌㅎ" romanisation="t" />
+  
+  <rule jamo="ㅍ" romanisation="p" />
+  <rule jamo="ㅍ " romanisation="p" />
+  
+  <rule jamo="ㅎ" romanisation="h" />
+  <rule jamo="ㅎ " romanisation="t" />
+  <rule jamo="ㅎㄱ" romanisation="k" />
+  <rule jamo="ㅎㄴ" romanisation="nn" />
+  <rule jamo="ㅎㄷ" romanisation="t" />
+  <rule jamo="ㅎㄹ" romanisation="nn" />
+  <rule jamo="ㅎㅁ" romanisation="nm" />
+  <rule jamo="ㅎㅂ" romanisation="p" />
+  <rule jamo="ㅎㅅ" romanisation="ts" />
+  <rule jamo="ㅎㅈ" romanisation="ch" />
+  <rule jamo="ㅎㅊ" romanisation="tch" />
+  <rule jamo="ㅎㅋ" romanisation="tk" />
+  <rule jamo="ㅎㅌ" romanisation="t-t" />
+  <rule jamo="ㅎㅍ" romanisation="tp" />
+  <rule jamo="ㅎㅎ" romanisation="t" />
+  
+  <rule jamo="ㅏ" romanisation="a" />
+  <rule jamo="ㅐ" romanisation="ae" />
+  <rule jamo="ㅑ" romanisation="ya" />
+  <rule jamo="ㅒ" romanisation="yae" />
+  <rule jamo="ㅓ" romanisation="eo" />
+  <rule jamo="ㅔ" romanisation="e" />
+  <rule jamo="ㅕ" romanisation="yeo" />
+  <rule jamo="ㅖ" romanisation="ye" />
+  <rule jamo="ㅗ" romanisation="o" />
+  <rule jamo="ㅘ" romanisation="wa" />
+  <rule jamo="ㅙ" romanisation="wae" />
+  <rule jamo="ㅚ" romanisation="oe" />
+  <rule jamo="ㅛ" romanisation="yo" />
+  <rule jamo="ㅜ" romanisation="u" />
+  <rule jamo="ㅝ" romanisation="wo" />
+  <rule jamo="ㅞ" romanisation="we" />
+  <rule jamo="ㅟ" romanisation="wi" />
+  <rule jamo="ㅠ" romanisation="yu" />
+  <rule jamo="ㅡ" romanisation="eu" />
+  <rule jamo="ㅢ" romanisation="ui" />
+  <rule jamo="ㅣ" romanisation="i" />
+  
+  <rule jamo="ㄳㅇ" romanisation="ks" />
+  <rule jamo="ㄵㅇ" romanisation="nj" />
+  <rule jamo="ㄶㅇ" romanisation="n" />
+  <rule jamo="ㄺㅇ" romanisation="lg" />
+  <rule jamo="ㄻㅇ" romanisation="lm" />
+  <rule jamo="ㄼㅇ" romanisation="lb" />
+  <rule jamo="ㄽㅇ" romanisation="ls" />
+  <rule jamo="ㄾㅇ" romanisation="lt" />
+  <rule jamo="ㄿㅇ" romanisation="lp" />
+  <rule jamo="ㅀㅇ" romanisation="lh" />
+  <rule jamo="ㅄㅇ" romanisation="ps" />  
+
+</romanisation>

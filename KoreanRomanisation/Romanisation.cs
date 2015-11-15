@@ -17,7 +17,7 @@ namespace KoreanRomanisation
 
         public bool PreserveNonKoreanCharacters { get; set; }
 
-        public int[] JamoCodes(int CharacterCode)
+        public Syllable JamoCodes(int CharacterCode)
         {
             if (CharacterCode >= FirstCode && CharacterCode <= LastCode)
             {
@@ -35,7 +35,7 @@ namespace KoreanRomanisation
 
                 FinalJamoCode = CodeOffset;
 
-                return new int[] { InitialJamoCode, MedialJamoCode, FinalJamoCode };
+                return new Syllable(InitialJamoCode, MedialJamoCode, FinalJamoCode);
             }
 
             return null;

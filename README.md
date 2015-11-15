@@ -1,5 +1,5 @@
-Korean Romanisation
-===================
+KoreanRomanisation
+==================
 
 KoreanRomanisation is a C# class library for romanising Korean text.
 

@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{819DBD2A-8ED3-4941-8D39-AA09BB7FECBC}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{452022BF-2FA7-4EED-AD3D-91907C252095}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KoreanRomanisation</RootNamespace>
-    <AssemblyName>KoreanRomanisation</AssemblyName>
+    <RootNamespace>KoreanRomanisation.TerminalApplication</RootNamespace>
+    <AssemblyName>KoreanRomanisation.TerminalApplication</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,20 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IRomanisation.cs" />
-    <Compile Include="McCuneReischauerRomanisation.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RevisedRomanisation.cs" />
-    <Compile Include="Romanisation.cs" />
-    <Compile Include="RomanisationRule.cs" />
-    <Compile Include="SimplifiedRomanisation.cs" />
-    <Compile Include="Syllable.cs" />
-    <Compile Include="YaleRomanisation.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="RevisedRomanisation.xml">
-      <SubType>Designer</SubType>
-    </Content>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KoreanRomanisation\KoreanRomanisation.csproj">
+      <Project>{819dbd2a-8ed3-4941-8d39-aa09bb7fecbc}</Project>
+      <Name>KoreanRomanisation</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
