@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<romanisation name="Revised Romanisation">
+
+  <rule jamo="ㅏ" romanisation="a" />
+  <rule jamo="ㅐ" romanisation="ay" />
+  <rule jamo="ㅑ" romanisation="ya" />
+  <rule jamo="ㅒ" romanisation="yay" />
+  <rule jamo="ㅓ" romanisation="e" />
+  <rule jamo="ㅔ" romanisation="ey" />
+  <rule jamo="ㅕ" romanisation="ye" />
+  <rule jamo="ㅖ" romanisation="yey" />
+  <rule jamo="ㅗ" romanisation="o" />
+  <rule jamo="ㅘ" romanisation="wa" />
+  <rule jamo="ㅙ" romanisation="way" />
+  <rule jamo="ㅚ" romanisation="oy" />
+  <rule jamo="ㅛ" romanisation="yo" />
+  <rule jamo="ㅜ" romanisation="u" />
+  <rule jamo="ㅝ" romanisation="we" />
+  <rule jamo="ㅞ" romanisation="wey" />
+  <rule jamo="ㅟ" romanisation="wi" />
+  <rule jamo="ㅠ" romanisation="yu" />
+  <rule jamo="ㅡ" romanisation="u" />
+  <rule jamo="ㅢ" romanisation="uy" />
+  <rule jamo="ㅣ" romanisation="i" />
+
+  <rule jamo="ㄱ" romanisation="k" />
+  <rule jamo="ㄲ" romanisation="kk" />
+  <rule jamo="ㄴ" romanisation="n" />
+  <rule jamo="ㄷ" romanisation="t" />
+  <rule jamo="ㄸ" romanisation="tt" />
+  <rule jamo="ㄹ" romanisation="l" />
+  <rule jamo="ㅁ" romanisation="m" />
+  <rule jamo="ㅂ" romanisation="p" />
+  <rule jamo="ㅃ" romanisation="pp" />
+  <rule jamo="ㅅ" romanisation="s" />
+  <rule jamo="ㅆ" romanisation="ss" />
+  <rule jamo="ㅇ" romanisation="ng" />
+  <rule jamo="ㅈ" romanisation="c" />
+  <rule jamo="ㅉ" romanisation="cc" />
+  <rule jamo="ㅊ" romanisation="ch" />
+  <rule jamo="ㅋ" romanisation="kh" />
+  <rule jamo="ㅌ" romanisation="th" />
+  <rule jamo="ㅍ" romanisation="ph" />
+  <rule jamo="ㅎ" romanisation="h" />
+
+</romanisation>
