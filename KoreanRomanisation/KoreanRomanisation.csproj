@@ -51,6 +51,9 @@
     <Compile Include="YaleRomanisation.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SimplifiedRomanisation.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="RevisedRomanisation.xml">
       <SubType>Designer</SubType>
     </Content>

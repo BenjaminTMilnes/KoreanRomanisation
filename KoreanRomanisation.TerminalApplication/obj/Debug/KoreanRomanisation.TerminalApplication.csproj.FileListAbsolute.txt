@@ -6,3 +6,6 @@ C:\Users\BenjaminTMilnes\Libraries\Web Design and Coding\My Libraries\KoreanRoma
 C:\Users\BenjaminTMilnes\Libraries\Web Design and Coding\My Libraries\KoreanRomanisation\KoreanRomanisation.TerminalApplication\obj\Debug\KoreanRomanisation.TerminalApplication.csprojResolveAssemblyReference.cache
 C:\Users\BenjaminTMilnes\Libraries\Web Design and Coding\My Libraries\KoreanRomanisation\KoreanRomanisation.TerminalApplication\obj\Debug\KoreanRomanisation.TerminalApplication.exe
 C:\Users\BenjaminTMilnes\Libraries\Web Design and Coding\My Libraries\KoreanRomanisation\KoreanRomanisation.TerminalApplication\obj\Debug\KoreanRomanisation.TerminalApplication.pdb
+C:\Users\Ben\Libraries\Websites\KoreanRomanisation\KoreanRomanisation.TerminalApplication\bin\Debug\KoreanRomanisation.TerminalApplication.exe.config
+C:\Users\Ben\Libraries\Websites\KoreanRomanisation\KoreanRomanisation.TerminalApplication\obj\Debug\KoreanRomanisation.TerminalApplication.exe
+C:\Users\Ben\Libraries\Websites\KoreanRomanisation\KoreanRomanisation.TerminalApplication\obj\Debug\KoreanRomanisation.TerminalApplication.pdb
