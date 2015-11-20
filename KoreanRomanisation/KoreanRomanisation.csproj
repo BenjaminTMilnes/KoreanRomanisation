@@ -51,15 +51,18 @@
     <Compile Include="YaleRomanisation.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="YaleRomanisation.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="McCuneReischauerRomanisation.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="SimplifiedRomanisation.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="RevisedRomanisation.xml">
+    <EmbeddedResource Include="RevisedRomanisation.xml">
       <SubType>Designer</SubType>
-    </Content>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

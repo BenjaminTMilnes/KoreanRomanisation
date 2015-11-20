@@ -10,18 +10,23 @@ namespace KoreanRomanisation
 {
     public class RevisedRomanisation : Romanisation, IRomanisation
     {
-         public  List<RomanisationRule> Rules { get; set; }
+        public List<RomanisationRule> Rules { get; set; }
 
-        public RevisedRomanisation() {
+        public RevisedRomanisation()
+        {
 
             var assembly = Assembly.GetExecutingAssembly();
             var document = new XmlDocument();
+            var stream = assembly.GetManifestResourceStream("KoreanRomanisation.RevisedRomanisation.xml");
 
-            document.Load(assembly.GetManifestResourceStream("KoreanRomanisation.RevisedRomanisation.xml"));
+            document.Load(stream);
 
-            foreach (XmlNode element in document.SelectNodes("//rule")) {
+            Rules = new List<RomanisationRule>();
 
-                var Rule1 = new RomanisationRule( element.Attributes["jamo"].Value, element.Attributes["romanisation"].Value);
+            foreach (XmlNode element in document.SelectNodes("//rule"))
+            {
+
+                var Rule1 = new RomanisationRule(element.Attributes["jamo"].Value, element.Attributes["romanisation"].Value);
 
                 Rules.Add(Rule1);
 
