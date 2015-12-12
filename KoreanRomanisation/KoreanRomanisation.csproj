@@ -40,8 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Document.cs" />
     <Compile Include="IRomanisation.cs" />
+    <Compile Include="IText.cs" />
+    <Compile Include="KoreanText.cs" />
     <Compile Include="McCuneReischauerRomanisation.cs" />
+    <Compile Include="NonKoreanText.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RevisedRomanisation.cs" />
     <Compile Include="Romanisation.cs" />
@@ -49,20 +53,6 @@
     <Compile Include="SimplifiedRomanisation.cs" />
     <Compile Include="Syllable.cs" />
     <Compile Include="YaleRomanisation.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="YaleRomanisation.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="McCuneReischauerRomanisation.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="SimplifiedRomanisation.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <EmbeddedResource Include="RevisedRomanisation.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

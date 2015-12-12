@@ -40,5 +40,52 @@ namespace KoreanRomanisation
 
             return null;
         }
+
+        public Document GetDocument( string Text)
+        {
+            var Document1 = new Document();
+            var KoreanText1 = new KoreanText();
+            var NonKoreanText1 = new NonKoreanText();
+
+            foreach(var Character in Text)
+            {
+                var Syllable = JamoCodes(Character);
+
+                if (Syllable != null)
+                {
+                    if (NonKoreanText1.Content != "")
+                    {
+                        Document1.Text.Add(NonKoreanText1);
+                        NonKoreanText1 = new NonKoreanText();
+                    }
+
+                    KoreanText1.Syllables.Add(Syllable);
+                }
+                else
+                {
+                    if (KoreanText1.Syllables.Any())
+                    {
+                        Document1.Text.Add(KoreanText1);
+                        KoreanText1 = new KoreanText();
+                    }
+
+                    NonKoreanText1.Content += Character;
+                }
+            }
+
+            if (NonKoreanText1.Content != "")
+            {
+                Document1.Text.Add(NonKoreanText1);
+                NonKoreanText1 = new NonKoreanText();
+            }
+
+            if (KoreanText1.Syllables.Any())
+            {
+                Document1.Text.Add(KoreanText1);
+                KoreanText1 = new KoreanText();
+            }
+
+            return Document1;
+        }
     }
 }

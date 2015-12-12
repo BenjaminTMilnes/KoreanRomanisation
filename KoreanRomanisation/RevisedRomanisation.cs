@@ -10,31 +10,12 @@ namespace KoreanRomanisation
 {
     public class RevisedRomanisation : Romanisation, IRomanisation
     {
-        public List<RomanisationRule> Rules { get; set; }
-
-        public RevisedRomanisation()
+        public string Romanise(string Document)
         {
-
-            var assembly = Assembly.GetExecutingAssembly();
-            var document = new XmlDocument();
-            var stream = assembly.GetManifestResourceStream("KoreanRomanisation.RevisedRomanisation.xml");
-
-            document.Load(stream);
-
-            Rules = new List<RomanisationRule>();
-
-            foreach (XmlNode element in document.SelectNodes("//rule"))
-            {
-
-                var Rule1 = new RomanisationRule(element.Attributes["jamo"].Value, element.Attributes["romanisation"].Value);
-
-                Rules.Add(Rule1);
-
-            }
-
+            throw new NotImplementedException();
         }
 
-        public string Romanise(string Korean)
+        public string Romanise(Syllable Syllable1, Syllable PrecedingSyllable = null, Syllable SucceedingSyllable = null)
         {
             throw new NotImplementedException();
         }

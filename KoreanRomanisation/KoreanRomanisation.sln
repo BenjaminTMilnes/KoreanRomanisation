@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoreanRomanisation", "Korea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoreanRomanisation.TerminalApplication", "..\KoreanRomanisation.TerminalApplication\KoreanRomanisation.TerminalApplication.csproj", "{452022BF-2FA7-4EED-AD3D-91907C252095}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoreanRomanisation.Tests", "..\KoreanRomanisation.Tests\KoreanRomanisation.Tests.csproj", "{84E1EBA2-B88C-415F-AD89-403D09C52FF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{452022BF-2FA7-4EED-AD3D-91907C252095}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{452022BF-2FA7-4EED-AD3D-91907C252095}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{452022BF-2FA7-4EED-AD3D-91907C252095}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84E1EBA2-B88C-415F-AD89-403D09C52FF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84E1EBA2-B88C-415F-AD89-403D09C52FF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84E1EBA2-B88C-415F-AD89-403D09C52FF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84E1EBA2-B88C-415F-AD89-403D09C52FF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

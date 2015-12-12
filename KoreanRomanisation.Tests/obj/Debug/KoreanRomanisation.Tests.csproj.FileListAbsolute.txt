@@ -1,0 +1,8 @@
+C:\Users\BenjaminTMilnes\Libraries\Web Design and Coding\My Libraries\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\KoreanRomanisation.Tests.dll
+C:\Users\BenjaminTMilnes\Libraries\Web Design and Coding\My Libraries\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\KoreanRomanisation.Tests.pdb
+C:\Users\BenjaminTMilnes\Libraries\Web Design and Coding\My Libraries\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\KoreanRomanisation.dll
+C:\Users\BenjaminTMilnes\Libraries\Web Design and Coding\My Libraries\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\BenjaminTMilnes\Libraries\Web Design and Coding\My Libraries\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\KoreanRomanisation.pdb
+C:\Users\BenjaminTMilnes\Libraries\Web Design and Coding\My Libraries\KoreanRomanisation\KoreanRomanisation.Tests\obj\Debug\KoreanRomanisation.Tests.csprojResolveAssemblyReference.cache
+C:\Users\BenjaminTMilnes\Libraries\Web Design and Coding\My Libraries\KoreanRomanisation\KoreanRomanisation.Tests\obj\Debug\KoreanRomanisation.Tests.dll
+C:\Users\BenjaminTMilnes\Libraries\Web Design and Coding\My Libraries\KoreanRomanisation\KoreanRomanisation.Tests\obj\Debug\KoreanRomanisation.Tests.pdb
