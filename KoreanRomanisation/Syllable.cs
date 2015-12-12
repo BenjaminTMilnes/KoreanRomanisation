@@ -9,7 +9,7 @@ namespace KoreanRomanisation
     /// <summary>
     /// Represents a syllable in Korean.
     /// </summary>
-    public class Syllable
+    public class Syllable : IEquatable<Syllable>, IComparable<Syllable>
     {
         public int Initial { get; set; }
         public int Medial { get; set; }
@@ -27,6 +27,26 @@ namespace KoreanRomanisation
             Initial = Initial1;
             Medial = Medial1;
             Final = Final1;
+        }
+
+        public int CharacterCode()
+        {
+            return Initial * 588 + Medial * 28 + Final + 44032;
+        }
+
+        public bool Equals(Syllable s)
+        {
+            if (s == null)
+            {
+                return false;
+            }
+
+            return s.Initial == Initial && s.Medial == Medial && s.Final == Final;
+        }
+
+        public int CompareTo(Syllable s)
+        {
+            return CharacterCode().CompareTo(s.CharacterCode());
         }
     }
 }
