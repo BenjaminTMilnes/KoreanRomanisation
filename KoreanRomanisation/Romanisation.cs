@@ -6,47 +6,18 @@ using System.Threading.Tasks;
 
 namespace KoreanRomanisation
 {
-    public abstract class Romanisation
+    public abstract class Romanisation : IRomanisation
     {
-        protected int FirstCode = 44032;
-        protected int LastCode = 55203;
-
-        protected int NumberOfInitialJamo = 19;
-        protected int NumberOfMedialJamo = 21;
-        protected int NumberOfFinalJamo = 28;
 
         public bool PreserveNonKoreanCharacters { get; set; }
         public bool UseSh { get; set; }
 
         public Romanisation()
         {
+            PreserveNonKoreanCharacters = true;
             UseSh = true;
         }
-
-        public Syllable JamoCodes(int CharacterCode)
-        {
-            if (CharacterCode >= FirstCode && CharacterCode <= LastCode)
-            {
-                int InitialJamoCode = 0;
-                int MedialJamoCode = 0;
-                int FinalJamoCode = 0;
-
-                int CodeOffset = CharacterCode - FirstCode;
-
-                InitialJamoCode = CodeOffset / (NumberOfMedialJamo * NumberOfFinalJamo);
-                CodeOffset = CodeOffset % (NumberOfMedialJamo * NumberOfFinalJamo);
-
-                MedialJamoCode = CodeOffset / NumberOfFinalJamo;
-                CodeOffset = CodeOffset % NumberOfFinalJamo;
-
-                FinalJamoCode = CodeOffset;
-
-                return new Syllable(InitialJamoCode, MedialJamoCode, FinalJamoCode);
-            }
-
-            return null;
-        }
-
+                        
         public Document GetDocument(string Text)
         {
             var Document1 = new Document();
@@ -55,10 +26,10 @@ namespace KoreanRomanisation
 
             foreach (var Character in Text)
             {
-                var Syllable = JamoCodes(Character);
-
-                if (Syllable != null)
+                if (Syllable.IsSyllable(Character))
                 {
+                    var Syllable = new Syllable(Character);
+
                     if (NonKoreanText1.Content != "")
                     {
                         Document1.Text.Add(NonKoreanText1);

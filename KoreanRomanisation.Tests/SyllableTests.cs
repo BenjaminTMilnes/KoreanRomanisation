@@ -8,18 +8,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace KoreanRomanisation.Tests
 {
     [TestClass]
-   public  class RomanisationTests
+    public class SyllableTests
     {
-        private readonly Romanisation Romanisation1;
-
-        public RomanisationTests() {
-            Romanisation1 = new RevisedRomanisation();
-        }
-
         [TestMethod]
-        public void JamoCodesGaTest() {
-
-            var Syllable1 = Romanisation1.JamoCodes('가');
+        public void JamoCodesGaTest()
+        {
+            var Syllable1 = new Syllable('가');
 
             Assert.AreEqual(0, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);
@@ -29,8 +23,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesNaTest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('나');
+            var Syllable1 = new Syllable('나');
 
             Assert.AreEqual(2, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);
@@ -40,8 +33,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesDaTest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('다');
+            var Syllable1 = new Syllable('다');
 
             Assert.AreEqual(3, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);
@@ -51,8 +43,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesMaTest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('마');
+            var Syllable1 = new Syllable('마');
 
             Assert.AreEqual(6, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);
@@ -62,8 +53,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesBaTest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('바');
+            var Syllable1 = new Syllable('바');
 
             Assert.AreEqual(7, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);
@@ -73,8 +63,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesSaTest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('사');
+            var Syllable1 = new Syllable('사');
 
             Assert.AreEqual(9, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);
@@ -84,8 +73,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesATest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('아');
+            var Syllable1 = new Syllable('아');
 
             Assert.AreEqual(11, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);
@@ -95,8 +83,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesJaTest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('자');
+            var Syllable1 = new Syllable('자');
 
             Assert.AreEqual(12, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);
@@ -106,8 +93,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesHaTest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('하');
+            var Syllable1 = new Syllable('하');
 
             Assert.AreEqual(18, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);
@@ -117,8 +103,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesGeoTest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('거');
+            var Syllable1 = new Syllable('거');
 
             Assert.AreEqual(0, Syllable1.Initial);
             Assert.AreEqual(4, Syllable1.Medial);
@@ -128,8 +113,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesGoTest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('고');
+            var Syllable1 = new Syllable('고');
 
             Assert.AreEqual(0, Syllable1.Initial);
             Assert.AreEqual(8, Syllable1.Medial);
@@ -139,8 +123,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesGuTest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('구');
+            var Syllable1 = new Syllable('구');
 
             Assert.AreEqual(0, Syllable1.Initial);
             Assert.AreEqual(13, Syllable1.Medial);
@@ -150,8 +133,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesGeuTest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('그');
+            var Syllable1 = new Syllable('그');
 
             Assert.AreEqual(0, Syllable1.Initial);
             Assert.AreEqual(18, Syllable1.Medial);
@@ -161,8 +143,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesGiTest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('기');
+            var Syllable1 = new Syllable('기');
 
             Assert.AreEqual(0, Syllable1.Initial);
             Assert.AreEqual(20, Syllable1.Medial);
@@ -172,8 +153,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesGakTest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('각');
+            var Syllable1 = new Syllable('각');
 
             Assert.AreEqual(0, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);
@@ -183,8 +163,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesGanTest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('간');
+            var Syllable1 = new Syllable('간');
 
             Assert.AreEqual(0, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);
@@ -194,8 +173,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesGat1Test()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('갇');
+            var Syllable1 = new Syllable('갇');
 
             Assert.AreEqual(0, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);
@@ -205,8 +183,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesGamTest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('감');
+            var Syllable1 = new Syllable('감');
 
             Assert.AreEqual(0, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);
@@ -216,8 +193,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesGapTest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('갑');
+            var Syllable1 = new Syllable('갑');
 
             Assert.AreEqual(0, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);
@@ -227,8 +203,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesGat2Test()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('갓');
+            var Syllable1 = new Syllable('갓');
 
             Assert.AreEqual(0, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);
@@ -238,8 +213,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesGangTest()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('강');
+            var Syllable1 = new Syllable('강');
 
             Assert.AreEqual(0, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);
@@ -249,8 +223,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesGat3Test()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('갖');
+            var Syllable1 = new Syllable('갖');
 
             Assert.AreEqual(0, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);
@@ -260,8 +233,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void JamoCodesGat4Test()
         {
-
-            var Syllable1 = Romanisation1.JamoCodes('갛');
+            var Syllable1 = new Syllable('갛');
 
             Assert.AreEqual(0, Syllable1.Initial);
             Assert.AreEqual(0, Syllable1.Medial);

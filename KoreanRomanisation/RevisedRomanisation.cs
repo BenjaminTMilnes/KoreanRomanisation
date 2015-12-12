@@ -8,7 +8,7 @@ using System.Xml;
 
 namespace KoreanRomanisation
 {
-    public class RevisedRomanisation : Romanisation, IRomanisation
+    public class RevisedRomanisation : Romanisation
     {
         public override string Romanise(Syllable Syllable1, Syllable PrecedingSyllable = null, Syllable SucceedingSyllable = null)
         {

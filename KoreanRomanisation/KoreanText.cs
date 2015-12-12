@@ -9,9 +9,9 @@ namespace KoreanRomanisation
     /// <summary>
     /// Represents a block of Korean text.
     /// </summary>
-   public  class KoreanText : IText
+    public class KoreanText : IText
     {
-         public IList<Syllable> Syllables { get; set; }
+        public IList<Syllable> Syllables { get; set; }
 
         public KoreanText()
         {

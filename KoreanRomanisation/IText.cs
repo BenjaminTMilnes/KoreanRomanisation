@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KoreanRomanisation
 {
-   public  interface IText
+    public interface IText
     {
     }
 }

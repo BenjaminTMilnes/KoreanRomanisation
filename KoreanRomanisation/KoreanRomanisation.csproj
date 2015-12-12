@@ -49,7 +49,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RevisedRomanisation.cs" />
     <Compile Include="Romanisation.cs" />
-    <Compile Include="RomanisationRule.cs" />
     <Compile Include="SimplifiedRomanisation.cs" />
     <Compile Include="Syllable.cs" />
     <Compile Include="YaleRomanisation.cs" />

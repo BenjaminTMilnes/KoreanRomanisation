@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KoreanRomanisation
 {
-    public class YaleRomanisation : Romanisation, IRomanisation
+    public class YaleRomanisation : Romanisation
     {
         public override string Romanise(Syllable Syllable1, Syllable PrecedingSyllable = null, Syllable SucceedingSyllable = null)
         {

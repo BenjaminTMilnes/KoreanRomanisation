@@ -8,8 +8,11 @@ namespace KoreanRomanisation
 {
     public interface IRomanisation
     {
+        bool PreserveNonKoreanCharacters { get; set; }
+        bool UseSh { get; set; }
+
         string Romanise(string Document);
-        
+                        
         string Romanise(Syllable Syllable1, Syllable PrecedingSyllable = null, Syllable SucceedingSyllable = null);
     }
 }
