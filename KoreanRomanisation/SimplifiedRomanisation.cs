@@ -8,7 +8,7 @@ namespace KoreanRomanisation
 {
     public class SimplifiedRomanisation : Romanisation
     {
-        public override string Romanise(Syllable Syllable1, Syllable PrecedingSyllable = null, Syllable SucceedingSyllable = null)
+        public override string Romanise(Syllable Syllable1, Syllable? PrecedingSyllable = null, Syllable? SucceedingSyllable = null)
         {
             var StringBuilder1 = new StringBuilder();
 
@@ -39,6 +39,11 @@ namespace KoreanRomanisation
             }
 
             return StringBuilder1.ToString();
+        }
+
+        public override string Romanise(Jamo Jamo1)
+        {
+            throw new NotImplementedException();
         }
     }
 }

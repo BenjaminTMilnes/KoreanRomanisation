@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace KoreanRomanisation
 {
     /// <summary>
     /// Represents a syllable in Korean.
     /// </summary>
-    public class Syllable : IEquatable<Syllable>, IComparable<Syllable>
+    public struct Syllable : IEquatable<Syllable>, IEquatable<char>, IEquatable<int>, IComparable<Syllable>, IComparable<char>, IComparable<int>, IFormattable
     {
-        protected const int FirstCode = 44032;
-        protected const int LastCode = 55203;
+        private const int FirstCode = 44032;
+        private const int LastCode = 55203;
 
-        protected const int NumberOfInitialJamo = 19;
-        protected const int NumberOfMedialJamo = 21;
-        protected const int NumberOfFinalJamo = 28;
+        private const int NumberOfInitialJamo = 19;
+        private const int NumberOfMedialJamo = 21;
+        private const int NumberOfFinalJamo = 28;
 
-        protected int _CharacterCode;
+        private int _CharacterCode;
 
         public int CharacterCode
         {
@@ -28,33 +29,25 @@ namespace KoreanRomanisation
             }
         }
 
-        public int Initial
+        public int Initial { get { return (CharacterCode - FirstCode) / (NumberOfMedialJamo * NumberOfFinalJamo); } }
+
+        public int Medial { get { return ((CharacterCode - FirstCode) % (NumberOfMedialJamo * NumberOfFinalJamo)) / NumberOfFinalJamo; } }
+
+        public int Final { get { return ((CharacterCode - FirstCode) % (NumberOfMedialJamo * NumberOfFinalJamo)) % NumberOfFinalJamo; } }
+
+        public static bool operator ==(Syllable Syllable1, Syllable Syllable2)
         {
-            get
-            {
-                return (CharacterCode - FirstCode) / (NumberOfMedialJamo * NumberOfFinalJamo);
-            }
+            return Syllable1.CharacterCode == Syllable2.CharacterCode;
         }
 
-        public int Medial
+        public static bool operator !=(Syllable Syllable1, Syllable Syllable2)
         {
-            get
-            {
-                return ((CharacterCode - FirstCode) % (NumberOfMedialJamo * NumberOfFinalJamo)) / NumberOfFinalJamo;
-            }
+            return Syllable1.CharacterCode != Syllable2.CharacterCode;
         }
 
-        public int Final
-        {
-            get
-            {
-                return ((CharacterCode - FirstCode) % (NumberOfMedialJamo * NumberOfFinalJamo)) % NumberOfFinalJamo;
-            }
-        }
-        
         public Syllable(int CharacterCode1)
         {
-            if (CharacterCode1 < FirstCode || CharacterCode1 > LastCode)
+            if (!IsSyllable(CharacterCode1))
             {
                 throw new ArgumentOutOfRangeException(nameof(CharacterCode1), $"Korean syllables have character codes between { FirstCode} and { LastCode}.");
             }
@@ -81,17 +74,12 @@ namespace KoreanRomanisation
                 throw new ArgumentOutOfRangeException(nameof(Final1), $"The final jamo code must be between 0 and {NumberOfFinalJamo - 1}");
             }
 
-            _CharacterCode = Initial1 * 588 + Medial1 * 28 + Final1;
+            _CharacterCode = Initial1 * NumberOfMedialJamo * NumberOfFinalJamo + Medial1 * NumberOfFinalJamo + Final1;
         }
 
         public static bool IsSyllable(int CharacterCode1)
         {
-            if (CharacterCode1 >= FirstCode && CharacterCode1 <= LastCode)
-            {
-                return true;
-            }
-
-            return false;
+            return (CharacterCode1 >= FirstCode && CharacterCode1 <= LastCode);
         }
 
         public bool Equals(Syllable s)
@@ -104,9 +92,46 @@ namespace KoreanRomanisation
             return CharacterCode == s.CharacterCode;
         }
 
+        public bool Equals(char c)
+        {
+            return CharacterCode == c;
+        }
+
+        public bool Equals(int i)
+        {
+            return CharacterCode == i;
+        }
+
         public int CompareTo(Syllable s)
         {
             return CharacterCode.CompareTo(s.CharacterCode);
+        }
+
+        public int CompareTo(char c)
+        {
+            return CharacterCode.CompareTo(c);
+        }
+
+        public int CompareTo(int i)
+        {
+            return CharacterCode.CompareTo(i);
+        }
+
+        public override string ToString()
+        {
+            return ToString("%S");
+        }
+
+        public string ToString(string Format)
+        {
+            return ToString(Format, CultureInfo.CurrentCulture);
+        }
+
+        public string ToString(string Format, IFormatProvider FormatProvider)
+        {
+            Format = Format.Replace("%S", ((char)_CharacterCode).ToString());
+
+            return Format;
         }
     }
 }

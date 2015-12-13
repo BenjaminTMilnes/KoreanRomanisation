@@ -43,6 +43,7 @@
     <Compile Include="Document.cs" />
     <Compile Include="IRomanisation.cs" />
     <Compile Include="IText.cs" />
+    <Compile Include="Jamo.cs" />
     <Compile Include="KoreanText.cs" />
     <Compile Include="McCuneReischauerRomanisation.cs" />
     <Compile Include="NonKoreanText.cs" />

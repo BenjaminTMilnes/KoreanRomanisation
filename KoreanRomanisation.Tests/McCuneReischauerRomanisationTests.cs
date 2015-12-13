@@ -472,5 +472,101 @@ namespace KoreanRomanisation.Tests
             McCuneReischauerRomanisation1.UseSh = true;
             Assert.AreEqual("sshye", McCuneReischauerRomanisation1.Romanise("쎼"));
         }
+
+        [TestMethod]
+        public void RomaniseGakga1()
+        {
+            Assert.AreEqual("kakka", McCuneReischauerRomanisation1.Romanise("각가"));
+        }
+
+        [TestMethod]
+        public void RomaniseGakga2()
+        {
+            Assert.AreEqual("kakka", McCuneReischauerRomanisation1.Romanise("갂가"));
+        }
+
+        [TestMethod]
+        public void RomaniseGanga1()
+        {
+            Assert.AreEqual("kan'ga", McCuneReischauerRomanisation1.Romanise("간가"));
+        }
+
+        [TestMethod]
+        public void RomaniseGatga1()
+        {
+            Assert.AreEqual("katka", McCuneReischauerRomanisation1.Romanise("갇가"));
+        }
+
+        [TestMethod]
+        public void RomaniseGalga1()
+        {
+            Assert.AreEqual("kalga", McCuneReischauerRomanisation1.Romanise("갈가"));
+        }
+
+        [TestMethod]
+        public void RomaniseGamga()
+        {
+            Assert.AreEqual("kamga", McCuneReischauerRomanisation1.Romanise("감가"));
+        }
+
+        [TestMethod]
+        public void RomaniseGapga()
+        {
+            Assert.AreEqual("kapka", McCuneReischauerRomanisation1.Romanise("갑가"));
+        }
+
+        [TestMethod]
+        public void RomaniseGatga2()
+        {
+            Assert.AreEqual("katka", McCuneReischauerRomanisation1.Romanise("갓가"));
+        }
+
+        [TestMethod]
+        public void RomaniseGatga3()
+        {
+            Assert.AreEqual("katka", McCuneReischauerRomanisation1.Romanise("갔가"));
+        }
+
+        [TestMethod]
+        public void RomaniseGangga1()
+        {
+            Assert.AreEqual("kangga", McCuneReischauerRomanisation1.Romanise("강가"));
+        }
+
+        [TestMethod]
+        public void RomaniseGatga4()
+        {
+            Assert.AreEqual("katka", McCuneReischauerRomanisation1.Romanise("갖가"));
+        }
+
+        [TestMethod]
+        public void RomaniseGatga5()
+        {
+            Assert.AreEqual("katka", McCuneReischauerRomanisation1.Romanise("갗가"));
+        }
+
+        [TestMethod]
+        public void RomaniseGakga3()
+        {
+            Assert.AreEqual("kakka", McCuneReischauerRomanisation1.Romanise("갘가"));
+        }
+
+        [TestMethod]
+        public void RomaniseGatga6()
+        {
+            Assert.AreEqual("katka", McCuneReischauerRomanisation1.Romanise("같가"));
+        }
+
+        [TestMethod]
+        public void RomaniseGapga1()
+        {
+            Assert.AreEqual("kapka", McCuneReischauerRomanisation1.Romanise("갚가"));
+        }
+
+        [TestMethod]
+        public void RomaniseGatga7()
+        {
+            Assert.AreEqual("katka", McCuneReischauerRomanisation1.Romanise("갛가"));
+        }        
     }
 }
