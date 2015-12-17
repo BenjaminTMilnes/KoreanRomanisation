@@ -1016,31 +1016,31 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void Ganna7()
         {
-            Assert.AreEqual("kanna", McCuneReischauerRomanisation1.Romanise("갗라"));
+            Assert.AreEqual("katna", McCuneReischauerRomanisation1.Romanise("갗라"));
         }
 
         [TestMethod]
         public void Gangna5()
         {
-            Assert.AreEqual("kangna", McCuneReischauerRomanisation1.Romanise("갘라"));
+            Assert.AreEqual("kakna", McCuneReischauerRomanisation1.Romanise("갘라"));
         }
 
         [TestMethod]
         public void Ganna8()
         {
-            Assert.AreEqual("kanna", McCuneReischauerRomanisation1.Romanise("같라"));
+            Assert.AreEqual("katna", McCuneReischauerRomanisation1.Romanise("같라"));
         }
 
         [TestMethod]
         public void Gamna5()
         {
-            Assert.AreEqual("kamna", McCuneReischauerRomanisation1.Romanise("갚라"));
+            Assert.AreEqual("kapna", McCuneReischauerRomanisation1.Romanise("갚라"));
         }
 
         [TestMethod]
         public void Ganna9()
         {
-            Assert.AreEqual("kanna", McCuneReischauerRomanisation1.Romanise("갛라"));
+            Assert.AreEqual("katna", McCuneReischauerRomanisation1.Romanise("갛라"));
         }
 
         [TestMethod]
@@ -1070,7 +1070,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void Ganma3()
         {
-            Assert.AreEqual("kanma", McCuneReischauerRomanisation1.Romanise("갈마"));
+            Assert.AreEqual("kalma", McCuneReischauerRomanisation1.Romanise("갈마"));
         }
 
         [TestMethod]
@@ -1148,7 +1148,7 @@ namespace KoreanRomanisation.Tests
         [TestMethod]
         public void Ganma9()
         {
-            Assert.AreEqual("kanma", McCuneReischauerRomanisation1.Romanise("갛마"));
+            Assert.AreEqual("katma", McCuneReischauerRomanisation1.Romanise("갛마"));
         }        
     }
 }
