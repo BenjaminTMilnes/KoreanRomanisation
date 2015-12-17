@@ -23,6 +23,8 @@ namespace KoreanRomanisation
 
         private const int FirstCommonFinal = 4520;
         private const int LastCommonFinal = 4546;
+
+        public static Jamo None = new Jamo(-1);
         
         public static Jamo Giyeok = new Jamo('ᄀ');
         public static Jamo SsangGiyeok = new Jamo('ᄁ');
@@ -110,7 +112,7 @@ namespace KoreanRomanisation
 
         public Jamo(int CharacterCode1)
         {
-            if (!IsJamo(CharacterCode1))
+            if (!IsJamo(CharacterCode1) && CharacterCode1 != -1)
             {
                 throw new ArgumentOutOfRangeException(nameof(CharacterCode1), $"Korean jamo have character codes between {FirstCode} and {LastCode}.");
             }
@@ -140,6 +142,11 @@ namespace KoreanRomanisation
 
         public static Jamo FromFinalCode(int FinalCode1)
         {
+            if (FinalCode1 == 0)
+            {
+                return new Jamo(-1);
+            }
+
             if (!IsCommonFinal(FirstCommonFinal + FinalCode1 - 1))
             {
                 throw new ArgumentOutOfRangeException(nameof(FinalCode1), $"Korean finals are numbered between 1 and { LastCommonFinal - FirstCommonFinal + 1 }");

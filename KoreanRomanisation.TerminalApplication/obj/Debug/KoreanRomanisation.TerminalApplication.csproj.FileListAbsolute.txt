@@ -14,3 +14,11 @@ C:\Users\Ben\Libraries\Websites\KoreanRomanisation\KoreanRomanisation.TerminalAp
 C:\Users\Ben\Libraries\Websites\KoreanRomanisation\KoreanRomanisation.TerminalApplication\bin\Debug\KoreanRomanisation.dll
 C:\Users\Ben\Libraries\Websites\KoreanRomanisation\KoreanRomanisation.TerminalApplication\bin\Debug\KoreanRomanisation.pdb
 C:\Users\Ben\Libraries\Websites\KoreanRomanisation\KoreanRomanisation.TerminalApplication\obj\Debug\KoreanRomanisation.TerminalApplication.csprojResolveAssemblyReference.cache
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.TerminalApplication\bin\Debug\KoreanRomanisation.TerminalApplication.exe.config
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.TerminalApplication\obj\Debug\KoreanRomanisation.TerminalApplication.exe
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.TerminalApplication\obj\Debug\KoreanRomanisation.TerminalApplication.pdb
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.TerminalApplication\bin\Debug\KoreanRomanisation.TerminalApplication.exe
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.TerminalApplication\bin\Debug\KoreanRomanisation.TerminalApplication.pdb
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.TerminalApplication\bin\Debug\KoreanRomanisation.dll
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.TerminalApplication\bin\Debug\KoreanRomanisation.pdb
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.TerminalApplication\obj\Debug\KoreanRomanisation.TerminalApplication.csprojResolveAssemblyReference.cache

@@ -29,11 +29,37 @@ namespace KoreanRomanisation
             }
         }
 
-        public int Initial { get { return (CharacterCode - FirstCode) / (NumberOfMedialJamo * NumberOfFinalJamo); } }
+        public Jamo Initial
+        {
+            get
+            {
+                return Jamo.FromInitialCode((CharacterCode - FirstCode) / (NumberOfMedialJamo * NumberOfFinalJamo));
+            }
+        }
 
-        public int Medial { get { return ((CharacterCode - FirstCode) % (NumberOfMedialJamo * NumberOfFinalJamo)) / NumberOfFinalJamo; } }
+        public Jamo Medial
+        {
+            get
+            {
+                return Jamo.FromMedialCode(((CharacterCode - FirstCode) % (NumberOfMedialJamo * NumberOfFinalJamo)) / NumberOfFinalJamo);
+            }
+        }
 
-        public int Final { get { return ((CharacterCode - FirstCode) % (NumberOfMedialJamo * NumberOfFinalJamo)) % NumberOfFinalJamo; } }
+        public Jamo Final
+        {
+            get
+            {
+                return Jamo.FromFinalCode(((CharacterCode - FirstCode) % (NumberOfMedialJamo * NumberOfFinalJamo)) % NumberOfFinalJamo);
+            }
+        }
+
+        public bool HasFinal
+        {
+            get
+            {
+                return ((CharacterCode - FirstCode) % (NumberOfMedialJamo * NumberOfFinalJamo)) % NumberOfFinalJamo > 0;
+            }
+        }
 
         public static bool operator ==(Syllable Syllable1, Syllable Syllable2)
         {

@@ -15,9 +15,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('가');
 
-            Assert.AreEqual(0, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(0, Syllable1.Final);
+            Assert.AreEqual(Jamo.Giyeok, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.None, Syllable1.Final);
         }
 
         [TestMethod]
@@ -25,9 +25,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('나');
 
-            Assert.AreEqual(2, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(0, Syllable1.Final);
+            Assert.AreEqual(Jamo.Nieun, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.None, Syllable1.Final);
         }
 
         [TestMethod]
@@ -35,9 +35,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('다');
 
-            Assert.AreEqual(3, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(0, Syllable1.Final);
+            Assert.AreEqual(Jamo.Digeut, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.None, Syllable1.Final);
         }
 
         [TestMethod]
@@ -45,9 +45,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('마');
 
-            Assert.AreEqual(6, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(0, Syllable1.Final);
+            Assert.AreEqual(Jamo.Mieum, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.None, Syllable1.Final);
         }
 
         [TestMethod]
@@ -55,9 +55,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('바');
 
-            Assert.AreEqual(7, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(0, Syllable1.Final);
+            Assert.AreEqual(Jamo.Bieup, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.None, Syllable1.Final);
         }
 
         [TestMethod]
@@ -65,9 +65,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('사');
 
-            Assert.AreEqual(9, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(0, Syllable1.Final);
+            Assert.AreEqual(Jamo.Shiot, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.None, Syllable1.Final);
         }
 
         [TestMethod]
@@ -75,9 +75,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('아');
 
-            Assert.AreEqual(11, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(0, Syllable1.Final);
+            Assert.AreEqual(Jamo.Ieung, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.None, Syllable1.Final);
         }
 
         [TestMethod]
@@ -85,9 +85,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('자');
 
-            Assert.AreEqual(12, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(0, Syllable1.Final);
+            Assert.AreEqual(Jamo.Jieut, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.None, Syllable1.Final);
         }
 
         [TestMethod]
@@ -95,9 +95,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('하');
 
-            Assert.AreEqual(18, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(0, Syllable1.Final);
+            Assert.AreEqual(Jamo.Hieut, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.None, Syllable1.Final);
         }
 
         [TestMethod]
@@ -105,9 +105,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('거');
 
-            Assert.AreEqual(0, Syllable1.Initial);
-            Assert.AreEqual(4, Syllable1.Medial);
-            Assert.AreEqual(0, Syllable1.Final);
+            Assert.AreEqual(Jamo.Giyeok, Syllable1.Initial);
+            Assert.AreEqual(Jamo.Eo, Syllable1.Medial);
+            Assert.AreEqual(Jamo.None, Syllable1.Final);
         }
 
         [TestMethod]
@@ -115,9 +115,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('고');
 
-            Assert.AreEqual(0, Syllable1.Initial);
-            Assert.AreEqual(8, Syllable1.Medial);
-            Assert.AreEqual(0, Syllable1.Final);
+            Assert.AreEqual(Jamo.Giyeok, Syllable1.Initial);
+            Assert.AreEqual(Jamo.O, Syllable1.Medial);
+            Assert.AreEqual(Jamo.None, Syllable1.Final);
         }
 
         [TestMethod]
@@ -125,9 +125,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('구');
 
-            Assert.AreEqual(0, Syllable1.Initial);
-            Assert.AreEqual(13, Syllable1.Medial);
-            Assert.AreEqual(0, Syllable1.Final);
+            Assert.AreEqual(Jamo.Giyeok, Syllable1.Initial);
+            Assert.AreEqual(Jamo.U, Syllable1.Medial);
+            Assert.AreEqual(Jamo.None, Syllable1.Final);
         }
 
         [TestMethod]
@@ -135,9 +135,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('그');
 
-            Assert.AreEqual(0, Syllable1.Initial);
-            Assert.AreEqual(18, Syllable1.Medial);
-            Assert.AreEqual(0, Syllable1.Final);
+            Assert.AreEqual(Jamo.Giyeok, Syllable1.Initial);
+            Assert.AreEqual(Jamo.Eu, Syllable1.Medial);
+            Assert.AreEqual(Jamo.None, Syllable1.Final);
         }
 
         [TestMethod]
@@ -145,9 +145,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('기');
 
-            Assert.AreEqual(0, Syllable1.Initial);
-            Assert.AreEqual(20, Syllable1.Medial);
-            Assert.AreEqual(0, Syllable1.Final);
+            Assert.AreEqual(Jamo.Giyeok, Syllable1.Initial);
+            Assert.AreEqual(Jamo.I, Syllable1.Medial);
+            Assert.AreEqual(Jamo.None, Syllable1.Final);
         }
 
         [TestMethod]
@@ -155,9 +155,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('각');
 
-            Assert.AreEqual(0, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(1, Syllable1.Final);
+            Assert.AreEqual(Jamo.Giyeok, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.GiyeokBatchim, Syllable1.Final);
         }
 
         [TestMethod]
@@ -165,9 +165,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('간');
 
-            Assert.AreEqual(0, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(4, Syllable1.Final);
+            Assert.AreEqual(Jamo.Giyeok, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.NieunBatchim, Syllable1.Final);
         }
 
         [TestMethod]
@@ -175,9 +175,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('갇');
 
-            Assert.AreEqual(0, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(7, Syllable1.Final);
+            Assert.AreEqual(Jamo.Giyeok, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.DigeutBatchim, Syllable1.Final);
         }
 
         [TestMethod]
@@ -185,9 +185,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('감');
 
-            Assert.AreEqual(0, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(16, Syllable1.Final);
+            Assert.AreEqual(Jamo.Giyeok, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.MieumBatchim, Syllable1.Final);
         }
 
         [TestMethod]
@@ -195,9 +195,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('갑');
 
-            Assert.AreEqual(0, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(17, Syllable1.Final);
+            Assert.AreEqual(Jamo.Giyeok, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.BieupBatchim, Syllable1.Final);
         }
 
         [TestMethod]
@@ -205,9 +205,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('갓');
 
-            Assert.AreEqual(0, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(19, Syllable1.Final);
+            Assert.AreEqual(Jamo.Giyeok, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.ShiotBatchim, Syllable1.Final);
         }
 
         [TestMethod]
@@ -215,9 +215,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('강');
 
-            Assert.AreEqual(0, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(21, Syllable1.Final);
+            Assert.AreEqual(Jamo.Giyeok, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.IeungBatchim, Syllable1.Final);
         }
 
         [TestMethod]
@@ -225,9 +225,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('갖');
 
-            Assert.AreEqual(0, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(22, Syllable1.Final);
+            Assert.AreEqual(Jamo.Giyeok, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.JieutBatchim, Syllable1.Final);
         }
 
         [TestMethod]
@@ -235,9 +235,9 @@ namespace KoreanRomanisation.Tests
         {
             var Syllable1 = new Syllable('갛');
 
-            Assert.AreEqual(0, Syllable1.Initial);
-            Assert.AreEqual(0, Syllable1.Medial);
-            Assert.AreEqual(27, Syllable1.Final);
+            Assert.AreEqual(Jamo.Giyeok, Syllable1.Initial);
+            Assert.AreEqual(Jamo.A, Syllable1.Medial);
+            Assert.AreEqual(Jamo.HieutBatchim, Syllable1.Final);
         }
     }
 }

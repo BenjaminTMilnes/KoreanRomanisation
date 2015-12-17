@@ -567,6 +567,588 @@ namespace KoreanRomanisation.Tests
         public void RomaniseGatga7()
         {
             Assert.AreEqual("katka", McCuneReischauerRomanisation1.Romanise("갛가"));
+        }
+
+        [TestMethod]
+        public void Gakka1()
+        {
+            Assert.AreEqual("kakka", McCuneReischauerRomanisation1.Romanise("각까"));
+        }
+
+        [TestMethod]
+        public void Gakka2()
+        {
+            Assert.AreEqual("kakka", McCuneReischauerRomanisation1.Romanise("갂까"));
+        }
+
+        [TestMethod]
+        public void Gankka1()
+        {
+            Assert.AreEqual("kankka", McCuneReischauerRomanisation1.Romanise("간까"));
+        }
+
+        [TestMethod]
+        public void Gatkka1()
+        {
+            Assert.AreEqual("katkka", McCuneReischauerRomanisation1.Romanise("갇까"));
+        }
+        
+        [TestMethod]
+        public void Galkka1()
+        {
+            Assert.AreEqual("kalkka", McCuneReischauerRomanisation1.Romanise("갈까"));
+        }
+
+        [TestMethod]
+        public void Gamkka1()
+        {
+            Assert.AreEqual("kamkka", McCuneReischauerRomanisation1.Romanise("감까"));
+        }
+
+        [TestMethod]
+        public void Gapkka1()
+        {
+            Assert.AreEqual("kapkka", McCuneReischauerRomanisation1.Romanise("갑까"));
+        }
+
+        [TestMethod]
+        public void Gatkka2()
+        {
+            Assert.AreEqual("katkka", McCuneReischauerRomanisation1.Romanise("갓까"));
+        }
+
+        [TestMethod]
+        public void Gatkka3()
+        {
+            Assert.AreEqual("katkka", McCuneReischauerRomanisation1.Romanise("갔까"));
+        }
+
+        [TestMethod]
+        public void Gangkka1()
+        {
+            Assert.AreEqual("kangkka", McCuneReischauerRomanisation1.Romanise("강까"));
+        }
+
+        [TestMethod]
+        public void Gatkka4()
+        {
+            Assert.AreEqual("katkka", McCuneReischauerRomanisation1.Romanise("갖까"));
+        }
+
+        [TestMethod]
+        public void Gatkka5()
+        {
+            Assert.AreEqual("katkka", McCuneReischauerRomanisation1.Romanise("갗까"));
+        }
+
+        [TestMethod]
+        public void Gakka3()
+        {
+            Assert.AreEqual("kakka", McCuneReischauerRomanisation1.Romanise("갘까"));
+        }
+
+        [TestMethod]
+        public void Gatkka6()
+        {
+            Assert.AreEqual("katkka", McCuneReischauerRomanisation1.Romanise("같까"));
+        }
+
+        [TestMethod]
+        public void Gapkka2()
+        {
+            Assert.AreEqual("kapkka", McCuneReischauerRomanisation1.Romanise("갚까"));
+        }
+
+        [TestMethod]
+        public void Gatkka7()
+        {
+            Assert.AreEqual("katkka", McCuneReischauerRomanisation1.Romanise("갛까"));
+        }
+
+        [TestMethod]
+        public void Gangna1()
+        {
+            Assert.AreEqual("kangna", McCuneReischauerRomanisation1.Romanise("각나"));
+        }
+
+        [TestMethod]
+        public void Gakna1()
+        {
+            Assert.AreEqual("kakna", McCuneReischauerRomanisation1.Romanise("갂나"));
+        }
+
+        [TestMethod]
+        public void Ganna1()
+        {
+            Assert.AreEqual("kanna", McCuneReischauerRomanisation1.Romanise("간나"));
+        }
+
+        [TestMethod]
+        public void Ganna2()
+        {
+            Assert.AreEqual("kanna", McCuneReischauerRomanisation1.Romanise("갇나"));
+        }
+
+        [TestMethod]
+        public void Galla1()
+        {
+            Assert.AreEqual("kalla", McCuneReischauerRomanisation1.Romanise("갈나"));
+        }
+
+        [TestMethod]
+        public void Gamna1()
+        {
+            Assert.AreEqual("kamna", McCuneReischauerRomanisation1.Romanise("감나"));
+        }
+
+        [TestMethod]
+        public void Gamna2()
+        {
+            Assert.AreEqual("kamna", McCuneReischauerRomanisation1.Romanise("갑나"));
+        }
+
+        [TestMethod]
+        public void Gatna1()
+        {
+            Assert.AreEqual("katna", McCuneReischauerRomanisation1.Romanise("갓나"));
+        }
+
+        [TestMethod]
+        public void Gatna2()
+        {
+            Assert.AreEqual("katna", McCuneReischauerRomanisation1.Romanise("갔나"));
+        }
+
+        [TestMethod]
+        public void Gangna2()
+        {
+            Assert.AreEqual("kangna", McCuneReischauerRomanisation1.Romanise("강나"));
+        }
+
+        [TestMethod]
+        public void Gatna3()
+        {
+            Assert.AreEqual("katna", McCuneReischauerRomanisation1.Romanise("갖나"));
+        }
+
+        [TestMethod]
+        public void Gatna4()
+        {
+            Assert.AreEqual("katna",  McCuneReischauerRomanisation1.Romanise("갗나"));
+        }
+
+        [TestMethod]
+        public void Gakna2()
+        {
+            Assert.AreEqual("kakna", McCuneReischauerRomanisation1.Romanise("갘나"));
+        }
+
+        [TestMethod]
+        public void Gatna5()
+        {
+            Assert.AreEqual("katna", McCuneReischauerRomanisation1.Romanise("같나"));
+        }
+
+        [TestMethod]
+        public void Gapna1()
+        {
+            Assert.AreEqual("kapna", McCuneReischauerRomanisation1.Romanise("갚나"));
+        }
+
+        [TestMethod]
+        public void Gatna6()
+        {
+            Assert.AreEqual("katna", McCuneReischauerRomanisation1.Romanise("갛나"));
+        }
+
+        [TestMethod]
+        public void Gakda1()
+        {
+            Assert.AreEqual("kakta", McCuneReischauerRomanisation1.Romanise("각다"));
+        }
+
+        [TestMethod]
+        public void Gakda2()
+        {
+            Assert.AreEqual("kakta", McCuneReischauerRomanisation1.Romanise("갂다"));
+        }
+
+        [TestMethod]
+        public void Ganda1()
+        {
+            Assert.AreEqual("kanda", McCuneReischauerRomanisation1.Romanise("간다"));
+        }
+
+        [TestMethod]
+        public void Gatda1()
+        {
+            Assert.AreEqual("katta", McCuneReischauerRomanisation1.Romanise("갇다"));
+        }
+
+        [TestMethod]
+        public void Galda1()
+        {
+            Assert.AreEqual("kalda", McCuneReischauerRomanisation1.Romanise("갈다"));
+        }
+
+        [TestMethod]
+        public void Gamda1()
+        {
+            Assert.AreEqual("kamda", McCuneReischauerRomanisation1.Romanise("감다"));
+        }
+
+        [TestMethod]
+        public void Gapda1()
+        {
+            Assert.AreEqual("kapta", McCuneReischauerRomanisation1.Romanise("갑다"));
+        }
+
+        [TestMethod]
+        public void Gatda2()
+        {
+            Assert.AreEqual("katta", McCuneReischauerRomanisation1.Romanise("갓다"));
+        }
+
+        [TestMethod]
+        public void Gatda3()
+        {
+            Assert.AreEqual("katta", McCuneReischauerRomanisation1.Romanise("갔다"));
+        }
+
+        [TestMethod]
+        public void Gangda1()
+        {
+            Assert.AreEqual("kangda", McCuneReischauerRomanisation1.Romanise("강다"));
+        }
+
+        [TestMethod]
+        public void Gatda4()
+        {
+            Assert.AreEqual("katta", McCuneReischauerRomanisation1.Romanise("갖다"));
+        }
+
+        [TestMethod]
+        public void Gatda5()
+        {
+            Assert.AreEqual("katta", McCuneReischauerRomanisation1.Romanise("갗다"));
+        }
+
+        [TestMethod]
+        public void Gakda3()
+        {
+            Assert.AreEqual("kakta", McCuneReischauerRomanisation1.Romanise("갘다"));
+        }
+
+        [TestMethod]
+        public void Gatda6()
+        {
+            Assert.AreEqual("katta", McCuneReischauerRomanisation1.Romanise("같다"));
+        }
+
+        [TestMethod]
+        public void Gapda2()
+        {
+            Assert.AreEqual("kapta", McCuneReischauerRomanisation1.Romanise("갚다"));
+        }
+
+        [TestMethod]
+        public void Gaktta1()
+        {
+            Assert.AreEqual("kaktta", McCuneReischauerRomanisation1.Romanise("각따"));
+        }
+
+        [TestMethod]
+        public void Gaktta2()
+        {
+            Assert.AreEqual("kaktta", McCuneReischauerRomanisation1.Romanise("갂따"));
+        }
+
+        [TestMethod]
+        public void Gantta1()
+        {
+            Assert.AreEqual("kantta", McCuneReischauerRomanisation1.Romanise("간따"));
+        }
+
+        [TestMethod]
+        public void Gatta1()
+        {
+            Assert.AreEqual("katta", McCuneReischauerRomanisation1.Romanise("갇따"));
+        }
+
+        [TestMethod]
+        public void Galtta1()
+        {
+            Assert.AreEqual("kaltta", McCuneReischauerRomanisation1.Romanise("갈따"));
+        }
+
+        [TestMethod]
+        public void Gamtta1()
+        {
+            Assert.AreEqual("kamtta", McCuneReischauerRomanisation1.Romanise("감따"));
+        }
+
+        [TestMethod]
+        public void Gaptta1()
+        {
+            Assert.AreEqual("kaptta", McCuneReischauerRomanisation1.Romanise("갑따"));
+        }
+
+        [TestMethod]
+        public void Gatta2()
+        {
+            Assert.AreEqual("katta", McCuneReischauerRomanisation1.Romanise("갓따"));
+        }
+
+        [TestMethod]
+        public void Gatta3()
+        {
+            Assert.AreEqual("katta", McCuneReischauerRomanisation1.Romanise("갔따"));
+        }
+
+        [TestMethod]
+        public void Gangtta1()
+        {
+            Assert.AreEqual("kangtta", McCuneReischauerRomanisation1.Romanise("강따"));
+        }
+
+        [TestMethod]
+        public void Gatta4()
+        {
+            Assert.AreEqual("katta", McCuneReischauerRomanisation1.Romanise("갖따"));
+        }
+
+        [TestMethod]
+        public void Gatta5()
+        {
+            Assert.AreEqual("katta", McCuneReischauerRomanisation1.Romanise("갗따"));
+        }
+
+        [TestMethod]
+        public void Gaktta3()
+        {
+            Assert.AreEqual("kaktta", McCuneReischauerRomanisation1.Romanise("갘따"));
+        }
+
+        [TestMethod]
+        public void Gatta6()
+        {
+            Assert.AreEqual("katta", McCuneReischauerRomanisation1.Romanise("같따"));
+        }
+
+        [TestMethod]
+        public void Gaptta2()
+        {
+            Assert.AreEqual("kaptta", McCuneReischauerRomanisation1.Romanise("갚따"));
+        }
+
+        [TestMethod]
+        public void Gatta7()
+        {
+            Assert.AreEqual("katta", McCuneReischauerRomanisation1.Romanise("갛따"));
+        }
+
+        [TestMethod]
+        public void Gangna3()
+        {
+            Assert.AreEqual("kangna", McCuneReischauerRomanisation1.Romanise("각라"));
+        }
+
+        [TestMethod]
+        public void Gakna3()
+        {
+            Assert.AreEqual("kakna", McCuneReischauerRomanisation1.Romanise("갂라"));
+        }
+
+        [TestMethod]
+        public void Galla2()
+        {
+            Assert.AreEqual("kalla", McCuneReischauerRomanisation1.Romanise("간라"));
+        }
+
+        [TestMethod]
+        public void Ganna3()
+        {
+            Assert.AreEqual("kanna", McCuneReischauerRomanisation1.Romanise("갇라"));
+        }
+
+        [TestMethod]
+        public void Galla3()
+        {
+            Assert.AreEqual("kalla", McCuneReischauerRomanisation1.Romanise("갈라"));
+        }
+
+        [TestMethod]
+        public void Gamna3()
+        {
+            Assert.AreEqual("kamna", McCuneReischauerRomanisation1.Romanise("감라"));
+        }
+
+        [TestMethod]
+        public void Gamna4()
+        {
+            Assert.AreEqual("kamna", McCuneReischauerRomanisation1.Romanise("갑라"));
+        }
+
+        [TestMethod]
+        public void Ganna4()
+        {
+            Assert.AreEqual("kanna", McCuneReischauerRomanisation1.Romanise("갓라"));
+        }
+
+        [TestMethod]
+        public void Ganna5()
+        {
+            Assert.AreEqual("kanna", McCuneReischauerRomanisation1.Romanise("갔라"));
+        }
+
+        [TestMethod]
+        public void Gangna4()
+        {
+            Assert.AreEqual("kangna", McCuneReischauerRomanisation1.Romanise("강라"));
+        }
+
+        [TestMethod]
+        public void Ganna6()
+        {
+            Assert.AreEqual("kanna", McCuneReischauerRomanisation1.Romanise("갖라"));
+        }
+
+        [TestMethod]
+        public void Ganna7()
+        {
+            Assert.AreEqual("kanna", McCuneReischauerRomanisation1.Romanise("갗라"));
+        }
+
+        [TestMethod]
+        public void Gangna5()
+        {
+            Assert.AreEqual("kangna", McCuneReischauerRomanisation1.Romanise("갘라"));
+        }
+
+        [TestMethod]
+        public void Ganna8()
+        {
+            Assert.AreEqual("kanna", McCuneReischauerRomanisation1.Romanise("같라"));
+        }
+
+        [TestMethod]
+        public void Gamna5()
+        {
+            Assert.AreEqual("kamna", McCuneReischauerRomanisation1.Romanise("갚라"));
+        }
+
+        [TestMethod]
+        public void Ganna9()
+        {
+            Assert.AreEqual("kanna", McCuneReischauerRomanisation1.Romanise("갛라"));
+        }
+
+        [TestMethod]
+        public void Gangma1()
+        {
+            Assert.AreEqual("kangma", McCuneReischauerRomanisation1.Romanise("각마"));
+        }
+
+        [TestMethod]
+        public void Gangma2()
+        {
+            Assert.AreEqual("kangma", McCuneReischauerRomanisation1.Romanise("갂마"));
+        }
+
+        [TestMethod]
+        public void Ganma1()
+        {
+            Assert.AreEqual("kanma", McCuneReischauerRomanisation1.Romanise("간마"));
+        }
+
+        [TestMethod]
+        public void Ganma2()
+        {
+            Assert.AreEqual("kanma", McCuneReischauerRomanisation1.Romanise("갇마"));
+        }
+
+        [TestMethod]
+        public void Ganma3()
+        {
+            Assert.AreEqual("kanma", McCuneReischauerRomanisation1.Romanise("갈마"));
+        }
+
+        [TestMethod]
+        public void Gamma1()
+        {
+            Assert.AreEqual("kamma", McCuneReischauerRomanisation1.Romanise("감마"));
+        }
+
+        [TestMethod]
+        public void Gamma2()
+        {
+            Assert.AreEqual("kamma", McCuneReischauerRomanisation1.Romanise("갑마"));
+        }
+
+        [TestMethod]
+        public void Ganma4()
+        {
+            Assert.AreEqual("kanma", McCuneReischauerRomanisation1.Romanise("갓마"));
+        }
+
+        [TestMethod]
+        public void Ganma5()
+        {
+            Assert.AreEqual("kanma", McCuneReischauerRomanisation1.Romanise("갔마"));
+        }
+
+        [TestMethod]
+        public void Gangma3()
+        {
+            Assert.AreEqual("kangma", McCuneReischauerRomanisation1.Romanise("강마"));
+        }
+
+        [TestMethod]
+        public void Ganma6()
+        {
+            Assert.AreEqual("kanma", McCuneReischauerRomanisation1.Romanise("갓마"));
+        }
+
+        [TestMethod]
+        public void Ganma7()
+        {
+            Assert.AreEqual("kanma", McCuneReischauerRomanisation1.Romanise("갔마"));
+        }
+
+        [TestMethod]
+        public void Ganma8()
+        {
+            Assert.AreEqual("kanma", McCuneReischauerRomanisation1.Romanise("갖마"));
+        }
+
+        [TestMethod]
+        public void Gatma1()
+        {
+            Assert.AreEqual("katma", McCuneReischauerRomanisation1.Romanise("갗마"));
+        }
+
+        [TestMethod]
+        public void Gakma1()
+        {
+            Assert.AreEqual("kakma", McCuneReischauerRomanisation1.Romanise("갘마"));
+        }
+
+        [TestMethod]
+        public void Gatma2()
+        {
+            Assert.AreEqual("katma", McCuneReischauerRomanisation1.Romanise("같마"));
+        }
+
+        [TestMethod]
+        public void Gapma1()
+        {
+            Assert.AreEqual("kapma", McCuneReischauerRomanisation1.Romanise("갚마"));
+        }
+
+        [TestMethod]
+        public void Ganma9()
+        {
+            Assert.AreEqual("kanma", McCuneReischauerRomanisation1.Romanise("갛마"));
         }        
     }
 }
