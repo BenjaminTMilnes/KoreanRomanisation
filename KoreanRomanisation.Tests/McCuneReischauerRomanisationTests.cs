@@ -1149,6 +1149,102 @@ namespace KoreanRomanisation.Tests
         public void Ganma9()
         {
             Assert.AreEqual("katma", McCuneReischauerRomanisation1.Romanise("갛마"));
-        }        
+        }
+
+        [TestMethod]
+        public void Gakba1()
+        {
+            Assert.AreEqual("kakpa", McCuneReischauerRomanisation1.Romanise("각바"));
+        }
+        
+        [TestMethod]
+        public void Gakba2()
+        {
+            Assert.AreEqual("kakpa", McCuneReischauerRomanisation1.Romanise("갂바"));
+        }
+        
+        [TestMethod]
+        public void Ganba1()
+        {
+            Assert.AreEqual("kanba", McCuneReischauerRomanisation1.Romanise("간바"));
+        }
+        
+        [TestMethod]
+        public void Gatba1()
+        {
+            Assert.AreEqual("katpa", McCuneReischauerRomanisation1.Romanise("갇바"));
+        }
+        
+        [TestMethod]
+        public void Galba1()
+        {
+            Assert.AreEqual("kalba", McCuneReischauerRomanisation1.Romanise("갈바"));
+        }
+        
+        [TestMethod]
+        public void Gamba1()
+        {
+            Assert.AreEqual("kamba", McCuneReischauerRomanisation1.Romanise("감바"));
+        }
+        
+        [TestMethod]
+        public void Gapba1()
+        {
+            Assert.AreEqual("kappa", McCuneReischauerRomanisation1.Romanise("갑바"));
+        }
+        
+        [TestMethod]
+        public void Gatba2()
+        {
+            Assert.AreEqual("katpa", McCuneReischauerRomanisation1.Romanise("갓바"));
+        }
+        
+        [TestMethod]
+        public void Gatba3()
+        {
+            Assert.AreEqual("katpa", McCuneReischauerRomanisation1.Romanise("갔바"));
+        }
+        
+        [TestMethod]
+        public void Gangba1()
+        {
+            Assert.AreEqual("kangba", McCuneReischauerRomanisation1.Romanise("강바"));
+        }
+        
+        [TestMethod]
+        public void Gatba4()
+        {
+            Assert.AreEqual("katpa", McCuneReischauerRomanisation1.Romanise("갖바"));
+        }
+        
+        [TestMethod]
+        public void Gatba5()
+        {
+            Assert.AreEqual("katpa", McCuneReischauerRomanisation1.Romanise("갗바"));
+        }
+        
+        [TestMethod]
+        public void Gakba3()
+        {
+            Assert.AreEqual("kakpa", McCuneReischauerRomanisation1.Romanise("갘바"));
+        }
+        
+        [TestMethod]
+        public void Gatba6()
+        {
+            Assert.AreEqual("katpa", McCuneReischauerRomanisation1.Romanise("같바"));
+        }
+        
+        [TestMethod]
+        public void Gapba2()
+        {
+            Assert.AreEqual("kappa", McCuneReischauerRomanisation1.Romanise("갚바"));
+        }
+        
+        [TestMethod]
+        public void Gatba7()
+        {
+            Assert.AreEqual("katpa", McCuneReischauerRomanisation1.Romanise("갛바"));
+        }
     }
 }
