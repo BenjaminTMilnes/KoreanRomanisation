@@ -8,11 +8,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace KoreanRomanisation.Tests
 {
     [TestClass]
-   public  class YaleRomanisationTests
+   public  class OneSyllableTests
     {
         private readonly YaleRomanisation YaleRomanisation1;
 
-        public YaleRomanisationTests()
+        public OneSyllableTests()
         {
             YaleRomanisation1 = new YaleRomanisation();
         }

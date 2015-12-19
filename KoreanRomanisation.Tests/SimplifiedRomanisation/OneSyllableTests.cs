@@ -5,16 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace KoreanRomanisation.Tests
+namespace KoreanRomanisation.Tests.SimplifiedRomanisation
 {
     [TestClass]
-    public class SimplifiedRomanisationTests
+    public class OneSyllableTests
     {
-        private readonly SimplifiedRomanisation SimplifiedRomanisation1;
+        private readonly KoreanRomanisation.SimplifiedRomanisation SimplifiedRomanisation1;
 
-        public SimplifiedRomanisationTests()
+        public OneSyllableTests()
         {
-            SimplifiedRomanisation1 = new SimplifiedRomanisation();
+            SimplifiedRomanisation1 = new KoreanRomanisation.SimplifiedRomanisation();
         }
 
         [TestMethod]
