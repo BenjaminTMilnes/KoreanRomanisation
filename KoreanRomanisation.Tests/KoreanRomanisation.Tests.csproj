@@ -74,7 +74,6 @@
     <Compile Include="McCuneReischauerRomanisation\TwoSyllableTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RevisedRomanisation\OneSyllableTests.cs" />
-    <Compile Include="RevisedRomanisation\TwoSyllableTests.cs" />
     <Compile Include="SyllableTests.cs" />
     <Compile Include="SimplifiedRomanisation\OneSyllableTests.cs" />
     <Compile Include="YaleRomanisation\OneSyllableTests.cs" />

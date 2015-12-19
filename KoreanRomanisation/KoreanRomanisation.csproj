@@ -52,6 +52,7 @@
     <Compile Include="McCuneReischauerRomanisation.cs" />
     <Compile Include="MedialRomanisationRule.cs" />
     <Compile Include="NonKoreanText.cs" />
+    <Compile Include="PronunciationChangeRomanisationRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RevisedRomanisation.cs" />
     <Compile Include="Romanisation.cs" />

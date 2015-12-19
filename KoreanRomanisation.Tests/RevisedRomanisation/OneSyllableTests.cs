@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace KoreanRomanisation.Tests.RevisedRomanisation
 {
-
-    [TestClass]
     public class OneSyllableTests
     {
         private readonly KoreanRomanisation.RevisedRomanisation RevisedRomanisation1;
@@ -18,460 +16,405 @@ namespace KoreanRomanisation.Tests.RevisedRomanisation
             RevisedRomanisation1 = new KoreanRomanisation.RevisedRomanisation();
         }
 
-        [TestMethod]
-        public void TestA()
-        {
-            Assert.AreEqual("a", RevisedRomanisation1.Romanise("아"));
-        }
-
-        [TestMethod]
-        public void TestEo()
-        {
-            Assert.AreEqual("eo", RevisedRomanisation1.Romanise("어"));
-        }
-
-        [TestMethod]
-        public void TestI()
-        {
-            Assert.AreEqual("i", RevisedRomanisation1.Romanise("이"));
-        }
-
-        [TestMethod]
-        public void TestAe()
-        {
-            Assert.AreEqual("ae", RevisedRomanisation1.Romanise("애"));
-        }
-
-        [TestMethod]
-        public void TestE()
-        {
-            Assert.AreEqual("e", RevisedRomanisation1.Romanise("에"));
-        }
-
-        [TestMethod]
-        public void TestO()
-        {
-            Assert.AreEqual("o", RevisedRomanisation1.Romanise("오"));
-        }
-
-        [TestMethod]
-        public void TestU()
-        {
-            Assert.AreEqual("u", RevisedRomanisation1.Romanise("우"));
-        }
-
-        [TestMethod]
-        public void TestEu()
-        {
-            Assert.AreEqual("eu", RevisedRomanisation1.Romanise("으"));
-        }
-
-        [TestMethod]
-        public void TestYa()
-        {
-            Assert.AreEqual("ya", RevisedRomanisation1.Romanise("야"));
-        }
-
-        [TestMethod]
-        public void TestYeo()
-        {
-            Assert.AreEqual("yeo", RevisedRomanisation1.Romanise("여"));
-        }
-
-        [TestMethod]
-        public void TestYae()
-        {
-            Assert.AreEqual("yae", RevisedRomanisation1.Romanise("얘"));
-        }
-
-        [TestMethod]
-        public void TestYe()
-        {
-            Assert.AreEqual("ye", RevisedRomanisation1.Romanise("예"));
-        }
-
-        [TestMethod]
-        public void TestYo()
-        {
-            Assert.AreEqual("yo", RevisedRomanisation1.Romanise("요"));
-        }
-
-        [TestMethod]
-        public void TestYu()
-        {
-            Assert.AreEqual("yu", RevisedRomanisation1.Romanise("유"));
-        }
-
-        [TestMethod]
-        public void TestWa()
-        {
-            Assert.AreEqual("wa", RevisedRomanisation1.Romanise("와"));
-        }
-
-        [TestMethod]
-        public void TestWo()
-        {
-            Assert.AreEqual("wo", RevisedRomanisation1.Romanise("워"));
-        }
-
-        [TestMethod]
-        public void TestWae()
-        {
-            Assert.AreEqual("wae", RevisedRomanisation1.Romanise("왜"));
-        }
-
-        [TestMethod]
-        public void TestWe()
-        {
-            Assert.AreEqual("we", RevisedRomanisation1.Romanise("웨"));
-        }
-
-        [TestMethod]
-        public void TestOe()
-        {
-            Assert.AreEqual("oe", RevisedRomanisation1.Romanise("외"));
-        }
-
-        [TestMethod]
-        public void TestUi()
-        {
-            Assert.AreEqual("ui", RevisedRomanisation1.Romanise("의"));
-        }
-
-        [TestMethod]
-        public void TestWi()
-        {
-            Assert.AreEqual("wi", RevisedRomanisation1.Romanise("위"));
-        }
-
-        [TestMethod]
-        public void TestGa()
-        {
-            Assert.AreEqual("ga", RevisedRomanisation1.Romanise("가"));
-        }
-
-        [TestMethod]
-        public void TestKka()
-        {
-            Assert.AreEqual("kka", RevisedRomanisation1.Romanise("까"));
-        }
-
-        [TestMethod]
-        public void TestNa()
-        {
-            Assert.AreEqual("na", RevisedRomanisation1.Romanise("나"));
-        }
-
-        [TestMethod]
-        public void TestDa()
-        {
-            Assert.AreEqual("da", RevisedRomanisation1.Romanise("다"));
-        }
-
-        [TestMethod]
-        public void TestTta()
-        {
-            Assert.AreEqual("tta", RevisedRomanisation1.Romanise("따"));
-        }
-
-        [TestMethod]
-        public void TestRa()
-        {
-            Assert.AreEqual("ra", RevisedRomanisation1.Romanise("라"));
-        }
-
-        [TestMethod]
-        public void TestMa()
-        {
-            Assert.AreEqual("ma", RevisedRomanisation1.Romanise("마"));
-        }
-
-        [TestMethod]
-        public void TestBa()
-        {
-            Assert.AreEqual("ba", RevisedRomanisation1.Romanise("바"));
-        }
-
-        [TestMethod]
-        public void TestPpa()
-        {
-            Assert.AreEqual("ppa", RevisedRomanisation1.Romanise("빠"));
-        }
-
-        [TestMethod]
-        public void TestSa()
-        {
-            Assert.AreEqual("sa", RevisedRomanisation1.Romanise("사"));
-        }
-
-        [TestMethod]
-        public void TestSsa()
-        {
-            Assert.AreEqual("ssa", RevisedRomanisation1.Romanise("싸"));
-        }
-
-        [TestMethod]
-        public void TestJa()
-        {
-            Assert.AreEqual("ja", RevisedRomanisation1.Romanise("자"));
-        }
-
-        [TestMethod]
-        public void TestJja()
-        {
-            Assert.AreEqual("jja", RevisedRomanisation1.Romanise("짜"));
-        }
-
-        [TestMethod]
-        public void TestCha()
-        {
-            Assert.AreEqual("cha", RevisedRomanisation1.Romanise("차"));
-        }
-
-        [TestMethod]
-        public void TestKa()
-        {
-            Assert.AreEqual("ka", RevisedRomanisation1.Romanise("카"));
-        }
-
-        [TestMethod]
-        public void TestTa()
-        {
-            Assert.AreEqual("ta", RevisedRomanisation1.Romanise("타"));
-        }
-
-        [TestMethod]
-        public void TestPa()
-        {
-            Assert.AreEqual("pa", RevisedRomanisation1.Romanise("파"));
-        }
-
-        [TestMethod]
-        public void TestHa()
-        {
-            Assert.AreEqual("ha", RevisedRomanisation1.Romanise("하"));
-        }
-
-        [TestMethod]
-        public void TestGak1()
-        {
-            Assert.AreEqual("gak", RevisedRomanisation1.Romanise("각"));
-        }
-
-        [TestMethod]
-        public void TestGakk()
-        {
-            Assert.AreEqual("gak", RevisedRomanisation1.Romanise("갂"));
-        }
-
-        [TestMethod]
-        public void TestGan()
-        {
-            Assert.AreEqual("gan", RevisedRomanisation1.Romanise("간"));
-        }
-
-        [TestMethod]
-        public void TestGat1()
-        {
-            Assert.AreEqual("gat", RevisedRomanisation1.Romanise("갇"));
-        }
-
-        [TestMethod]
-        public void TestGal()
-        {
-            Assert.AreEqual("gal", RevisedRomanisation1.Romanise("갈"));
-        }
-
-        [TestMethod]
-        public void TestGam()
-        {
-            Assert.AreEqual("gam", RevisedRomanisation1.Romanise("감"));
-        }
-
-        [TestMethod]
-        public void TestGap1()
-        {
-            Assert.AreEqual("gap", RevisedRomanisation1.Romanise("갑"));
-        }
-
-        [TestMethod]
-        public void TestGat2()
-        {
-            Assert.AreEqual("gat", RevisedRomanisation1.Romanise("갓"));
-        }
-
-        [TestMethod]
-        public void TestGat3()
-        {
-            Assert.AreEqual("gat", RevisedRomanisation1.Romanise("갔"));
-        }
-
-        [TestMethod]
-        public void TestGang()
-        {
-            Assert.AreEqual("gang", RevisedRomanisation1.Romanise("강"));
-        }
-
-        [TestMethod]
-        public void TestGat4()
-        {
-            Assert.AreEqual("gat", RevisedRomanisation1.Romanise("갖"));
-        }
-
-        [TestMethod]
-        public void TestGat5()
-        {
-            Assert.AreEqual("gat", RevisedRomanisation1.Romanise("갗"));
-        }
-
-        [TestMethod]
-        public void TestGak2()
-        {
-            Assert.AreEqual("gak", RevisedRomanisation1.Romanise("갘"));
-        }
-
-        [TestMethod]
-        public void TestGat6()
-        {
-            Assert.AreEqual("gat", RevisedRomanisation1.Romanise("같"));
-        }
-
-        [TestMethod]
-        public void TestGap2()
-        {
-            Assert.AreEqual("gap", RevisedRomanisation1.Romanise("갚"));
-        }
-
-        [TestMethod]
-        public void TestGat7()
-        {
-            Assert.AreEqual("gat", RevisedRomanisation1.Romanise("갛"));
-        }
-
-        [TestMethod]
-        public void TestShi()
-        {
-            RevisedRomanisation1.UseSh = false;
-            Assert.AreEqual("si", RevisedRomanisation1.Romanise("시"));
-            RevisedRomanisation1.UseSh = true;
-            Assert.AreEqual("shi", RevisedRomanisation1.Romanise("시"));
-        }
-
-        [TestMethod]
-        public void TestShya()
-        {
-            RevisedRomanisation1.UseSh = false;
-            Assert.AreEqual("sya", RevisedRomanisation1.Romanise("샤"));
-            RevisedRomanisation1.UseSh = true;
-            Assert.AreEqual("shya", RevisedRomanisation1.Romanise("샤"));
-        }
-
-        [TestMethod]
-        public void TestShyeo()
-        {
-            RevisedRomanisation1.UseSh = false;
-            Assert.AreEqual("syeo", RevisedRomanisation1.Romanise("셔"));
-            RevisedRomanisation1.UseSh = true;
-            Assert.AreEqual("shyeo", RevisedRomanisation1.Romanise("셔"));
-        }
-
-        [TestMethod]
-        public void TestShyo()
-        {
-            RevisedRomanisation1.UseSh = false;
-            Assert.AreEqual("syo", RevisedRomanisation1.Romanise("쇼"));
-            RevisedRomanisation1.UseSh = true;
-            Assert.AreEqual("shyo", RevisedRomanisation1.Romanise("쇼"));
-        }
-
-        [TestMethod]
-        public void TestShyu()
-        {
-            RevisedRomanisation1.UseSh = false;
-            Assert.AreEqual("syu", RevisedRomanisation1.Romanise("슈"));
-            RevisedRomanisation1.UseSh = true;
-            Assert.AreEqual("shyu", RevisedRomanisation1.Romanise("슈"));
-        }
-
-        [TestMethod]
-        public void TestShyae()
+        [Theory]
+        [InlineData("아", "a")]
+        [InlineData("어", "eo")]
+        [InlineData("이", "i")]
+        [InlineData("애", "ae")]
+        [InlineData("에", "e")]
+        [InlineData("오", "o")]
+        [InlineData("우", "u")]
+        [InlineData("으", "eu")]
+        [InlineData("야", "ya")]
+        [InlineData("여", "yeo")]
+        [InlineData("얘", "yae")]
+        [InlineData("예", "ye")]
+        [InlineData("요", "yo")]
+        [InlineData("유", "yu")]
+        [InlineData("와", "wa")]
+        [InlineData("워", "wo")]
+        [InlineData("왜", "wae")]
+        [InlineData("웨", "we")]
+        [InlineData("외", "oe")]
+        [InlineData("의", "ui")]
+        [InlineData("위", "wi")]
+        [InlineData("가", "ga")]
+        [InlineData("까", "kka")]
+        [InlineData("나", "na")]
+        [InlineData("다", "da")]
+        [InlineData("따", "tta")]
+        [InlineData("라", "ra")]
+        [InlineData("마", "ma")]
+        [InlineData("바", "ba")]
+        [InlineData("빠", "ppa")]
+        [InlineData("사", "sa")]
+        [InlineData("싸", "ssa")]
+        [InlineData("자", "ja")]
+        [InlineData("짜", "jja")]
+        [InlineData("차", "cha")]
+        [InlineData("카", "ka")]
+        [InlineData("타", "ta")]
+        [InlineData("파", "pa")]
+        [InlineData("하", "ha")]
+        [InlineData("각", "gak")]
+        [InlineData("갂", "gak")]
+        [InlineData("간", "gan")]
+        [InlineData("갇", "gat")]
+        [InlineData("갈", "gal")]
+        [InlineData("감", "gam")]
+        [InlineData("갑", "gap")]
+        [InlineData("갓", "gat")]
+        [InlineData("갔", "gat")]
+        [InlineData("강", "gang")]
+        [InlineData("갖", "gat")]
+        [InlineData("갗", "gat")]
+        [InlineData("갘", "gak")]
+        [InlineData("같", "gat")]
+        [InlineData("갚", "gap")]
+        [InlineData("갛", "gat")]
+        [InlineData("시", "si")]
+        [InlineData("샤", "sya")]
+        [InlineData("셔", "syeo")]
+        [InlineData("섀", "syae")]
+        [InlineData("셰", "sye")]
+        [InlineData("쇼", "syo")]
+        [InlineData("슈", "syu")]
+        [InlineData("씨", "ssi")]
+        [InlineData("쌰", "ssya")]
+        [InlineData("쎠", "ssyeo")]
+        [InlineData("썌", "ssyae")]
+        [InlineData("쎼", "ssye")]
+        [InlineData("쑈", "ssyo")]
+        [InlineData("쓔", "ssyu")]
+        [InlineData("각가", "gakga")]
+        [InlineData("갂가", "gakga")]
+        [InlineData("간가", "gan-ga")]
+        [InlineData("갇가", "gatga")]
+        [InlineData("갈가", "galga")]
+        [InlineData("감가", "gamga")]
+        [InlineData("갑가", "gapga")]
+        [InlineData("갓가", "gatga")]
+        [InlineData("갔가", "gatga")]
+        [InlineData("강가", "gangga")]
+        [InlineData("갖가", "gatga")]
+        [InlineData("갗가", "gatga")]
+        [InlineData("갘가", "gakga")]
+        [InlineData("같가", "gatga")]
+        [InlineData("갚가", "gapga")]
+        [InlineData("갛가", "gatga")]
+        [InlineData("각까", "gakka")]
+        [InlineData("갂까", "gakka")]
+        [InlineData("간까", "gankka")]
+        [InlineData("갇까", "gatkka")]
+        [InlineData("갈까", "galkka")]
+        [InlineData("감까", "gamkka")]
+        [InlineData("갑까", "gapkka")]
+        [InlineData("갓까", "gatkka")]
+        [InlineData("갔까", "gatkka")]
+        [InlineData("강까", "gangkka")]
+        [InlineData("갖까", "gatkka")]
+        [InlineData("갗까", "gatkka")]
+        [InlineData("갘까", "gakka")]
+        [InlineData("같까", "gatkka")]
+        [InlineData("갚까", "gapkka")]
+        [InlineData("갛까", "gatkka")]
+        [InlineData("각나", "gangna")]
+        [InlineData("갂나", "gangna")]
+        [InlineData("간나", "ganna")]
+        [InlineData("갇나", "ganna")]
+        [InlineData("갈나", "galla")]
+        [InlineData("감나", "gamna")]
+        [InlineData("갑나", "gamna")]
+        [InlineData("갓나", "ganna")]
+        [InlineData("갔나", "ganna")]
+        [InlineData("강나", "gangna")]
+        [InlineData("갖나", "ganna")]
+        [InlineData("갗나", "ganna")]
+        [InlineData("갘나", "gangna")]
+        [InlineData("같나", "ganna")]
+        [InlineData("갚나", "gamna")]
+        [InlineData("갛나", "ganna")]
+        [InlineData("각다", "gakda")]
+        [InlineData("갂다", "gakda")]
+        [InlineData("간다", "ganda")]
+        [InlineData("갇다", "gatda")]
+        [InlineData("갈다", "galda")]
+        [InlineData("감다", "gamda")]
+        [InlineData("갑다", "gapda")]
+        [InlineData("갓다", "gatda")]
+        [InlineData("갔다", "gatda")]
+        [InlineData("강다", "gangda")]
+        [InlineData("갖다", "gatda")]
+        [InlineData("갗다", "gatda")]
+        [InlineData("갘다", "gakda")]
+        [InlineData("같다", "gatda")]
+        [InlineData("갚다", "gapda")]
+        [InlineData("갛다", "gatda")]
+        [InlineData("각따", "gaktta")]
+        [InlineData("갂따", "gaktta")]
+        [InlineData("간따", "gantta")]
+        [InlineData("갇따", "gatta")]
+        [InlineData("갈따", "galtta")]
+        [InlineData("감따", "gamtta")]
+        [InlineData("갑따", "gaptta")]
+        [InlineData("갓따", "gatta")]
+        [InlineData("갔따", "gatta")]
+        [InlineData("강따", "gangtta")]
+        [InlineData("갖따", "gatta")]
+        [InlineData("갗따", "gatta")]
+        [InlineData("갘따", "gaktta")]
+        [InlineData("같따", "gatta")]
+        [InlineData("갚따", "gaptta")]
+        [InlineData("갛따", "gatta")]
+        [InlineData("각라", "gangna")]
+        [InlineData("갂라", "gangna")]
+        [InlineData("간라", "galla")]
+        [InlineData("갇라", "ganna")]
+        [InlineData("갈라", "galla")]
+        [InlineData("감라", "gamna")]
+        [InlineData("갑라", "gamna")]
+        [InlineData("갓라", "ganna")]
+        [InlineData("갔라", "ganna")]
+        [InlineData("강라", "gangna")]
+        [InlineData("갖라", "ganna")]
+        [InlineData("갗라", "ganna")]
+        [InlineData("갘라", "gangna")]
+        [InlineData("같라", "ganna")]
+        [InlineData("갚라", "gamna")]
+        [InlineData("갛라", "ganna")]
+        [InlineData("각마", "gangma")]
+        [InlineData("갂마", "gangma")]
+        [InlineData("간마", "ganma")]
+        [InlineData("갇마", "ganma")]
+        [InlineData("갈마", "galma")]
+        [InlineData("감마", "gamma")]
+        [InlineData("갑마", "gamma")]
+        [InlineData("갓마", "ganma")]
+        [InlineData("갔마", "ganma")]
+        [InlineData("강마", "gangma")]
+        [InlineData("갖마", "ganma")]
+        [InlineData("갗마", "ganma")]
+        [InlineData("갘마", "gangma")]
+        [InlineData("같마", "ganma")]
+        [InlineData("갚마", "gamma")]
+        [InlineData("갛마", "ganma")]
+        [InlineData("각바", "gakba")]
+        [InlineData("갂바", "gakba")]
+        [InlineData("간바", "ganba")]
+        [InlineData("갇바", "gatba")]
+        [InlineData("갈바", "galba")]
+        [InlineData("감바", "gamba")]
+        [InlineData("갑바", "gapba")]
+        [InlineData("갓바", "gatba")]
+        [InlineData("갔바", "gatba")]
+        [InlineData("강바", "gangba")]
+        [InlineData("갖바", "gatba")]
+        [InlineData("갗바", "gatba")]
+        [InlineData("갘바", "gakba")]
+        [InlineData("같바", "gatba")]
+        [InlineData("갚바", "gapba")]
+        [InlineData("갛바", "gatba")]
+        [InlineData("각빠", "gakppa")]
+        [InlineData("갂빠", "gakppa")]
+        [InlineData("간빠", "ganppa")]
+        [InlineData("갇빠", "gatppa")]
+        [InlineData("갈빠", "galppa")]
+        [InlineData("감빠", "gamppa")]
+        [InlineData("갑빠", "gappa")]
+        [InlineData("갓빠", "gatppa")]
+        [InlineData("갔빠", "gatppa")]
+        [InlineData("강빠", "gangppa")]
+        [InlineData("갖빠", "gatppa")]
+        [InlineData("갗빠", "gatppa")]
+        [InlineData("갘빠", "gakppa")]
+        [InlineData("같빠", "gatppa")]
+        [InlineData("갚빠", "gappa")]
+        [InlineData("갛빠", "gatppa")]
+        [InlineData("각사", "gaksa")]
+        [InlineData("갂사", "gaksa")]
+        [InlineData("간사", "gansa")]
+        [InlineData("갇사", "gatsa")]
+        [InlineData("갈사", "galsa")]
+        [InlineData("감사", "gamsa")]
+        [InlineData("갑사", "gapsa")]
+        [InlineData("갓사", "gassa")]
+        [InlineData("갔사", "gassa")]
+        [InlineData("강사", "gangsa")]
+        [InlineData("갖사", "gatsa")]
+        [InlineData("갗사", "gatsa")]
+        [InlineData("갘사", "gaksa")]
+        [InlineData("같사", "gatsa")]
+        [InlineData("갚사", "gapsa")]
+        [InlineData("갛사", "gatsa")]
+        [InlineData("각싸", "gakssa")]
+        [InlineData("갂싸", "gakssa")]
+        [InlineData("간싸", "ganssa")]
+        [InlineData("갇싸", "gatssa")]
+        [InlineData("갈싸", "galssa")]
+        [InlineData("감싸", "gamssa")]
+        [InlineData("갑싸", "gapssa")]
+        [InlineData("갓싸", "gatssa")]
+        [InlineData("갔싸", "gatssa")]
+        [InlineData("강싸", "gangssa")]
+        [InlineData("갖싸", "gatssa")]
+        [InlineData("갗싸", "gatssa")]
+        [InlineData("갘싸", "gakssa")]
+        [InlineData("같싸", "gatssa")]
+        [InlineData("갚싸", "gapssa")]
+        [InlineData("갛싸", "gatssa")]
+        [InlineData("각아", "gaga")]
+        [InlineData("갂아", "gakka")]
+        [InlineData("간아", "gana")]
+        [InlineData("갇아", "gada")]
+        [InlineData("갈아", "gara")]
+        [InlineData("감아", "gama")]
+        [InlineData("갑아", "gaba")]
+        [InlineData("갓아", "gasa")]
+        [InlineData("갔아", "gassa")]
+        [InlineData("강아", "gang-a")]
+        [InlineData("갖아", "gaja")]
+        [InlineData("갗아", "gacha")]
+        [InlineData("갘아", "gaka")]
+        [InlineData("같아", "gata")]
+        [InlineData("갚아", "gapa")]
+        [InlineData("갛아", "gaha")]
+        [InlineData("각자", "gakja")]
+        [InlineData("갂자", "gakja")]
+        [InlineData("간자", "ganja")]
+        [InlineData("갇자", "gatja")]
+        [InlineData("갈자", "galja")]
+        [InlineData("감자", "gamja")]
+        [InlineData("갑자", "gapja")]
+        [InlineData("갓자", "gatja")]
+        [InlineData("갔자", "gatja")]
+        [InlineData("강자", "gangja")]
+        [InlineData("갖자", "gatja")]
+        [InlineData("갗자", "gatja")]
+        [InlineData("갘자", "gakja")]
+        [InlineData("같자", "gatja")]
+        [InlineData("갚자", "gapja")]
+        [InlineData("갛자", "gatja")]
+        [InlineData("각짜", "gakjja")]
+        [InlineData("갂짜", "gakjja")]
+        [InlineData("간짜", "ganjja")]
+        [InlineData("갇짜", "gatjja")]
+        [InlineData("갈짜", "galjja")]
+        [InlineData("감짜", "gamjja")]
+        [InlineData("갑짜", "gapjja")]
+        [InlineData("갓짜", "gatjja")]
+        [InlineData("갔짜", "gatjja")]
+        [InlineData("강짜", "gangjja")]
+        [InlineData("갖짜", "gatjja")]
+        [InlineData("갗짜", "gatjja")]
+        [InlineData("갘짜", "gakjja")]
+        [InlineData("같짜", "gatjja")]
+        [InlineData("갚짜", "gapjja")]
+        [InlineData("갛짜", "gatjja")]
+        [InlineData("각차", "gakcha")]
+        [InlineData("갂차", "gakcha")]
+        [InlineData("간차", "gancha")]
+        [InlineData("갇차", "gatcha")]
+        [InlineData("갈차", "galcha")]
+        [InlineData("감차", "gamcha")]
+        [InlineData("갑차", "gapcha")]
+        [InlineData("갓차", "gatcha")]
+        [InlineData("갔차", "gatcha")]
+        [InlineData("강차", "gangcha")]
+        [InlineData("갖차", "gatcha")]
+        [InlineData("갗차", "gatcha")]
+        [InlineData("갘차", "gakcha")]
+        [InlineData("같차", "gatcha")]
+        [InlineData("갚차", "gapcha")]
+        [InlineData("갛차", "gatcha")]
+        [InlineData("각카", "gak-ka")]
+        [InlineData("갂카", "gak-ka")]
+        [InlineData("간카", "ganka")]
+        [InlineData("갇카", "gatka")]
+        [InlineData("갈카", "galka")]
+        [InlineData("감카", "gamka")]
+        [InlineData("갑카", "gapka")]
+        [InlineData("갓카", "gatka")]
+        [InlineData("갔카", "gatka")]
+        [InlineData("강카", "gangka")]
+        [InlineData("갖카", "gatka")]
+        [InlineData("갗카", "gatka")]
+        [InlineData("갘카", "gak-ka")]
+        [InlineData("같카", "gatka")]
+        [InlineData("갚카", "gapka")]
+        [InlineData("갛카", "gatka")]
+        [InlineData("각타", "gakta")]
+        [InlineData("갂타", "gakta")]
+        [InlineData("간타", "ganta")]
+        [InlineData("갇타", "gat-ta")]
+        [InlineData("갈타", "galta")]
+        [InlineData("감타", "gamta")]
+        [InlineData("갑타", "gapta")]
+        [InlineData("갓타", "gat-ta")]
+        [InlineData("갔타", "gat-ta")]
+        [InlineData("강타", "gangta")]
+        [InlineData("갖타", "gat-ta")]
+        [InlineData("갗타", "gat-ta")]
+        [InlineData("갘타", "gakta")]
+        [InlineData("같타", "gat-ta")]
+        [InlineData("갚타", "gapta")]
+        [InlineData("갛타", "gat-ta")]
+        [InlineData("각파", "gakpa")]
+        [InlineData("갂파", "gakpa")]
+        [InlineData("간파", "ganpa")]
+        [InlineData("갇파", "gatpa")]
+        [InlineData("갈파", "galpa")]
+        [InlineData("감파", "gampa")]
+        [InlineData("갑파", "gap-pa")]
+        [InlineData("갓파", "gatpa")]
+        [InlineData("갔파", "gatpa")]
+        [InlineData("강파", "gangpa")]
+        [InlineData("갖파", "gatpa")]
+        [InlineData("갗파", "gatpa")]
+        [InlineData("갘파", "gakpa")]
+        [InlineData("같파", "gatpa")]
+        [InlineData("갚파", "gap-pa")]
+        [InlineData("갛파", "gatpa")]
+        [InlineData("각하", "gakha")]
+        [InlineData("갂하", "gakha")]
+        [InlineData("간하", "ganha")]
+        [InlineData("갇하", "gatha")]
+        [InlineData("갈하", "galha")]
+        [InlineData("감하", "gamha")]
+        [InlineData("갑하", "gapha")]
+        [InlineData("갓하", "gatha")]
+        [InlineData("갔하", "gatha")]
+        [InlineData("강하", "gangha")]
+        [InlineData("갖하", "gatha")]
+        [InlineData("갗하", "gatha")]
+        [InlineData("갘하", "gakha")]
+        [InlineData("같하", "gatha")]
+        [InlineData("갚하", "gapha")]
+        [InlineData("갛하", "gatha")]
+        public void Romanise(string Korean, string Romanisation)
         {
             RevisedRomanisation1.UseSh = false;
-            Assert.AreEqual("syae", RevisedRomanisation1.Romanise("섀"));
-            RevisedRomanisation1.UseSh = true;
-            Assert.AreEqual("shyae", RevisedRomanisation1.Romanise("섀"));
+            Assert.Equal(Romanisation, RevisedRomanisation1.Romanise(Korean));
         }
 
-        [TestMethod]
-        public void TestShye()
+        [Theory]
+        [InlineData("시", "shi")]
+        [InlineData("샤", "shya")]
+        [InlineData("셔", "shyeo")]
+        [InlineData("섀", "shyae")]
+        [InlineData("셰", "shye")]
+        [InlineData("쇼", "shyo")]
+        [InlineData("슈", "shyu")]
+        [InlineData("씨", "sshi")]
+        [InlineData("쌰", "sshya")]
+        [InlineData("쎠", "sshyeo")]
+        [InlineData("썌", "sshyae")]
+        [InlineData("쎼", "sshye")]
+        [InlineData("쑈", "sshyo")]
+        [InlineData("쓔", "sshyu")]
+        public void RomaniseUsingSh(string Korean, string Romanisation)
         {
-            RevisedRomanisation1.UseSh = false;
-            Assert.AreEqual("sye", RevisedRomanisation1.Romanise("셰"));
             RevisedRomanisation1.UseSh = true;
-            Assert.AreEqual("shye", RevisedRomanisation1.Romanise("셰"));
-        }
-
-        [TestMethod]
-        public void TestSshi()
-        {
-            RevisedRomanisation1.UseSh = false;
-            Assert.AreEqual("ssi", RevisedRomanisation1.Romanise("씨"));
-            RevisedRomanisation1.UseSh = true;
-            Assert.AreEqual("sshi", RevisedRomanisation1.Romanise("씨"));
-        }
-
-        [TestMethod]
-        public void TestSshya()
-        {
-            RevisedRomanisation1.UseSh = false;
-            Assert.AreEqual("ssya", RevisedRomanisation1.Romanise("쌰"));
-            RevisedRomanisation1.UseSh = true;
-            Assert.AreEqual("sshya", RevisedRomanisation1.Romanise("쌰"));
-        }
-
-        [TestMethod]
-        public void TestSshyeo()
-        {
-            RevisedRomanisation1.UseSh = false;
-            Assert.AreEqual("ssyeo", RevisedRomanisation1.Romanise("쎠"));
-            RevisedRomanisation1.UseSh = true;
-            Assert.AreEqual("sshyeo", RevisedRomanisation1.Romanise("쎠"));
-        }
-
-        [TestMethod]
-        public void TestSshyo()
-        {
-            RevisedRomanisation1.UseSh = false;
-            Assert.AreEqual("ssyo", RevisedRomanisation1.Romanise("쑈"));
-            RevisedRomanisation1.UseSh = true;
-            Assert.AreEqual("sshyo", RevisedRomanisation1.Romanise("쑈"));
-        }
-
-        [TestMethod]
-        public void TestSshyu()
-        {
-            RevisedRomanisation1.UseSh = false;
-            Assert.AreEqual("ssyu", RevisedRomanisation1.Romanise("쓔"));
-            RevisedRomanisation1.UseSh = true;
-            Assert.AreEqual("sshyu", RevisedRomanisation1.Romanise("쓔"));
-        }
-
-        [TestMethod]
-        public void TestSshyae()
-        {
-            RevisedRomanisation1.UseSh = false;
-            Assert.AreEqual("ssyae", RevisedRomanisation1.Romanise("썌"));
-            RevisedRomanisation1.UseSh = true;
-            Assert.AreEqual("sshyae", RevisedRomanisation1.Romanise("썌"));
-        }
-
-        [TestMethod]
-        public void TestSshye()
-        {
-            RevisedRomanisation1.UseSh = false;
-            Assert.AreEqual("ssye", RevisedRomanisation1.Romanise("쎼"));
-            RevisedRomanisation1.UseSh = true;
-            Assert.AreEqual("sshye", RevisedRomanisation1.Romanise("쎼"));
+            Assert.Equal(Romanisation, RevisedRomanisation1.Romanise(Korean));
         }
     }
 }
