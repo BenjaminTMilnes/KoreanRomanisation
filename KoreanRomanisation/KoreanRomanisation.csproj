@@ -48,11 +48,11 @@
     <Compile Include="InitialRomanisationRule.cs" />
     <Compile Include="IRomanisation.cs" />
     <Compile Include="ITextSection.cs" />
-    <Compile Include="Jamo.cs" />
-    <Compile Include="KoreanText.cs" />
+    <Compile Include="KoreanLetter.cs" />
+    <Compile Include="KoreanTextSection.cs" />
     <Compile Include="McCuneReischauerRomanisation.cs" />
     <Compile Include="MedialRomanisationRule.cs" />
-    <Compile Include="NonKoreanText.cs" />
+    <Compile Include="NonKoreanTextSection.cs" />
     <Compile Include="PronunciationChangeRomanisationRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RevisedRomanisation.cs" />

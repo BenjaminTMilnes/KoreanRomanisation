@@ -15,6 +15,6 @@ namespace KoreanRomanisation
                         
         string Romanise(Syllable Syllable1, Syllable? PrecedingSyllable = null, Syllable? SucceedingSyllable = null);
 
-        string Romanise(Jamo Jamo1);
+        string Romanise(KoreanLetter Jamo1);
     }
 }

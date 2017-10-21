@@ -8,12 +8,12 @@ namespace KoreanRomanisation
 {
     public class PronunciationChangeRomanisationRule
     {
-        public Jamo Final { get; set; }
-        public Jamo Initial { get; set; }
+        public KoreanLetter Final { get; set; }
+        public KoreanLetter Initial { get; set; }
         public string FinalRomanisation { get; set; }
         public string InitialRomanisation { get; set; }
 
-        public PronunciationChangeRomanisationRule(Jamo Final1, Jamo Initial1, string FinalRomanisation1, string InitialRomanisation1)
+        public PronunciationChangeRomanisationRule(KoreanLetter Final1, KoreanLetter Initial1, string FinalRomanisation1, string InitialRomanisation1)
         {
             Final = Final1;
             Initial = Initial1;

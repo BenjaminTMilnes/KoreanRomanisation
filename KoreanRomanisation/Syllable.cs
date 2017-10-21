@@ -29,27 +29,27 @@ namespace KoreanRomanisation
             }
         }
 
-        public Jamo Initial
+        public KoreanLetter Initial
         {
             get
             {
-                return Jamo.FromInitialCode((CharacterCode - FirstCode) / (NumberOfMedialJamo * NumberOfFinalJamo));
+                return KoreanLetter.GetKoreanLetterFromInitialCharacterCode((CharacterCode - FirstCode) / (NumberOfMedialJamo * NumberOfFinalJamo));
             }
         }
 
-        public Jamo Medial
+        public KoreanLetter Medial
         {
             get
             {
-                return Jamo.FromMedialCode(((CharacterCode - FirstCode) % (NumberOfMedialJamo * NumberOfFinalJamo)) / NumberOfFinalJamo);
+                return KoreanLetter.GetKoreanLetterFromMedialCharacterCode(((CharacterCode - FirstCode) % (NumberOfMedialJamo * NumberOfFinalJamo)) / NumberOfFinalJamo);
             }
         }
 
-        public Jamo Final
+        public KoreanLetter Final
         {
             get
             {
-                return Jamo.FromFinalCode(((CharacterCode - FirstCode) % (NumberOfMedialJamo * NumberOfFinalJamo)) % NumberOfFinalJamo);
+                return KoreanLetter.GetKoreanLetterFromFinalCharacterCode(((CharacterCode - FirstCode) % (NumberOfMedialJamo * NumberOfFinalJamo)) % NumberOfFinalJamo);
             }
         }
 

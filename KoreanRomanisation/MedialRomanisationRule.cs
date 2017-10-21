@@ -8,10 +8,10 @@ namespace KoreanRomanisation
 {
     public class MedialRomanisationRule
     {
-        public Jamo Jamo { get; set; }
+        public KoreanLetter Jamo { get; set; }
         public string Romanisation { get; set; }
 
-        public MedialRomanisationRule(Jamo Jamo1, string Romanisation1)
+        public MedialRomanisationRule(KoreanLetter Jamo1, string Romanisation1)
         {
             Jamo = Jamo1;
             Romanisation = Romanisation1;

@@ -112,6 +112,6 @@ namespace KoreanRomanisation
 
         public abstract string Romanise(Syllable Syllable1, Syllable? PrecedingSyllable = null, Syllable? SucceedingSyllable = null);
 
-        public abstract string Romanise(Jamo Jamo1);  
+        public abstract string Romanise(KoreanLetter Jamo1);  
     }
 }
