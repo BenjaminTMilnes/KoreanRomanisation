@@ -47,7 +47,7 @@
     <Compile Include="InitialPronunciationChangeRomanisationRule.cs" />
     <Compile Include="InitialRomanisationRule.cs" />
     <Compile Include="IRomanisation.cs" />
-    <Compile Include="IText.cs" />
+    <Compile Include="ITextSection.cs" />
     <Compile Include="Jamo.cs" />
     <Compile Include="KoreanText.cs" />
     <Compile Include="McCuneReischauerRomanisation.cs" />

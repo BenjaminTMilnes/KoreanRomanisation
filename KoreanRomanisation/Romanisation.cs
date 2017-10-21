@@ -22,7 +22,7 @@ namespace KoreanRomanisation
         {
             var Document1 = new TextBlock();
             var KoreanText1 = new KoreanTextSection();
-            var NonKoreanText1 = new NonKoreanText();
+            var NonKoreanText1 = new NonKoreanTextSection();
 
             foreach (var Character in Text)
             {
@@ -33,7 +33,7 @@ namespace KoreanRomanisation
                     if (NonKoreanText1.Content != "")
                     {
                         Document1.TextSections.Add(NonKoreanText1);
-                        NonKoreanText1 = new NonKoreanText();
+                        NonKoreanText1 = new NonKoreanTextSection();
                     }
 
                     KoreanText1.Syllables.Add(Syllable);
@@ -53,7 +53,7 @@ namespace KoreanRomanisation
             if (NonKoreanText1.Content != "")
             {
                 Document1.TextSections.Add(NonKoreanText1);
-                NonKoreanText1 = new NonKoreanText();
+                NonKoreanText1 = new NonKoreanTextSection();
             }
 
             if (KoreanText1.Syllables.Any())
@@ -101,9 +101,9 @@ namespace KoreanRomanisation
                     }
 
                 }
-                else if (Text is NonKoreanText)
+                else if (Text is NonKoreanTextSection)
                 {
-                    StringBuilder1.Append((Text as NonKoreanText).Content);
+                    StringBuilder1.Append((Text as NonKoreanTextSection).Content);
                 }
             }
 
