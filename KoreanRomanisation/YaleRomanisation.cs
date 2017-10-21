@@ -91,7 +91,7 @@ namespace KoreanRomanisation
             };
         }
 
-        public override string Romanise(Syllable Syllable1, Syllable? PrecedingSyllable = null, Syllable? SucceedingSyllable = null)
+        public override string Romanise(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null)
         {
             var StringBuilder1 = new StringBuilder();
 
@@ -102,17 +102,17 @@ namespace KoreanRomanisation
             return StringBuilder1.ToString();
         }
 
-        private string RomaniseInitial(Syllable Syllable1)
+        private string RomaniseInitial(KoreanSyllable Syllable1)
         {
             return InitialRomanisationRules.First(r => r.Initial == Syllable1.Initial).Romanisation;
         }
 
-        private string RomaniseMedial(Syllable Syllable1)
+        private string RomaniseMedial(KoreanSyllable Syllable1)
         {
             return MedialRomanisationRules.First(m => m.Jamo == Syllable1.Medial).Romanisation;
         }
 
-        private string RomaniseFinal(Syllable Syllable1)
+        private string RomaniseFinal(KoreanSyllable Syllable1)
         {
             if (Syllable1.HasFinal)
             {

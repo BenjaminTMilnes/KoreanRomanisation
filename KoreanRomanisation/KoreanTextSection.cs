@@ -10,11 +10,11 @@ namespace KoreanRomanisation
         /// <summary>
         /// The list of Korean syllables contained within the text section.
         /// </summary>
-        public IList<Syllable> Syllables { get; set; }
+        public IList<KoreanSyllable> Syllables { get; set; }
 
         public KoreanTextSection()
         {
-            Syllables = new List<Syllable>();
+            Syllables = new List<KoreanSyllable>();
         }
     }
 }

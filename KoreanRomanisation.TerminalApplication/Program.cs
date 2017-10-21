@@ -22,13 +22,13 @@ namespace KoreanRomanisation.TerminalApplication
 
                 var Romanisation1 = new RevisedRomanisation();
 
-                var JamoCodes1 = new List<Syllable>();
+                var JamoCodes1 = new List<KoreanSyllable>();
 
                 foreach (var Character in FileText)
                 {
-                    if (Syllable.IsSyllable(Character))
+                    if (KoreanSyllable.IsAKoreanSyllable(Character))
                     {
-                        JamoCodes1.Add(new Syllable(Character));
+                        JamoCodes1.Add(new KoreanSyllable(Character));
                     }
                 }
 

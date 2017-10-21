@@ -225,7 +225,7 @@ namespace KoreanRomanisation
 
         }
 
-        public override string Romanise(Syllable Syllable1, Syllable? PrecedingSyllable = null, Syllable? SucceedingSyllable = null)
+        public override string Romanise(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null)
         {
             var StringBuilder1 = new StringBuilder();
 
@@ -236,7 +236,7 @@ namespace KoreanRomanisation
             return StringBuilder1.ToString();
         }
 
-        private string RomaniseInitial(Syllable Syllable1, Syllable? PrecedingSyllable, Syllable? SucceedingSyllable)
+        private string RomaniseInitial(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
         {
             if (PrecedingSyllable != null)
             {
@@ -263,7 +263,7 @@ namespace KoreanRomanisation
             return InitialRomanisationRules.First(r => r.Initial == Syllable1.Initial).Romanisation;
         }
 
-        private string RomaniseMedial(Syllable Syllable1, Syllable? PrecedingSyllable, Syllable? SucceedingSyllable)
+        private string RomaniseMedial(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
         {
             if (PrecedingSyllable != null && (PrecedingSyllable.Value.Medial == KoreanLetter.A || PrecedingSyllable.Value.Medial == KoreanLetter.O) && !PrecedingSyllable.Value.HasFinal && Syllable1.Initial == KoreanLetter.Ieung && Syllable1.Medial == KoreanLetter.E)
             {
@@ -273,7 +273,7 @@ namespace KoreanRomanisation
             return MedialRomanisationRules.First(m => m.Jamo == Syllable1.Medial).Romanisation;
         }
 
-        private string RomaniseFinal(Syllable Syllable1, Syllable? PrecedingSyllable, Syllable? SucceedingSyllable)
+        private string RomaniseFinal(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
         {
             if (Syllable1.HasFinal)
             {

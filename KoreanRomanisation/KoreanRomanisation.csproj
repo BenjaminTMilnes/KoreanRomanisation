@@ -58,7 +58,7 @@
     <Compile Include="RevisedRomanisation.cs" />
     <Compile Include="Romanisation.cs" />
     <Compile Include="SimplifiedRomanisation.cs" />
-    <Compile Include="Syllable.cs" />
+    <Compile Include="KoreanSyllable.cs" />
     <Compile Include="YaleRomanisation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -26,9 +26,9 @@ namespace KoreanRomanisation
 
             foreach (var Character in Text)
             {
-                if (Syllable.IsSyllable(Character))
+                if (KoreanSyllable.IsAKoreanSyllable(Character))
                 {
-                    var Syllable = new Syllable(Character);
+                    var Syllable = new KoreanSyllable(Character);
 
                     if (NonKoreanText1.Content != "")
                     {
@@ -110,7 +110,7 @@ namespace KoreanRomanisation
             return StringBuilder1.ToString();
         }
 
-        public abstract string Romanise(Syllable Syllable1, Syllable? PrecedingSyllable = null, Syllable? SucceedingSyllable = null);
+        public abstract string Romanise(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null);
 
         public abstract string Romanise(KoreanLetter Jamo1);  
     }
