@@ -18,9 +18,9 @@ namespace KoreanRomanisation
             UseSh = true;
         }
                         
-        public Document GetDocument(string Text)
+        public TextBlock GetDocument(string Text)
         {
-            var Document1 = new Document();
+            var Document1 = new TextBlock();
             var KoreanText1 = new KoreanText();
             var NonKoreanText1 = new NonKoreanText();
 
