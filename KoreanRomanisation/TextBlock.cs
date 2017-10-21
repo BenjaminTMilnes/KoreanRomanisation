@@ -10,11 +10,11 @@ namespace KoreanRomanisation
         /// <summary>
         /// The list of text sections contained within the text block, each of which is either Korean text or non-Korean text.
         /// </summary>
-        public IList<IText> Text { get; set; }
+        public IList<ITextSection> TextSections { get; set; }
 
         public TextBlock()
         {
-            Text = new List<IText>();
+            TextSections = new List<ITextSection>();
         }
     }
 }

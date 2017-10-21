@@ -1,6 +1,6 @@
 ﻿namespace KoreanRomanisation
 {
-    public interface IText
+    public interface ITextSection
     {
     }
 }

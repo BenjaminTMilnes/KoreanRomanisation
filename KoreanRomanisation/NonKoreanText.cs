@@ -9,7 +9,7 @@ namespace KoreanRomanisation
     /// <summary>
     /// Represents a block of non-Korean text.
     /// </summary>
-    public class NonKoreanText : IText
+    public class NonKoreanText : ITextSection
     {
         public string Content { get; set; }
 

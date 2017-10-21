@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace KoreanRomanisation
 {
     /// <summary>
-    /// Represents a block of Korean text.
+    /// Represents a section of Korean text.
     /// </summary>
-    public class KoreanText : IText
+    public class KoreanTextSection : ITextSection
     {
+        /// <summary>
+        /// The list of Korean syllables contained within the text section.
+        /// </summary>
         public IList<Syllable> Syllables { get; set; }
 
-        public KoreanText()
+        public KoreanTextSection()
         {
             Syllables = new List<Syllable>();
         }

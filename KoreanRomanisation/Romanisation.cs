@@ -21,7 +21,7 @@ namespace KoreanRomanisation
         public TextBlock GetDocument(string Text)
         {
             var Document1 = new TextBlock();
-            var KoreanText1 = new KoreanText();
+            var KoreanText1 = new KoreanTextSection();
             var NonKoreanText1 = new NonKoreanText();
 
             foreach (var Character in Text)
@@ -32,7 +32,7 @@ namespace KoreanRomanisation
 
                     if (NonKoreanText1.Content != "")
                     {
-                        Document1.Text.Add(NonKoreanText1);
+                        Document1.TextSections.Add(NonKoreanText1);
                         NonKoreanText1 = new NonKoreanText();
                     }
 
@@ -42,8 +42,8 @@ namespace KoreanRomanisation
                 {
                     if (KoreanText1.Syllables.Any())
                     {
-                        Document1.Text.Add(KoreanText1);
-                        KoreanText1 = new KoreanText();
+                        Document1.TextSections.Add(KoreanText1);
+                        KoreanText1 = new KoreanTextSection();
                     }
 
                     NonKoreanText1.Content += Character;
@@ -52,14 +52,14 @@ namespace KoreanRomanisation
 
             if (NonKoreanText1.Content != "")
             {
-                Document1.Text.Add(NonKoreanText1);
+                Document1.TextSections.Add(NonKoreanText1);
                 NonKoreanText1 = new NonKoreanText();
             }
 
             if (KoreanText1.Syllables.Any())
             {
-                Document1.Text.Add(KoreanText1);
-                KoreanText1 = new KoreanText();
+                Document1.TextSections.Add(KoreanText1);
+                KoreanText1 = new KoreanTextSection();
             }
 
             return Document1;
@@ -71,11 +71,11 @@ namespace KoreanRomanisation
 
             var Document1 = GetDocument(Document);
 
-            foreach (var Text in Document1.Text)
+            foreach (var Text in Document1.TextSections)
             {
-                if (Text is KoreanText)
+                if (Text is KoreanTextSection)
                 {
-                    var KoreanText1 = Text as KoreanText;
+                    var KoreanText1 = Text as KoreanTextSection;
 
                     if (KoreanText1.Syllables.Count() > 1)
                     {
