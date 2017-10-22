@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KoreanRomanisation
+﻿namespace KoreanRomanisation
 {
-    public class InitialPronunciationChangeRomanisationRule
+    /// <summary>
+    /// Represents a rule for how to romanise an initial when it is preceded by a given final.
+    /// </summary>
+    public sealed class InitialPronunciationChangeRomanisationRule : RomanisationRule
     {
-        public KoreanLetter PrecedingFinal { get; set; }
-        public KoreanLetter Initial { get; set; }
-        public string Romanisation { get; set; }
+        public KoreanLetter PrecedingFinal { get; private set; }
+        public KoreanLetter Initial { get; private set; }
 
-        public InitialPronunciationChangeRomanisationRule(KoreanLetter PrecedingFinal1, KoreanLetter Initial1, string Romanisation1)
+        public InitialPronunciationChangeRomanisationRule(KoreanLetter PrecedingFinal1, KoreanLetter Initial1, string Romanisation1) : base(Romanisation1)
         {
             PrecedingFinal = PrecedingFinal1;
             Initial = Initial1;
-            Romanisation = Romanisation1;
         }
     }
 }
