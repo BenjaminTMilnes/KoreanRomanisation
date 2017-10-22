@@ -83,21 +83,21 @@ namespace KoreanRomanisation
                         {
                             if (i == 0)
                             {
-                                StringBuilder1.Append(Romanise(KoreanText1.Syllables[i], null, KoreanText1.Syllables[i + 1]));
+                                StringBuilder1.Append(RomaniseSyllable(KoreanText1.Syllables[i], null, KoreanText1.Syllables[i + 1]));
                             }
                             else if (i == KoreanText1.Syllables.Count() - 1)
                             {
-                                StringBuilder1.Append(Romanise(KoreanText1.Syllables[i], KoreanText1.Syllables[i - 1], null));
+                                StringBuilder1.Append(RomaniseSyllable(KoreanText1.Syllables[i], KoreanText1.Syllables[i - 1], null));
                             }
                             else
                             {
-                                StringBuilder1.Append(Romanise(KoreanText1.Syllables[i], KoreanText1.Syllables[i - 1], KoreanText1.Syllables[i + 1]));
+                                StringBuilder1.Append(RomaniseSyllable(KoreanText1.Syllables[i], KoreanText1.Syllables[i - 1], KoreanText1.Syllables[i + 1]));
                             }
                         }
                     }
                     else if (KoreanText1.Syllables.Count() == 1)
                     {
-                        StringBuilder1.Append(Romanise(KoreanText1.Syllables[0]));
+                        StringBuilder1.Append(RomaniseSyllable(KoreanText1.Syllables[0]));
                     }
 
                 }
@@ -110,7 +110,7 @@ namespace KoreanRomanisation
             return StringBuilder1.ToString();
         }
 
-        public abstract string Romanise(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null);
+        public abstract string RomaniseSyllable(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null);
 
         public abstract string Romanise(KoreanLetter Jamo1);  
     }

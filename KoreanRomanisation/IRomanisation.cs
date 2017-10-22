@@ -13,7 +13,7 @@ namespace KoreanRomanisation
 
         string Romanise(string Document);
                         
-        string Romanise(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null);
+        string RomaniseSyllable(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null);
 
         string Romanise(KoreanLetter Jamo1);
     }

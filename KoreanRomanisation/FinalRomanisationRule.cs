@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KoreanRomanisation
+﻿namespace KoreanRomanisation
 {
-  public  class FinalRomanisationRule
+    /// <summary>
+    /// Represents a rule for how to romanise a final.
+    /// </summary>
+    public sealed class FinalRomanisationRule : RomanisationRule
     {
-        public KoreanLetter Final { get; set; }
-        public string Romanisation { get; set; }
+        public KoreanLetter Final { get; private set; }
 
-        public FinalRomanisationRule(KoreanLetter Final1, string Romanisation1)
+        public FinalRomanisationRule(KoreanLetter Final1, string Romanisation1) : base(Romanisation1)
         {
             Final = Final1;
-            Romanisation = Romanisation1;
         }
     }
 }

@@ -18,7 +18,7 @@ namespace KoreanRomanisation
     {
     }
 
-    public class YaleRomanisation : Romanisation
+    public sealed class YaleRomanisation : Romanisation
     {
         private InitialRomanisationRule[] InitialRomanisationRules;
         private MedialRomanisationRule[] MedialRomanisationRules;
@@ -107,13 +107,13 @@ namespace KoreanRomanisation
             FinalRomanisationRules = FinalRomanisationRulesList.Select(t => new FinalRomanisationRule(t.Item1, t.Item2)).ToArray();
         }
 
-        public override string Romanise(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null)
+        public override string RomaniseSyllable(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null)
         {
             var StringBuilder1 = new StringBuilder();
 
-            StringBuilder1.Append(RomaniseInitial(Syllable1));
-            StringBuilder1.Append(RomaniseMedial(Syllable1));
-            StringBuilder1.Append(RomaniseFinal(Syllable1));
+            StringBuilder1.Append(RomaniseInitial(Syllable));
+            StringBuilder1.Append(RomaniseMedial(Syllable));
+            StringBuilder1.Append(RomaniseFinal(Syllable));
 
             return StringBuilder1.ToString();
         }
@@ -125,7 +125,7 @@ namespace KoreanRomanisation
 
         private string RomaniseMedial(KoreanSyllable Syllable1)
         {
-            return MedialRomanisationRules.First(m => m.Jamo == Syllable1.Medial).Romanisation;
+            return MedialRomanisationRules.First(m => m.Medial == Syllable1.Medial).Romanisation;
         }
 
         private string RomaniseFinal(KoreanSyllable Syllable1)

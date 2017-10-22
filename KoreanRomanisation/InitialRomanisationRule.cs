@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KoreanRomanisation
+﻿namespace KoreanRomanisation
 {
-    public class InitialRomanisationRule
+    /// <summary>
+    /// Represents a rule for how to romanise an initial.
+    /// </summary>
+    public sealed class InitialRomanisationRule : RomanisationRule
     {
-        public KoreanLetter Initial { get; set; }
-        public string Romanisation { get; set; }
+        public KoreanLetter Initial { get; private set; }
 
-        public InitialRomanisationRule(KoreanLetter Initial1, string Romanisation1)
+        public InitialRomanisationRule(KoreanLetter Initial1, string Romanisation1) : base(Romanisation1)
         {
             Initial = Initial1;
-            Romanisation = Romanisation1;
         }
     }
 }

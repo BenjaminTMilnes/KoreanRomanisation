@@ -225,7 +225,7 @@ namespace KoreanRomanisation
 
         }
 
-        public override string Romanise(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null)
+        public override string RomaniseSyllable(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null)
         {
             var StringBuilder1 = new StringBuilder();
 
@@ -270,7 +270,7 @@ namespace KoreanRomanisation
                 return "ë";
             }
 
-            return MedialRomanisationRules.First(m => m.Jamo == Syllable1.Medial).Romanisation;
+            return MedialRomanisationRules.First(m => m.Medial == Syllable1.Medial).Romanisation;
         }
 
         private string RomaniseFinal(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)

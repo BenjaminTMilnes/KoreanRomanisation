@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KoreanRomanisation
+﻿namespace KoreanRomanisation
 {
-    public class MedialRomanisationRule
+    /// <summary>
+    /// Represents a rule for how to romanise a medial.
+    /// </summary>
+    public sealed class MedialRomanisationRule : RomanisationRule
     {
-        public KoreanLetter Jamo { get; set; }
-        public string Romanisation { get; set; }
+        public KoreanLetter Medial { get; private set; }
 
-        public MedialRomanisationRule(KoreanLetter Jamo1, string Romanisation1)
+        public MedialRomanisationRule(KoreanLetter Medial1, string Romanisation1) : base(Romanisation1)
         {
-            Jamo = Jamo1;
-            Romanisation = Romanisation1;
+            Medial = Medial1;
         }
     }
 }
