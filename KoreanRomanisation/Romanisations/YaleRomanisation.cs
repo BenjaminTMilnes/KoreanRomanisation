@@ -90,9 +90,9 @@ namespace KoreanRomanisation
                 {KoreanLetter.HieutBatchim, "h" }
             };
 
-            InitialRomanisationRules = InitialRomanisationRulesList.Select(t => new InitialRomanisationRule(t.Item1, t.Item2)).ToArray();
-            MedialRomanisationRules = MedialRomanisationRulesList.Select(t => new MedialRomanisationRule(t.Item1, t.Item2)).ToArray();
-            FinalRomanisationRules = FinalRomanisationRulesList.Select(t => new FinalRomanisationRule(t.Item1, t.Item2)).ToArray();
+            InitialRomanisationRules = InitialRomanisationRulesList.ToInitialRomanisationRules().ToArray();
+            MedialRomanisationRules = MedialRomanisationRulesList.ToMedialRomanisationRules().ToArray();
+            FinalRomanisationRules = FinalRomanisationRulesList.ToFinalRomanisationRules().ToArray();
         }
 
         public override string RomaniseSyllable(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null)

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace KoreanRomanisation
@@ -14,6 +15,14 @@ namespace KoreanRomanisation
         public bool UseSh { get; set; }
         public bool UseOi { get; set; }
 
+        protected IEnumerable<InitialRomanisationRule> InitialRomanisationRules;
+        protected IEnumerable<InitialPronunciationChangeRomanisationRule> InitialPronunciationChangeRomanisationRules;
+
+        protected IEnumerable<MedialRomanisationRule> MedialRomanisationRules;
+
+        protected IEnumerable<FinalRomanisationRule> FinalRomanisationRules;
+        protected IEnumerable<FinalPronunciationChangeRomanisationRule> FinalPronunciationChangeRomanisationRules;
+
         #endregion
 
         #region Constructors
@@ -24,6 +33,8 @@ namespace KoreanRomanisation
             UseSh = true;
             UseOi = false;
         }
+
+        protected abstract void SetRules();
 
         #endregion
 
