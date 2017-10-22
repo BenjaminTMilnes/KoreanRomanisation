@@ -27,6 +27,8 @@ namespace KoreanRomanisation
 
         #endregion
 
+        #region Romanisation Functions
+
         /// <summary>
         /// Takes a text string and converts it into a text block of Korean and non-Korean text sections.
         /// </summary>
@@ -79,8 +81,14 @@ namespace KoreanRomanisation
 
         public string RomaniseText(string Text)
         {
-            var StringBuilder1 = new StringBuilder();
             var TextBlock1 = GetTextBlock(Text);
+
+            return RomaniseTextBlock(TextBlock1);
+        }
+
+        public string RomaniseTextBlock(TextBlock TextBlock1)
+        {
+            var StringBuilder1 = new StringBuilder();
 
             foreach (var TextSection in TextBlock1.TextSections)
             {
@@ -89,7 +97,7 @@ namespace KoreanRomanisation
                     var KoreanTextSection1 = TextSection as KoreanTextSection;
                     var Syllables = KoreanTextSection1.Syllables.ToArray();
 
-                    if ( Syllables.Length > 1)
+                    if (Syllables.Length > 1)
                     {
                         for (var i = 0; i < Syllables.Length; i++)
                         {
@@ -115,20 +123,25 @@ namespace KoreanRomanisation
                     }
                     else if (Syllables.Length == 1)
                     {
-                        StringBuilder1.Append(RomaniseSyllable(Syllables[0]));
+                        var RomanisedText = RomaniseSyllable(Syllables[0]);
+
+                        StringBuilder1.Append(RomanisedText);
                     }
                 }
                 else if (TextSection is NonKoreanTextSection)
                 {
-                    StringBuilder1.Append((TextSection as NonKoreanTextSection).Content);
+                    var Content = (TextSection as NonKoreanTextSection).Content;
+
+                    StringBuilder1.Append(Content);
                 }
             }
 
             return StringBuilder1.ToString();
         }
 
-        public abstract string RomaniseTextBlock(TextBlock TextBlock1);
-        public abstract string RomaniseSyllable(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null);
-        public abstract string RomaniseLetter(KoreanLetter Jamo1);
+        public abstract string RomaniseSyllable(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null);
+        public abstract string RomaniseLetter(KoreanLetter Letter);
+
+        #endregion
     }
 }
