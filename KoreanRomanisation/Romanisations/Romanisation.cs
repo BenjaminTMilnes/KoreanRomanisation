@@ -34,6 +34,9 @@ namespace KoreanRomanisation
             UseOi = false;
         }
 
+        /// <summary>
+        /// Sets the rules of the romanisation system. In this library, romanisation rules are hard-coded, since they rarely change - this function is where they are set.
+        /// </summary>
         protected abstract void SetRules();
 
         #endregion
