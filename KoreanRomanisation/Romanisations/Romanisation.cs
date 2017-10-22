@@ -10,9 +10,9 @@ namespace KoreanRomanisation
     {
         #region Properties
 
-        public bool PreserveNonKoreanText { get; protected set; }
-        public bool UseSh { get; protected set; }
-        public bool UseOi { get; protected set; }
+        public bool PreserveNonKoreanText { get; set; }
+        public bool UseSh { get; set; }
+        public bool UseOi { get; set; }
 
         #endregion
 

@@ -5,17 +5,17 @@
         /// <summary>
         /// Whether or not to remove any text that isn't Korean from the final output.
         /// </summary>
-        bool PreserveNonKoreanText { get; }
+        bool PreserveNonKoreanText { get; set; }
 
         /// <summary>
         /// Whether or not to romanise the letter shiot as 'sh', and ssangshiot as 'ssh', when they appear before an 'i' sound.
         /// </summary>
-        bool UseSh { get; }
+        bool UseSh { get; set; }
 
         /// <summary>
         /// Whether or not to romanise o followed by i as 'oi' instead of 'oe'.
         /// </summary>
-        bool UseOi { get; }
+        bool UseOi { get; set; }
 
         /// <summary>
         /// Romanise a given text string.
