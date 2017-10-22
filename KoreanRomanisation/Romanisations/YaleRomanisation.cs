@@ -6,18 +6,6 @@ using System.Threading.Tasks;
 
 namespace KoreanRomanisation
 {
-    public class TupleList<T1, T2> : List<Tuple<T1, T2>>
-    {
-        public void Add(T1 Item1, T2 Item2)
-        {
-            Add(new Tuple<T1, T2>(Item1, Item2));
-        }
-    }
-
-    public class RomanisationRuleList : TupleList<KoreanLetter, string>
-    {
-    }
-
     public sealed class YaleRomanisation : Romanisation
     {
         private InitialRomanisationRule[] InitialRomanisationRules;
