@@ -41,25 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RomanisationRule.cs" />
+    <Compile Include="Rules\RomanisationRule.cs" />
     <Compile Include="TextBlock.cs" />
-    <Compile Include="FinalPronunciationChangeRomanisationRule.cs" />
-    <Compile Include="FinalRomanisationRule.cs" />
-    <Compile Include="InitialPronunciationChangeRomanisationRule.cs" />
-    <Compile Include="InitialRomanisationRule.cs" />
-    <Compile Include="IRomanisation.cs" />
+    <Compile Include="Rules\FinalPronunciationChangeRomanisationRule.cs" />
+    <Compile Include="Rules\FinalRomanisationRule.cs" />
+    <Compile Include="Rules\InitialPronunciationChangeRomanisationRule.cs" />
+    <Compile Include="Rules\InitialRomanisationRule.cs" />
+    <Compile Include="Romanisations\IRomanisation.cs" />
     <Compile Include="ITextSection.cs" />
     <Compile Include="KoreanLetter.cs" />
     <Compile Include="KoreanTextSection.cs" />
-    <Compile Include="McCuneReischauerRomanisation.cs" />
-    <Compile Include="MedialRomanisationRule.cs" />
+    <Compile Include="Romanisations\McCuneReischauerRomanisation.cs" />
+    <Compile Include="Rules\MedialRomanisationRule.cs" />
     <Compile Include="NonKoreanTextSection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RevisedRomanisation.cs" />
-    <Compile Include="Romanisation.cs" />
-    <Compile Include="SimplifiedRomanisation.cs" />
+    <Compile Include="Romanisations\RevisedRomanisation.cs" />
+    <Compile Include="Romanisations\Romanisation.cs" />
+    <Compile Include="Romanisations\SimplifiedRomanisation.cs" />
     <Compile Include="KoreanSyllable.cs" />
-    <Compile Include="YaleRomanisation.cs" />
+    <Compile Include="Romanisations\YaleRomanisation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
