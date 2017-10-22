@@ -1,28 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace KoreanRomanisation
 {
+    /// <summary>
+    /// A base class for classes that can romanise Korean text according to their own internal romanisation rules.
+    /// </summary>
     public abstract class Romanisation : IRomanisation
     {
+        #region Properties
 
-        public bool PreserveNonKoreanText { get; set; }
-        public bool UseSh { get; set; }
+        public bool PreserveNonKoreanText { get; protected set; }
+        public bool UseSh { get; protected set; }
+        public bool UseOi { get; protected set; }
+
+        #endregion
+
+        #region Constructors
 
         public Romanisation()
         {
             PreserveNonKoreanText = true;
             UseSh = true;
+            UseOi = false;
         }
-                        
-        public TextBlock GetDocument(string Text)
+
+        #endregion
+
+        /// <summary>
+        /// Takes a text string and converts it into a text block of Korean and non-Korean text sections.
+        /// </summary>
+        /// <param name="Text"></param>
+        /// <returns></returns>
+        public TextBlock GetTextBlock(string Text)
         {
-            var Document1 = new TextBlock();
-            var KoreanText1 = new KoreanTextSection();
-            var NonKoreanText1 = new NonKoreanTextSection();
+            var TextBlock1 = new TextBlock();
+            var KoreanTextSection1 = new KoreanTextSection();
+            var NonKoreanTextSection1 = new NonKoreanTextSection();
 
             foreach (var Character in Text)
             {
@@ -30,88 +44,91 @@ namespace KoreanRomanisation
                 {
                     var Syllable = new KoreanSyllable(Character);
 
-                    if (NonKoreanText1.Content != "")
+                    if (NonKoreanTextSection1.Content != "")
                     {
-                        Document1.TextSections.Add(NonKoreanText1);
-                        NonKoreanText1 = new NonKoreanTextSection();
+                        TextBlock1.TextSections.Add(NonKoreanTextSection1);
+                        NonKoreanTextSection1 = new NonKoreanTextSection();
                     }
 
-                    KoreanText1.Syllables.Add(Syllable);
+                    KoreanTextSection1.Syllables.Add(Syllable);
                 }
                 else
                 {
-                    if (KoreanText1.Syllables.Any())
+                    if (KoreanTextSection1.Syllables.Any())
                     {
-                        Document1.TextSections.Add(KoreanText1);
-                        KoreanText1 = new KoreanTextSection();
+                        TextBlock1.TextSections.Add(KoreanTextSection1);
+                        KoreanTextSection1 = new KoreanTextSection();
                     }
 
-                    NonKoreanText1.Content += Character;
+                    NonKoreanTextSection1.Content += Character;
                 }
             }
 
-            if (NonKoreanText1.Content != "")
+            if (NonKoreanTextSection1.Content != "")
             {
-                Document1.TextSections.Add(NonKoreanText1);
-                NonKoreanText1 = new NonKoreanTextSection();
+                TextBlock1.TextSections.Add(NonKoreanTextSection1);
             }
 
-            if (KoreanText1.Syllables.Any())
+            if (KoreanTextSection1.Syllables.Any())
             {
-                Document1.TextSections.Add(KoreanText1);
-                KoreanText1 = new KoreanTextSection();
+                TextBlock1.TextSections.Add(KoreanTextSection1);
             }
 
-            return Document1;
+            return TextBlock1;
         }
 
-        public string RomaniseText(string Document)
+        public string RomaniseText(string Text)
         {
             var StringBuilder1 = new StringBuilder();
+            var TextBlock1 = GetTextBlock(Text);
 
-            var Document1 = GetDocument(Document);
-
-            foreach (var Text in Document1.TextSections)
+            foreach (var TextSection in TextBlock1.TextSections)
             {
-                if (Text is KoreanTextSection)
+                if (TextSection is KoreanTextSection)
                 {
-                    var KoreanText1 = Text as KoreanTextSection;
+                    var KoreanTextSection1 = TextSection as KoreanTextSection;
+                    var Syllables = KoreanTextSection1.Syllables.ToArray();
 
-                    if (KoreanText1.Syllables.Count() > 1)
+                    if ( Syllables.Length > 1)
                     {
-                        for (var i = 0; i < KoreanText1.Syllables.Count(); i++)
+                        for (var i = 0; i < Syllables.Length; i++)
                         {
-                            if (i == 0)
+                            KoreanSyllable? PrecedingSyllable = null;
+                            KoreanSyllable Syllable = Syllables[i];
+                            KoreanSyllable? SucceedingSyllable = null;
+
+                            var RomanisedText = "";
+
+                            if (i > 0)
                             {
-                                StringBuilder1.Append(RomaniseSyllable(KoreanText1.Syllables[i], null, KoreanText1.Syllables[i + 1]));
+                                PrecedingSyllable = Syllables[i - 1];
                             }
-                            else if (i == KoreanText1.Syllables.Count() - 1)
+                            else if (i < Syllables.Length - 1)
                             {
-                                StringBuilder1.Append(RomaniseSyllable(KoreanText1.Syllables[i], KoreanText1.Syllables[i - 1], null));
+                                SucceedingSyllable = Syllables[i + 1];
                             }
-                            else
-                            {
-                                StringBuilder1.Append(RomaniseSyllable(KoreanText1.Syllables[i], KoreanText1.Syllables[i - 1], KoreanText1.Syllables[i + 1]));
-                            }
+
+                            RomanisedText = RomaniseSyllable(Syllable, PrecedingSyllable, SucceedingSyllable);
+
+                            StringBuilder1.Append(RomanisedText);
                         }
                     }
-                    else if (KoreanText1.Syllables.Count() == 1)
+                    else if (Syllables.Length == 1)
                     {
-                        StringBuilder1.Append(RomaniseSyllable(KoreanText1.Syllables[0]));
+                        StringBuilder1.Append(RomaniseSyllable(Syllables[0]));
                     }
-
                 }
-                else if (Text is NonKoreanTextSection)
+                else if (TextSection is NonKoreanTextSection)
                 {
-                    StringBuilder1.Append((Text as NonKoreanTextSection).Content);
+                    StringBuilder1.Append((TextSection as NonKoreanTextSection).Content);
                 }
             }
 
             return StringBuilder1.ToString();
         }
 
+        public abstract string RomaniseTextBlock(TextBlock TextBlock1);
         public abstract string RomaniseSyllable(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null);
-
-        public abstract string RomaniseLetter(KoreanLetter Jamo1);  
+        public abstract string RomaniseLetter(KoreanLetter Jamo1);
     }
 }
