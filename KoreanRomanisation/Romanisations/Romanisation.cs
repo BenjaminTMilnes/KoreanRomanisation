@@ -9,12 +9,12 @@ namespace KoreanRomanisation
     public abstract class Romanisation : IRomanisation
     {
 
-        public bool PreserveNonKoreanCharacters { get; set; }
+        public bool PreserveNonKoreanText { get; set; }
         public bool UseSh { get; set; }
 
         public Romanisation()
         {
-            PreserveNonKoreanCharacters = true;
+            PreserveNonKoreanText = true;
             UseSh = true;
         }
                         
@@ -65,7 +65,7 @@ namespace KoreanRomanisation
             return Document1;
         }
 
-        public string Romanise(string Document)
+        public string RomaniseText(string Document)
         {
             var StringBuilder1 = new StringBuilder();
 
@@ -112,6 +112,6 @@ namespace KoreanRomanisation
 
         public abstract string RomaniseSyllable(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null);
 
-        public abstract string Romanise(KoreanLetter Jamo1);  
+        public abstract string RomaniseLetter(KoreanLetter Jamo1);  
     }
 }

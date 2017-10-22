@@ -393,7 +393,7 @@ namespace KoreanRomanisation.Tests.SimplifiedRomanisation
         public void Romanise(string Korean, string Romanisation)
         {
             SimplifiedRomanisation1.UseSh = false;
-            Assert.Equal(Romanisation, SimplifiedRomanisation1.Romanise(Korean));
+            Assert.Equal(Romanisation, SimplifiedRomanisation1.RomaniseText(Korean));
         }
 
         [Theory]
@@ -414,7 +414,7 @@ namespace KoreanRomanisation.Tests.SimplifiedRomanisation
         public void RomaniseUsingSh(string Korean, string Romanisation)
         {
             SimplifiedRomanisation1.UseSh = true;
-            Assert.Equal(Romanisation, SimplifiedRomanisation1.Romanise(Korean));
+            Assert.Equal(Romanisation, SimplifiedRomanisation1.RomaniseText(Korean));
         }
     }
 }

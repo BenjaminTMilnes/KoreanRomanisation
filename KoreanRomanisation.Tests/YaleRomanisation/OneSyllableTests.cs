@@ -75,7 +75,7 @@ namespace KoreanRomanisation.Tests
         public void Romanise(string Korean, string Romanisation)
         {
             YaleRomanisation1.UseSh = false;
-            Assert.Equal(Romanisation, YaleRomanisation1.Romanise(Korean));
+            Assert.Equal(Romanisation, YaleRomanisation1.RomaniseText(Korean));
         }        
     }
 }

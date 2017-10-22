@@ -380,7 +380,7 @@ namespace KoreanRomanisation.Tests.McCuneReischauerRomanisation
         [InlineData("갛하", "katha")]
         public void Romanise(string Korean, string Romanisation)
         {
-            Assert.Equal(Romanisation, McCuneReischauerRomanisation1.Romanise(Korean));
+            Assert.Equal(Romanisation, McCuneReischauerRomanisation1.RomaniseText(Korean));
         }
     }
 }

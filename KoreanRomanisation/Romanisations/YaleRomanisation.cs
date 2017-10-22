@@ -138,7 +138,7 @@ namespace KoreanRomanisation
             return "";
         }
 
-        public override string Romanise(KoreanLetter Jamo1)
+        public override string RomaniseLetter(KoreanLetter Jamo1)
         {
             throw new NotImplementedException();
         }
