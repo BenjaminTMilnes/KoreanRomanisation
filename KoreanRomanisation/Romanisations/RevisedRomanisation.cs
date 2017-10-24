@@ -206,7 +206,7 @@ namespace KoreanRomanisation
                 {KoreanLetter.HieutBatchim, KoreanLetter.SsangDigeut , ""},
                 {KoreanLetter.HieutBatchim, KoreanLetter.Rieul , "n"},
                 {KoreanLetter.HieutBatchim, KoreanLetter.Mieum , "n"}
-                            };
+            };
 
             InitialRomanisationRules = InitialRomanisationRulesList.ToInitialRomanisationRules();
             InitialPronunciationChangeRomanisationRules = InitialPronunciationChangeRomanisationRulesList.ToInitialPronunciationChangeRomanisationRules();

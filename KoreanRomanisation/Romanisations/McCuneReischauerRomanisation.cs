@@ -1,292 +1,297 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace KoreanRomanisation
 {
+    /// <summary>
+    /// A class for romanising text according to the McCune-Reischauer Romanisation of Korean.
+    /// </summary>
     public sealed class McCuneReischauerRomanisation : Romanisation
     {
-        private InitialRomanisationRule[] InitialRomanisationRules;
-        private InitialPronunciationChangeRomanisationRule[] InitialPronunciationChangesRomanisationRules;
-        private MedialRomanisationRule[] MedialRomanisationRules;
-        private FinalRomanisationRule[] FinalRomanisationRules;
-        private FinalPronunciationChangeRomanisationRule[] FinalPronunciationChangesRomanisationRules;
-
         public McCuneReischauerRomanisation()
         {
-            InitialRomanisationRules = new InitialRomanisationRule[] {
-                new InitialRomanisationRule(KoreanLetter.Giyeok, "k"),
-                new InitialRomanisationRule(KoreanLetter.SsangGiyeok, "kk"),
-                new InitialRomanisationRule(KoreanLetter.Nieun, "n"),
-                new InitialRomanisationRule(KoreanLetter.Digeut, "t"),
-                new InitialRomanisationRule(KoreanLetter.SsangDigeut, "tt"),
-                new InitialRomanisationRule(KoreanLetter.Rieul, "r"),
-                new InitialRomanisationRule(KoreanLetter.Mieum, "m"),
-                new InitialRomanisationRule(KoreanLetter.Bieup, "p"),
-                new InitialRomanisationRule(KoreanLetter.SsangBieup, "pp"),
-                new InitialRomanisationRule(KoreanLetter.Shiot, "s"),
-                new InitialRomanisationRule(KoreanLetter.SsangShiot, "ss"),
-                new InitialRomanisationRule(KoreanLetter.Ieung, ""),
-                new InitialRomanisationRule(KoreanLetter.Jieut, "ch"),
-                new InitialRomanisationRule(KoreanLetter.SsangJieut, "tch"),
-                new InitialRomanisationRule(KoreanLetter.Chieut, "ch'"),
-                new InitialRomanisationRule(KoreanLetter.Kieuk, "k'"),
-                new InitialRomanisationRule(KoreanLetter.Tieut, "t'"),
-                new InitialRomanisationRule(KoreanLetter.Pieup, "p'"),
-                new InitialRomanisationRule(KoreanLetter.Hieut, "h")
-            };
-
-            InitialPronunciationChangesRomanisationRules = new InitialPronunciationChangeRomanisationRule[]  {
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.GiyeokBatchim, KoreanLetter.Rieul, "n" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.GiyeokBatchim, KoreanLetter.SsangGiyeok, "k" ),
-
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.SsangGiyeokBatchim, KoreanLetter.SsangGiyeok, "k" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.SsangGiyeokBatchim, KoreanLetter.Rieul, "n" ),
-
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.NieunBatchim, KoreanLetter.Giyeok, "'g" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.NieunBatchim, KoreanLetter.Digeut, "d" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.NieunBatchim, KoreanLetter.Rieul, "l" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.NieunBatchim, KoreanLetter.Bieup, "b" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.NieunBatchim, KoreanLetter.Jieut, "j" ),
-
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.DigeutBatchim, KoreanLetter.Rieul, "n" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.DigeutBatchim, KoreanLetter.SsangDigeut, "t" ),
-
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.RieulBatchim, KoreanLetter.Giyeok, "g" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.RieulBatchim, KoreanLetter.Nieun, "l" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.RieulBatchim, KoreanLetter.Digeut, "d" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.RieulBatchim, KoreanLetter.Rieul, "l" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.RieulBatchim, KoreanLetter.Bieup, "b" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.RieulBatchim, KoreanLetter.Jieut, "j" ),
-
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.MieumBatchim, KoreanLetter.Giyeok, "g" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.MieumBatchim, KoreanLetter.Digeut, "d" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.MieumBatchim, KoreanLetter.Rieul, "n" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.MieumBatchim, KoreanLetter.Bieup, "b" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.MieumBatchim, KoreanLetter.Jieut, "j" ),
-
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.BieupBatchim, KoreanLetter.Rieul, "n" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.BieupBatchim, KoreanLetter.SsangBieup, "p" ),
-
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.ShiotBatchim, KoreanLetter.Rieul, "n" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.ShiotBatchim, KoreanLetter.SsangDigeut, "t" ),
-
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.SsangShiotBatchim, KoreanLetter.SsangDigeut, "t" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.SsangShiotBatchim, KoreanLetter.Rieul, "n" ),
-
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.IeungBatchim, KoreanLetter.Giyeok, "g" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.IeungBatchim, KoreanLetter.Digeut, "d" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.IeungBatchim, KoreanLetter.Rieul, "n" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.IeungBatchim, KoreanLetter.Bieup, "b" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.IeungBatchim, KoreanLetter.Ieung, "'" ),
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.IeungBatchim, KoreanLetter.Jieut, "j" ),
-
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.JieutBatchim, KoreanLetter.SsangDigeut, "t" ) ,
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.JieutBatchim, KoreanLetter.Rieul, "n" ) ,
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.JieutBatchim, KoreanLetter.SsangJieut, "ch" ) ,
-
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.ChieutBatchim, KoreanLetter.SsangDigeut, "t" ) ,
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.ChieutBatchim, KoreanLetter.Rieul, "n" ) ,
-
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.TieutBatchim, KoreanLetter.SsangDigeut, "t" ) ,
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.TieutBatchim, KoreanLetter.Rieul, "n" ) ,
-
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.KieukBatchim, KoreanLetter.SsangGiyeok, "k" ) ,
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.KieukBatchim, KoreanLetter.Rieul, "n" ) ,
-
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.PieupBatchim, KoreanLetter.Rieul, "n" ) ,
-
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.HieutBatchim, KoreanLetter.SsangDigeut, "t" ) ,
-                new InitialPronunciationChangeRomanisationRule ( KoreanLetter.HieutBatchim, KoreanLetter.Rieul, "n" )  };
-
-            MedialRomanisationRules = new MedialRomanisationRule[] {
-                new MedialRomanisationRule(KoreanLetter.A, "a"),
-                new MedialRomanisationRule(KoreanLetter.Ae, "ae"),
-                new MedialRomanisationRule(KoreanLetter.Ya, "ya"),
-                new MedialRomanisationRule(KoreanLetter.Yae, "yae"),
-                new MedialRomanisationRule(KoreanLetter.Eo, "ŏ"),
-                new MedialRomanisationRule(KoreanLetter.E, "e"),
-                new MedialRomanisationRule(KoreanLetter.Yeo, "yŏ"),
-                new MedialRomanisationRule(KoreanLetter.Ye, "ye"),
-                new MedialRomanisationRule(KoreanLetter.O, "o"),
-                new MedialRomanisationRule(KoreanLetter.Wa, "wa"),
-                new MedialRomanisationRule(KoreanLetter.Wae, "wae"),
-                new MedialRomanisationRule(KoreanLetter.Oe, "oe"),
-                new MedialRomanisationRule(KoreanLetter.Yo, "yo"),
-                new MedialRomanisationRule(KoreanLetter.U, "u"),
-                new MedialRomanisationRule(KoreanLetter.Wo, "wŏ"),
-                new MedialRomanisationRule(KoreanLetter.We, "we"),
-                new MedialRomanisationRule(KoreanLetter.Wi, "wi"),
-                new MedialRomanisationRule(KoreanLetter.Yu, "yu"),
-                new MedialRomanisationRule(KoreanLetter.Eu, "ŭ"),
-                new MedialRomanisationRule(KoreanLetter.Ui, "ŭi"),
-                new MedialRomanisationRule(KoreanLetter.I, "i")
-            };
-
-            FinalRomanisationRules = new FinalRomanisationRule[] {
-                new FinalRomanisationRule(KoreanLetter.GiyeokBatchim, "k"),
-                new FinalRomanisationRule(KoreanLetter.SsangGiyeokBatchim, "k"),
-                new FinalRomanisationRule(KoreanLetter.NieunBatchim, "n"),
-                new FinalRomanisationRule(KoreanLetter.DigeutBatchim, "t"),
-                new FinalRomanisationRule(KoreanLetter.RieulBatchim, "l"),
-                new FinalRomanisationRule(KoreanLetter.MieumBatchim, "m"),
-                new FinalRomanisationRule(KoreanLetter.BieupBatchim, "p"),
-                new FinalRomanisationRule(KoreanLetter.ShiotBatchim, "t"),
-                new FinalRomanisationRule(KoreanLetter.SsangShiotBatchim, "t"),
-                new FinalRomanisationRule(KoreanLetter.IeungBatchim, "ng"),
-                new FinalRomanisationRule(KoreanLetter.JieutBatchim, "t"),
-                new FinalRomanisationRule(KoreanLetter.ChieutBatchim, "t"),
-                new FinalRomanisationRule(KoreanLetter.KieukBatchim, "k"),
-                new FinalRomanisationRule(KoreanLetter.TieutBatchim, "t"),
-                new FinalRomanisationRule(KoreanLetter.PieupBatchim, "p"),
-                new FinalRomanisationRule(KoreanLetter.HieutBatchim, "t")
-            };
-
-            FinalPronunciationChangesRomanisationRules = new FinalPronunciationChangeRomanisationRule[] {
-
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.GiyeokBatchim, KoreanLetter.Rieul, "ng" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.GiyeokBatchim, KoreanLetter.Ieung, "g" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.GiyeokBatchim, KoreanLetter.Nieun, "ng" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.GiyeokBatchim, KoreanLetter.Mieum, "ng" ),
-
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.SsangGiyeokBatchim, KoreanLetter.Nieun, "ng" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.SsangGiyeokBatchim, KoreanLetter.Rieul, "ng" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.SsangGiyeokBatchim, KoreanLetter.Mieum, "ng" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.SsangGiyeokBatchim, KoreanLetter.Ieung, "kk" ),
-
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.NieunBatchim, KoreanLetter.Rieul, "l" ),
-
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.DigeutBatchim, KoreanLetter.Nieun, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.DigeutBatchim, KoreanLetter.Rieul, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.DigeutBatchim, KoreanLetter.Mieum, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.DigeutBatchim, KoreanLetter.Ieung, "d" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.DigeutBatchim, KoreanLetter.SsangJieut, "" ),
-
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.RieulBatchim, KoreanLetter.Ieung, "r" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.RieulBatchim, KoreanLetter.Hieut, "r" ),
-
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.BieupBatchim, KoreanLetter.Ieung, "b" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.BieupBatchim, KoreanLetter.Nieun, "m" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.BieupBatchim, KoreanLetter.Rieul, "m" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.BieupBatchim, KoreanLetter.Mieum, "m" ),
-
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.ShiotBatchim, KoreanLetter.Nieun, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.ShiotBatchim, KoreanLetter.Rieul, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.ShiotBatchim, KoreanLetter.Mieum, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.ShiotBatchim, KoreanLetter.Shiot, "s" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.ShiotBatchim, KoreanLetter.SsangShiot, "" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.ShiotBatchim, KoreanLetter.Ieung, "s" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.ShiotBatchim, KoreanLetter.SsangJieut, "" ),
-
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.SsangShiotBatchim, KoreanLetter.Nieun, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.SsangShiotBatchim, KoreanLetter.Rieul, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.SsangShiotBatchim, KoreanLetter.Mieum, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.SsangShiotBatchim, KoreanLetter.Shiot, "s" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.SsangShiotBatchim, KoreanLetter.SsangShiot, "" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.SsangShiotBatchim, KoreanLetter.Ieung, "ss" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.SsangShiotBatchim, KoreanLetter.SsangJieut, "" ),
-
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.JieutBatchim, KoreanLetter.Nieun, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.JieutBatchim, KoreanLetter.Rieul, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.JieutBatchim, KoreanLetter.Mieum, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.JieutBatchim, KoreanLetter.Ieung, "j" ),
-
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.ChieutBatchim, KoreanLetter.Nieun, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.ChieutBatchim, KoreanLetter.Rieul, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.ChieutBatchim, KoreanLetter.Mieum, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.ChieutBatchim, KoreanLetter.Ieung, "ch'" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.ChieutBatchim, KoreanLetter.SsangJieut, "" ),
-
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.KieukBatchim, KoreanLetter.Nieun, "ng" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.KieukBatchim, KoreanLetter.Rieul, "ng" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.KieukBatchim, KoreanLetter.Mieum, "ng" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.KieukBatchim, KoreanLetter.Ieung, "k'" ),
-
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.TieutBatchim, KoreanLetter.Nieun, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.TieutBatchim, KoreanLetter.Rieul, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.TieutBatchim, KoreanLetter.Mieum, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.TieutBatchim, KoreanLetter.Ieung, "t'" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.TieutBatchim, KoreanLetter.SsangJieut, "" ),
-
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.PieupBatchim, KoreanLetter.Nieun, "m" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.PieupBatchim, KoreanLetter.Rieul, "m" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.PieupBatchim, KoreanLetter.Mieum, "m" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.PieupBatchim, KoreanLetter.SsangBieup, "" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.PieupBatchim, KoreanLetter.Ieung, "p'" ),
-
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.HieutBatchim, KoreanLetter.Nieun, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.HieutBatchim, KoreanLetter.Rieul, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.HieutBatchim, KoreanLetter.Mieum, "n" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.HieutBatchim, KoreanLetter.Ieung, "h" ),
-                new FinalPronunciationChangeRomanisationRule ( KoreanLetter.HieutBatchim, KoreanLetter.SsangJieut, "" )
-            };
-
+            SetRules();
         }
 
-        public override string RomaniseSyllable(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null)
+        protected override void SetRules()
+        {
+            var InitialRomanisationRulesList = new RomanisationRuleList(){
+                {KoreanLetter.Giyeok, "k"},
+                {KoreanLetter.SsangGiyeok, "kk"},
+                {KoreanLetter.Nieun, "n"},
+                {KoreanLetter.Digeut, "t"},
+                {KoreanLetter.SsangDigeut, "tt"},
+                {KoreanLetter.Rieul, "r"},
+                {KoreanLetter.Mieum, "m"},
+                {KoreanLetter.Bieup, "p"},
+                {KoreanLetter.SsangBieup, "pp"},
+                {KoreanLetter.Shiot, "s"},
+                {KoreanLetter.SsangShiot, "ss"},
+                {KoreanLetter.Ieung, ""},
+                {KoreanLetter.Jieut, "ch"},
+                {KoreanLetter.SsangJieut, "tch"},
+                {KoreanLetter.Chieut, "ch'"},
+                {KoreanLetter.Kieuk, "k'"},
+                {KoreanLetter.Tieut, "t'"},
+                {KoreanLetter.Pieup, "p'"},
+                {KoreanLetter.Hieut, "h"}
+            };
+
+            var InitialPronunciationChangeRomanisationRulesList = new PronunciationChangeRomanisationRuleList(){
+                {KoreanLetter.GiyeokBatchim, KoreanLetter.Rieul, "n" },
+                {KoreanLetter.GiyeokBatchim, KoreanLetter.SsangGiyeok, "k" },
+
+                {KoreanLetter.SsangGiyeokBatchim, KoreanLetter.SsangGiyeok, "k" },
+                {KoreanLetter.SsangGiyeokBatchim, KoreanLetter.Rieul, "n" },
+
+                {KoreanLetter.NieunBatchim, KoreanLetter.Giyeok, "'g" },
+                {KoreanLetter.NieunBatchim, KoreanLetter.Digeut, "d" },
+                {KoreanLetter.NieunBatchim, KoreanLetter.Rieul, "l" },
+                {KoreanLetter.NieunBatchim, KoreanLetter.Bieup, "b" },
+                {KoreanLetter.NieunBatchim, KoreanLetter.Jieut, "j" },
+
+                {KoreanLetter.DigeutBatchim, KoreanLetter.Rieul, "n" },
+                {KoreanLetter.DigeutBatchim, KoreanLetter.SsangDigeut, "t" },
+
+                {KoreanLetter.RieulBatchim, KoreanLetter.Giyeok, "g" },
+                {KoreanLetter.RieulBatchim, KoreanLetter.Nieun, "l" },
+                {KoreanLetter.RieulBatchim, KoreanLetter.Digeut, "d" },
+                {KoreanLetter.RieulBatchim, KoreanLetter.Rieul, "l" },
+                {KoreanLetter.RieulBatchim, KoreanLetter.Bieup, "b" },
+                {KoreanLetter.RieulBatchim, KoreanLetter.Jieut, "j" },
+
+                {KoreanLetter.MieumBatchim, KoreanLetter.Giyeok, "g" },
+                {KoreanLetter.MieumBatchim, KoreanLetter.Digeut, "d" },
+                {KoreanLetter.MieumBatchim, KoreanLetter.Rieul, "n" },
+                {KoreanLetter.MieumBatchim, KoreanLetter.Bieup, "b" },
+                {KoreanLetter.MieumBatchim, KoreanLetter.Jieut, "j" },
+
+                {KoreanLetter.BieupBatchim, KoreanLetter.Rieul, "n" },
+                {KoreanLetter.BieupBatchim, KoreanLetter.SsangBieup, "p" },
+
+                {KoreanLetter.ShiotBatchim, KoreanLetter.Rieul, "n" },
+                {KoreanLetter.ShiotBatchim, KoreanLetter.SsangDigeut, "t" },
+
+                {KoreanLetter.SsangShiotBatchim, KoreanLetter.SsangDigeut, "t" },
+                {KoreanLetter.SsangShiotBatchim, KoreanLetter.Rieul, "n" },
+
+                {KoreanLetter.IeungBatchim, KoreanLetter.Giyeok, "g" },
+                {KoreanLetter.IeungBatchim, KoreanLetter.Digeut, "d" },
+                {KoreanLetter.IeungBatchim, KoreanLetter.Rieul, "n" },
+                {KoreanLetter.IeungBatchim, KoreanLetter.Bieup, "b" },
+                {KoreanLetter.IeungBatchim, KoreanLetter.Ieung, "'" },
+                {KoreanLetter.IeungBatchim, KoreanLetter.Jieut, "j" },
+
+                {KoreanLetter.JieutBatchim, KoreanLetter.SsangDigeut, "t" } ,
+                {KoreanLetter.JieutBatchim, KoreanLetter.Rieul, "n" } ,
+                {KoreanLetter.JieutBatchim, KoreanLetter.SsangJieut, "ch" } ,
+
+                {KoreanLetter.ChieutBatchim, KoreanLetter.SsangDigeut, "t" } ,
+                {KoreanLetter.ChieutBatchim, KoreanLetter.Rieul, "n" } ,
+
+                {KoreanLetter.TieutBatchim, KoreanLetter.SsangDigeut, "t" } ,
+                {KoreanLetter.TieutBatchim, KoreanLetter.Rieul, "n" } ,
+
+                {KoreanLetter.KieukBatchim, KoreanLetter.SsangGiyeok, "k" } ,
+                {KoreanLetter.KieukBatchim, KoreanLetter.Rieul, "n" } ,
+
+                {KoreanLetter.PieupBatchim, KoreanLetter.Rieul, "n" } ,
+
+                {KoreanLetter.HieutBatchim, KoreanLetter.SsangDigeut, "t" } ,
+                {KoreanLetter.HieutBatchim, KoreanLetter.Rieul, "n" }  };
+
+            var MedialRomanisationRulesList = new RomanisationRuleList(){
+                {KoreanLetter.A, "a"},
+                {KoreanLetter.Ae, "ae"},
+                {KoreanLetter.Ya, "ya"},
+                {KoreanLetter.Yae, "yae"},
+                {KoreanLetter.Eo, "ŏ"},
+                {KoreanLetter.E, "e"},
+                {KoreanLetter.Yeo, "yŏ"},
+                {KoreanLetter.Ye, "ye"},
+                {KoreanLetter.O, "o"},
+                {KoreanLetter.Wa, "wa"},
+                {KoreanLetter.Wae, "wae"},
+                {KoreanLetter.Oe, "oe"},
+                {KoreanLetter.Yo, "yo"},
+                {KoreanLetter.U, "u"},
+                {KoreanLetter.Wo, "wŏ"},
+                {KoreanLetter.We, "we"},
+                {KoreanLetter.Wi, "wi"},
+                {KoreanLetter.Yu, "yu"},
+                {KoreanLetter.Eu, "ŭ"},
+                {KoreanLetter.Ui, "ŭi"},
+                {KoreanLetter.I, "i"}
+            };
+
+            var FinalRomanisationRulesList = new RomanisationRuleList(){
+                {KoreanLetter.GiyeokBatchim, "k"},
+                {KoreanLetter.SsangGiyeokBatchim, "k"},
+                {KoreanLetter.NieunBatchim, "n"},
+                {KoreanLetter.DigeutBatchim, "t"},
+                {KoreanLetter.RieulBatchim, "l"},
+                {KoreanLetter.MieumBatchim, "m"},
+                {KoreanLetter.BieupBatchim, "p"},
+                {KoreanLetter.ShiotBatchim, "t"},
+                {KoreanLetter.SsangShiotBatchim, "t"},
+                {KoreanLetter.IeungBatchim, "ng"},
+                {KoreanLetter.JieutBatchim, "t"},
+                {KoreanLetter.ChieutBatchim, "t"},
+                {KoreanLetter.KieukBatchim, "k"},
+                {KoreanLetter.TieutBatchim, "t"},
+                {KoreanLetter.PieupBatchim, "p"},
+                {KoreanLetter.HieutBatchim, "t"}
+            };
+
+            var FinalPronunciationChangeRomanisationRulesList = new PronunciationChangeRomanisationRuleList() {
+
+                {KoreanLetter.GiyeokBatchim, KoreanLetter.Rieul, "ng" },
+                {KoreanLetter.GiyeokBatchim, KoreanLetter.Ieung, "g" },
+                {KoreanLetter.GiyeokBatchim, KoreanLetter.Nieun, "ng" },
+                {KoreanLetter.GiyeokBatchim, KoreanLetter.Mieum, "ng" },
+
+                {KoreanLetter.SsangGiyeokBatchim, KoreanLetter.Nieun, "ng" },
+                {KoreanLetter.SsangGiyeokBatchim, KoreanLetter.Rieul, "ng" },
+                {KoreanLetter.SsangGiyeokBatchim, KoreanLetter.Mieum, "ng" },
+                {KoreanLetter.SsangGiyeokBatchim, KoreanLetter.Ieung, "kk" },
+
+                {KoreanLetter.NieunBatchim, KoreanLetter.Rieul, "l" },
+
+                {KoreanLetter.DigeutBatchim, KoreanLetter.Nieun, "n" },
+                {KoreanLetter.DigeutBatchim, KoreanLetter.Rieul, "n" },
+                {KoreanLetter.DigeutBatchim, KoreanLetter.Mieum, "n" },
+                {KoreanLetter.DigeutBatchim, KoreanLetter.Ieung, "d" },
+                {KoreanLetter.DigeutBatchim, KoreanLetter.SsangJieut, "" },
+
+                {KoreanLetter.RieulBatchim, KoreanLetter.Ieung, "r" },
+                {KoreanLetter.RieulBatchim, KoreanLetter.Hieut, "r" },
+
+                {KoreanLetter.BieupBatchim, KoreanLetter.Ieung, "b" },
+                {KoreanLetter.BieupBatchim, KoreanLetter.Nieun, "m" },
+                {KoreanLetter.BieupBatchim, KoreanLetter.Rieul, "m" },
+                {KoreanLetter.BieupBatchim, KoreanLetter.Mieum, "m" },
+
+                {KoreanLetter.ShiotBatchim, KoreanLetter.Nieun, "n" },
+                {KoreanLetter.ShiotBatchim, KoreanLetter.Rieul, "n" },
+                {KoreanLetter.ShiotBatchim, KoreanLetter.Mieum, "n" },
+                {KoreanLetter.ShiotBatchim, KoreanLetter.Shiot, "s" },
+                {KoreanLetter.ShiotBatchim, KoreanLetter.SsangShiot, "" },
+                {KoreanLetter.ShiotBatchim, KoreanLetter.Ieung, "s" },
+                {KoreanLetter.ShiotBatchim, KoreanLetter.SsangJieut, "" },
+
+                {KoreanLetter.SsangShiotBatchim, KoreanLetter.Nieun, "n" },
+                {KoreanLetter.SsangShiotBatchim, KoreanLetter.Rieul, "n" },
+                {KoreanLetter.SsangShiotBatchim, KoreanLetter.Mieum, "n" },
+                {KoreanLetter.SsangShiotBatchim, KoreanLetter.Shiot, "s" },
+                {KoreanLetter.SsangShiotBatchim, KoreanLetter.SsangShiot, "" },
+                {KoreanLetter.SsangShiotBatchim, KoreanLetter.Ieung, "ss" },
+                {KoreanLetter.SsangShiotBatchim, KoreanLetter.SsangJieut, "" },
+
+                {KoreanLetter.JieutBatchim, KoreanLetter.Nieun, "n" },
+                {KoreanLetter.JieutBatchim, KoreanLetter.Rieul, "n" },
+                {KoreanLetter.JieutBatchim, KoreanLetter.Mieum, "n" },
+                {KoreanLetter.JieutBatchim, KoreanLetter.Ieung, "j" },
+
+                {KoreanLetter.ChieutBatchim, KoreanLetter.Nieun, "n" },
+                {KoreanLetter.ChieutBatchim, KoreanLetter.Rieul, "n" },
+                {KoreanLetter.ChieutBatchim, KoreanLetter.Mieum, "n" },
+                {KoreanLetter.ChieutBatchim, KoreanLetter.Ieung, "ch'" },
+                {KoreanLetter.ChieutBatchim, KoreanLetter.SsangJieut, "" },
+
+                {KoreanLetter.KieukBatchim, KoreanLetter.Nieun, "ng" },
+                {KoreanLetter.KieukBatchim, KoreanLetter.Rieul, "ng" },
+                {KoreanLetter.KieukBatchim, KoreanLetter.Mieum, "ng" },
+                {KoreanLetter.KieukBatchim, KoreanLetter.Ieung, "k'" },
+
+                {KoreanLetter.TieutBatchim, KoreanLetter.Nieun, "n" },
+                {KoreanLetter.TieutBatchim, KoreanLetter.Rieul, "n" },
+                {KoreanLetter.TieutBatchim, KoreanLetter.Mieum, "n" },
+                {KoreanLetter.TieutBatchim, KoreanLetter.Ieung, "t'" },
+                {KoreanLetter.TieutBatchim, KoreanLetter.SsangJieut, "" },
+
+                {KoreanLetter.PieupBatchim, KoreanLetter.Nieun, "m" },
+                {KoreanLetter.PieupBatchim, KoreanLetter.Rieul, "m" },
+                {KoreanLetter.PieupBatchim, KoreanLetter.Mieum, "m" },
+                {KoreanLetter.PieupBatchim, KoreanLetter.SsangBieup, "" },
+                {KoreanLetter.PieupBatchim, KoreanLetter.Ieung, "p'" },
+
+                {KoreanLetter.HieutBatchim, KoreanLetter.Nieun, "n" },
+                {KoreanLetter.HieutBatchim, KoreanLetter.Rieul, "n" },
+                {KoreanLetter.HieutBatchim, KoreanLetter.Mieum, "n" },
+                {KoreanLetter.HieutBatchim, KoreanLetter.Ieung, "h" },
+                {KoreanLetter.HieutBatchim, KoreanLetter.SsangJieut, "" }
+            };
+
+            InitialRomanisationRules = InitialRomanisationRulesList.ToInitialRomanisationRules();
+            InitialPronunciationChangeRomanisationRules = InitialPronunciationChangeRomanisationRulesList.ToInitialPronunciationChangeRomanisationRules();
+
+            MedialRomanisationRules = MedialRomanisationRulesList.ToMedialRomanisationRules();
+
+            FinalRomanisationRules = FinalRomanisationRulesList.ToFinalRomanisationRules();
+            FinalPronunciationChangeRomanisationRules = FinalPronunciationChangeRomanisationRulesList.ToFinalPronunciationChangeRomanisationRules();
+        }
+
+        public override string RomaniseSyllable(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null)
         {
             var StringBuilder1 = new StringBuilder();
 
-            StringBuilder1.Append(RomaniseInitial(Syllable1, PrecedingSyllable, SucceedingSyllable));
-            StringBuilder1.Append(RomaniseMedial(Syllable1, PrecedingSyllable, SucceedingSyllable));
-            StringBuilder1.Append(RomaniseFinal(Syllable1, PrecedingSyllable, SucceedingSyllable));
+            StringBuilder1.Append(RomaniseInitial(Syllable, PrecedingSyllable, SucceedingSyllable));
+            StringBuilder1.Append(RomaniseMedial(Syllable, PrecedingSyllable, SucceedingSyllable));
+            StringBuilder1.Append(RomaniseFinal(Syllable, PrecedingSyllable, SucceedingSyllable));
 
             return StringBuilder1.ToString();
         }
 
-        private string RomaniseInitial(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
+        private string RomaniseInitial(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
         {
             if (PrecedingSyllable != null)
             {
-                if (InitialPronunciationChangesRomanisationRules.Any(c => c.PrecedingFinal == PrecedingSyllable.Value.Final && c.Initial == Syllable1.Initial))
+                var PronunciationChangeRomanisationRule = InitialPronunciationChangeRomanisationRules.FirstOrDefault(r => r.PrecedingFinal == PrecedingSyllable.Value.Final && r.Initial == Syllable.Initial);
+
+                if (PronunciationChangeRomanisationRule != null)
                 {
-                    return InitialPronunciationChangesRomanisationRules.First(c => c.PrecedingFinal == PrecedingSyllable.Value.Final && c.Initial == Syllable1.Initial).Romanisation;
+                    return PronunciationChangeRomanisationRule.Romanisation;
                 }
             }
 
-            if (PrecedingSyllable == null)
+            if (UseSh && Syllable.Initial == KoreanLetter.Shiot && IsIMedial(Syllable.Medial))
             {
-                var IsIMedial = (Syllable1.Medial == KoreanLetter.I || Syllable1.Medial == KoreanLetter.Ya || Syllable1.Medial == KoreanLetter.Yae || Syllable1.Medial == KoreanLetter.Yeo || Syllable1.Medial == KoreanLetter.Ye || Syllable1.Medial == KoreanLetter.Yo || Syllable1.Medial == KoreanLetter.Yu);
-
-                if (UseSh && Syllable1.Initial == KoreanLetter.Shiot && IsIMedial)
-                {
-                    return "sh";
-                }
-                if (UseSh && Syllable1.Initial == KoreanLetter.SsangShiot && IsIMedial)
-                {
-                    return "ssh";
-                }
+                return "sh";
+            }
+            if (UseSh && Syllable.Initial == KoreanLetter.SsangShiot && IsIMedial(Syllable.Medial))
+            {
+                return "ssh";
             }
 
-            return InitialRomanisationRules.First(r => r.Initial == Syllable1.Initial).Romanisation;
+            return InitialRomanisationRules.First(r => r.Initial == Syllable.Initial).Romanisation;
         }
 
-        private string RomaniseMedial(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
+        private string RomaniseMedial(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
         {
-            if (PrecedingSyllable != null && (PrecedingSyllable.Value.Medial == KoreanLetter.A || PrecedingSyllable.Value.Medial == KoreanLetter.O) && !PrecedingSyllable.Value.HasFinal && Syllable1.Initial == KoreanLetter.Ieung && Syllable1.Medial == KoreanLetter.E)
+            if (PrecedingSyllable != null && (PrecedingSyllable.Value.Medial == KoreanLetter.A || PrecedingSyllable.Value.Medial == KoreanLetter.O) && !PrecedingSyllable.Value.HasFinal && Syllable.Initial == KoreanLetter.Ieung && Syllable.Medial == KoreanLetter.E)
             {
                 return "ë";
             }
 
-            return MedialRomanisationRules.First(m => m.Medial == Syllable1.Medial).Romanisation;
+            return MedialRomanisationRules.First(r => r.Medial == Syllable.Medial).Romanisation;
         }
 
-        private string RomaniseFinal(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
+        private string RomaniseFinal(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
         {
-            if (Syllable1.HasFinal)
+            if (Syllable.HasFinal)
             {
                 if (SucceedingSyllable != null)
                 {
-                    if (FinalPronunciationChangesRomanisationRules.Any(c => c.Final == Syllable1.Final && c.SucceedingInitial == SucceedingSyllable.Value.Initial))
-                    {
-                        return FinalPronunciationChangesRomanisationRules.First(c => c.Final == Syllable1.Final && c.SucceedingInitial == SucceedingSyllable.Value.Initial).Romanisation;
+                    var PronunciationChangeRomanisationRule = FinalPronunciationChangeRomanisationRules.FirstOrDefault(r => r.Final == Syllable.Final && r.SucceedingInitial == SucceedingSyllable.Value.Initial);
 
+                    if (PronunciationChangeRomanisationRule != null)
+                    {
+                        return PronunciationChangeRomanisationRule.Romanisation;
                     }
                 }
 
-                return FinalRomanisationRules.First(f => f.Final == Syllable1.Final).Romanisation;
+                return FinalRomanisationRules.First(r => r.Final == Syllable.Final).Romanisation;
             }
 
             return "";
