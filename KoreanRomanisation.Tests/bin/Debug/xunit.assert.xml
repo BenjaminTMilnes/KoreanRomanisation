@@ -294,7 +294,7 @@
             </summary>
             <param name="expected">The expected value</param>
             <param name="actual">The value to be compared against</param>
-            <param name="precision">The number of decimal places (valid values: 0-15)</param>
+            <param name="precision">The number of decimal places (valid values: 0-28)</param>
             <exception cref="T:Xunit.Sdk.EqualException">Thrown when the values are not equal</exception>
         </member>
         <member name="M:Xunit.Assert.StrictEqual``1(``0,``0)">
@@ -342,7 +342,7 @@
             </summary>
             <param name="expected">The expected value</param>
             <param name="actual">The value to be compared against</param>
-            <param name="precision">The number of decimal places (valid values: 0-15)</param>
+            <param name="precision">The number of decimal places (valid values: 0-28)</param>
             <exception cref="T:Xunit.Sdk.EqualException">Thrown when the values are equal</exception>
         </member>
         <member name="M:Xunit.Assert.NotStrictEqual``1(``0,``0)">
@@ -353,6 +353,73 @@
             <param name="expected">The expected object</param>
             <param name="actual">The actual object</param>
             <exception cref="T:Xunit.Sdk.NotEqualException">Thrown when the objects are equal</exception>
+        </member>
+        <member name="M:Xunit.Assert.Raises``1(System.Action{System.EventHandler{``0}},System.Action{System.EventHandler{``0}},System.Action)">
+            <summary>
+            Verifies that a event with the exact event args is raised.
+            </summary>
+            <typeparam name="T">The type of the event arguments to expect</typeparam>
+            <param name="attach">Code to attach the event handler</param>
+            <param name="detach">Code to detach the event handler</param>
+            <param name="testCode">A delegate to the code to be tested</param>
+            <returns>The event sender and arguments wrapped in an object</returns>
+            <exception cref="T:Xunit.Sdk.RaisesException">Thrown when the expected event was not raised.</exception>
+        </member>
+        <member name="M:Xunit.Assert.RaisesAny``1(System.Action{System.EventHandler{``0}},System.Action{System.EventHandler{``0}},System.Action)">
+            <summary>
+            Verifies that an event with the exact or a derived event args is raised.
+            </summary>
+            <typeparam name="T">The type of the event arguments to expect</typeparam>
+            <param name="attach">Code to attach the event handler</param>
+            <param name="detach">Code to detach the event handler</param>
+            <param name="testCode">A delegate to the code to be tested</param>
+            <returns>The event sender and arguments wrapped in an object</returns>
+            <exception cref="T:Xunit.Sdk.RaisesException">Thrown when the expected event was not raised.</exception>
+        </member>
+        <member name="M:Xunit.Assert.RaisesAsync``1(System.Action{System.EventHandler{``0}},System.Action{System.EventHandler{``0}},System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Verifies that a event with the exact event args (and not a derived type) is raised.
+            </summary>
+            <typeparam name="T">The type of the event arguments to expect</typeparam>
+            <param name="attach">Code to attach the event handler</param>
+            <param name="detach">Code to detach the event handler</param>
+            <param name="testCode">A delegate to the code to be tested</param>
+            <returns>The event sender and arguments wrapped in an object</returns>
+            <exception cref="T:Xunit.Sdk.RaisesException">Thrown when the expected event was not raised.</exception>
+        </member>
+        <member name="M:Xunit.Assert.RaisesAnyAsync``1(System.Action{System.EventHandler{``0}},System.Action{System.EventHandler{``0}},System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Verifies that an event with the exact or a derived event args is raised.
+            </summary>
+            <typeparam name="T">The type of the event arguments to expect</typeparam>
+            <param name="attach">Code to attach the event handler</param>
+            <param name="detach">Code to detach the event handler</param>
+            <param name="testCode">A delegate to the code to be tested</param>
+            <returns>The event sender and arguments wrapped in an object</returns>
+            <exception cref="T:Xunit.Sdk.RaisesException">Thrown when the expected event was not raised.</exception>
+        </member>
+        <member name="T:Xunit.Assert.RaisedEvent`1">
+            <summary>
+            Represents a raised event after the fact.
+            </summary>
+            <typeparam name="T">The type of the event arguments.</typeparam>
+        </member>
+        <member name="P:Xunit.Assert.RaisedEvent`1.Sender">
+            <summary>
+            The sender of the event.
+            </summary>
+        </member>
+        <member name="P:Xunit.Assert.RaisedEvent`1.Arguments">
+            <summary>
+            The event arguments.
+            </summary>
+        </member>
+        <member name="M:Xunit.Assert.RaisedEvent`1.#ctor(System.Object,`0)">
+            <summary>
+            Creates a new instance of the <see cref="T:Xunit.Assert.RaisedEvent`1" /> class.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="args">The event arguments</param>
         </member>
         <member name="M:Xunit.Assert.Throws``1(System.Action)">
             <summary>
@@ -477,31 +544,6 @@
         <member name="M:Xunit.Assert.GuardArgumentNotNull(System.String,System.Object)">
             <summary/>
         </member>
-        <member name="M:Xunit.Assert.RecordException(System.Action)">
-            <summary>
-            Records any exception which is thrown by the given code.
-            </summary>
-            <param name="testCode">The code which may thrown an exception.</param>
-            <returns>Returns the exception that was thrown by the code; null, otherwise.</returns>
-        </member>
-        <member name="M:Xunit.Assert.RecordException(System.Func{System.Object})">
-            <summary>
-            Records any exception which is thrown by the given code that has
-            a return value. Generally used for testing property accessors.
-            </summary>
-            <param name="testCode">The code which may thrown an exception.</param>
-            <returns>Returns the exception that was thrown by the code; null, otherwise.</returns>
-        </member>
-        <member name="M:Xunit.Assert.RecordException(System.Func{System.Threading.Tasks.Task})">
-            <summary/>
-        </member>
-        <member name="M:Xunit.Assert.RecordExceptionAsync(System.Func{System.Threading.Tasks.Task})">
-            <summary>
-            Records any exception which is thrown by the given task.
-            </summary>
-            <param name="testCode">The task which may thrown an exception.</param>
-            <returns>Returns the exception that was thrown by the code; null, otherwise.</returns>
-        </member>
         <member name="M:Xunit.Assert.NotSame(System.Object,System.Object)">
             <summary>
             Verifies that two objects are not the same instance.
@@ -534,7 +576,20 @@
         </member>
         <member name="M:Xunit.Assert.PropertyChanged(System.ComponentModel.INotifyPropertyChanged,System.String,System.Action)">
             <summary>
-            Verifies that the provided object raised INotifyPropertyChanged.PropertyChanged
+            Verifies that the provided object raised <see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged"/>
+            as a result of executing the given test code.
+            </summary>
+            <param name="object">The object which should raise the notification</param>
+            <param name="propertyName">The property name for which the notification should be raised</param>
+            <param name="testCode">The test code which should cause the notification to be raised</param>
+            <exception cref="T:Xunit.Sdk.PropertyChangedException">Thrown when the notification is not raised</exception>
+        </member>
+        <member name="M:Xunit.Assert.PropertyChanged(System.ComponentModel.INotifyPropertyChanged,System.String,System.Func{System.Threading.Tasks.Task})">
+            <summary/>
+        </member>
+        <member name="M:Xunit.Assert.PropertyChangedAsync(System.ComponentModel.INotifyPropertyChanged,System.String,System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Verifies that the provided object raised <see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged"/>
             as a result of executing the given test code.
             </summary>
             <param name="object">The object which should raise the notification</param>
@@ -583,6 +638,31 @@
             <param name="high">The (inclusive) high value of the range</param>
             <param name="comparer">The comparer used to evaluate the value's range</param>
             <exception cref="T:Xunit.Sdk.NotInRangeException">Thrown when the value is in the given range</exception>
+        </member>
+        <member name="M:Xunit.Assert.RecordException(System.Action)">
+            <summary>
+            Records any exception which is thrown by the given code.
+            </summary>
+            <param name="testCode">The code which may thrown an exception.</param>
+            <returns>Returns the exception that was thrown by the code; null, otherwise.</returns>
+        </member>
+        <member name="M:Xunit.Assert.RecordException(System.Func{System.Object})">
+            <summary>
+            Records any exception which is thrown by the given code that has
+            a return value. Generally used for testing property accessors.
+            </summary>
+            <param name="testCode">The code which may thrown an exception.</param>
+            <returns>Returns the exception that was thrown by the code; null, otherwise.</returns>
+        </member>
+        <member name="M:Xunit.Assert.RecordException(System.Func{System.Threading.Tasks.Task})">
+            <summary/>
+        </member>
+        <member name="M:Xunit.Assert.RecordExceptionAsync(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Records any exception which is thrown by the given task.
+            </summary>
+            <param name="testCode">The task which may thrown an exception.</param>
+            <returns>Returns the exception that was thrown by the code; null, otherwise.</returns>
         </member>
         <member name="M:Xunit.Assert.ProperSubset``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.ISet{``0})">
             <summary>
@@ -816,11 +896,10 @@
             </summary>
             <typeparam name="T">The type that is being compared.</typeparam>
         </member>
-        <member name="M:Xunit.Sdk.AssertEqualityComparer`1.#ctor(System.Boolean,System.Collections.IEqualityComparer)">
+        <member name="M:Xunit.Sdk.AssertEqualityComparer`1.#ctor(System.Collections.IEqualityComparer)">
             <summary>
             Initializes a new instance of the <see cref="T:Xunit.Sdk.AssertEqualityComparer`1" /> class.
             </summary>
-            <param name="skipTypeCheck">Set to <c>true</c> to skip type equality checks.</param>
             <param name="innerComparer">The inner comparer to be used when the compared objects are enumerable.</param>
         </member>
         <member name="M:Xunit.Sdk.AssertEqualityComparer`1.Equals(`0,`0)">
@@ -845,6 +924,26 @@
             <inheritdoc/>
         </member>
         <member name="M:Xunit.Sdk.AssertEqualityComparerAdapter`1.GetHashCode(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Xunit.Sdk.AllException">
+            <summary>
+            Exception thrown when an All assertion has one or more items fail an assertion.
+            </summary>
+        </member>
+        <member name="M:Xunit.Sdk.AllException.#ctor(System.Int32,System.Tuple{System.Int32,System.Object,System.Exception}[])">
+            <summary>
+            Creates a new instance of the <see cref="T:Xunit.Sdk.AllException"/> class.
+            </summary>
+            <param name="totalItems">The total number of items that were in the collection.</param>
+            <param name="errors">The list of errors that occurred during the test pass.</param>
+        </member>
+        <member name="P:Xunit.Sdk.AllException.Failures">
+            <summary>
+            The errors that occurred during execution of the test.
+            </summary>
+        </member>
+        <member name="P:Xunit.Sdk.AllException.Message">
             <inheritdoc/>
         </member>
         <member name="T:Xunit.Sdk.AssertActualExpectedException">
@@ -906,14 +1005,20 @@
             Exception thrown when Assert.Collection fails.
             </summary>
         </member>
-        <member name="M:Xunit.Sdk.CollectionException.#ctor(System.Int32,System.Int32,System.Int32,System.Exception)">
+        <member name="M:Xunit.Sdk.CollectionException.#ctor(System.Object,System.Int32,System.Int32,System.Int32,System.Exception)">
             <summary>
             Creates a new instance of the <see cref="T:Xunit.Sdk.CollectionException"/> class.
             </summary>
+            <param name="collection">The collection that failed the test.</param>
             <param name="expectedCount">The expected number of items in the collection.</param>
             <param name="actualCount">The actual number of items in the collection.</param>
             <param name="indexFailurePoint">The index of the position where the first comparison failure occurred.</param>
             <param name="innerException">The exception that was thrown during the comparison failure.</param>
+        </member>
+        <member name="P:Xunit.Sdk.CollectionException.Collection">
+            <summary>
+            The collection that failed the test.
+            </summary>
         </member>
         <member name="P:Xunit.Sdk.CollectionException.ActualCount">
             <summary>
@@ -935,26 +1040,6 @@
             <inheritdoc/>
         </member>
         <member name="P:Xunit.Sdk.CollectionException.StackTrace">
-            <inheritdoc/>
-        </member>
-        <member name="T:Xunit.Sdk.AllException">
-            <summary>
-            Exception thrown when an All assertion has one or more items fail an assertion.
-            </summary>
-        </member>
-        <member name="M:Xunit.Sdk.AllException.#ctor(System.Int32,System.Tuple{System.Int32,System.Exception}[])">
-            <summary>
-            Creates a new instance of the <see cref="T:Xunit.Sdk.AllException"/> class.
-            </summary>
-            <param name="totalItems">The total number of items that were in the collection.</param>
-            <param name="errors">The list of errors that occurred during the test pass.</param>
-        </member>
-        <member name="P:Xunit.Sdk.AllException.Failures">
-            <summary>
-            The errors that occurred during execution of the test.
-            </summary>
-        </member>
-        <member name="P:Xunit.Sdk.AllException.Message">
             <inheritdoc/>
         </member>
         <member name="T:Xunit.Sdk.ContainsException">
@@ -998,10 +1083,18 @@
             Exception thrown when a collection is unexpectedly not empty.
             </summary>
         </member>
-        <member name="M:Xunit.Sdk.EmptyException.#ctor">
+        <member name="M:Xunit.Sdk.EmptyException.#ctor(System.Collections.IEnumerable)">
             <summary>
             Creates a new instance of the <see cref="T:Xunit.Sdk.EmptyException"/> class.
             </summary>
+        </member>
+        <member name="P:Xunit.Sdk.EmptyException.Collection">
+            <summary>
+            The collection that failed the test.
+            </summary>
+        </member>
+        <member name="P:Xunit.Sdk.EmptyException.Message">
+            <inheritdoc/>
         </member>
         <member name="T:Xunit.Sdk.EndsWithException">
             <summary>
@@ -1267,6 +1360,49 @@
             when no exception was thrown.
             </summary>
             <param name="propertyName">The name of the property that was expected to be changed.</param>
+        </member>
+        <member name="T:Xunit.Sdk.RaisesException">
+            <summary>
+            Exception thrown when code unexpectedly fails to raise an event.
+            </summary>
+        </member>
+        <member name="M:Xunit.Sdk.RaisesException.#ctor(System.Type)">
+            <summary>
+            Creates a new instance of the <see cref="T:Xunit.Sdk.RaisesException" /> class. Call this constructor
+            when no event was raised.
+            </summary>
+            <param name="expected">The type of the event args that was expected</param>
+        </member>
+        <member name="M:Xunit.Sdk.RaisesException.#ctor(System.Type,System.Type)">
+            <summary>
+            Creates a new instance of the <see cref="T:Xunit.Sdk.RaisesException" /> class. Call this constructor
+            when an
+            </summary>
+            <param name="expected"></param>
+            <param name="actual"></param>
+        </member>
+        <member name="P:Xunit.Sdk.RaisesException.Actual">
+            <summary>
+            Gets the actual value.
+            </summary>
+        </member>
+        <member name="P:Xunit.Sdk.RaisesException.Expected">
+            <summary>
+            Gets the expected value.
+            </summary>
+        </member>
+        <member name="P:Xunit.Sdk.RaisesException.Message">
+            <summary>
+            Gets a message that describes the current exception. Includes the expected and actual values.
+            </summary>
+            <returns>The error message that explains the reason for the exception, or an empty string("").</returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="P:Xunit.Sdk.RaisesException.StackTrace">
+            <summary>
+            Gets a string representation of the frames on the call stack at the time the current exception was thrown.
+            </summary>
+            <returns>A string that describes the contents of the call stack, with the most recent method call appearing first.</returns>
         </member>
         <member name="T:Xunit.Sdk.SameException">
             <summary>

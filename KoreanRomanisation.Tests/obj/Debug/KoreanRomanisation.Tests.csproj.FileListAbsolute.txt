@@ -46,3 +46,13 @@ C:\Users\BenjaminTMilnes\Libraries\Programming\Websites and Code Libraries\Korea
 C:\Users\BenjaminTMilnes\Libraries\Programming\Websites and Code Libraries\KoreanRomanisation\KoreanRomanisation.Tests\obj\Debug\KoreanRomanisation.Tests.csprojResolveAssemblyReference.cache
 C:\Users\BenjaminTMilnes\Libraries\Programming\Websites and Code Libraries\KoreanRomanisation\KoreanRomanisation.Tests\obj\Debug\KoreanRomanisation.Tests.dll
 C:\Users\BenjaminTMilnes\Libraries\Programming\Websites and Code Libraries\KoreanRomanisation\KoreanRomanisation.Tests\obj\Debug\KoreanRomanisation.Tests.pdb
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\xunit.runner.utility.desktop.dll
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\xunit.abstractions.dll
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\xunit.assert.dll
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\xunit.core.dll
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\xunit.execution.desktop.dll
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\xunit.abstractions.xml
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\xunit.assert.xml
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\xunit.core.xml
+C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\xunit.execution.desktop.xml

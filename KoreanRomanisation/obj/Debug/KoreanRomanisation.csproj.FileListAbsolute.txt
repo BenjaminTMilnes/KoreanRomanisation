@@ -12,7 +12,6 @@ C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation\bin\Deb
 C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation\bin\Debug\KoreanRomanisation.pdb
 C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation\obj\Debug\KoreanRomanisation.dll
 C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation\obj\Debug\KoreanRomanisation.pdb
-C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation\obj\Debug\KoreanRomanisation.csprojResolveAssemblyReference.cache
 C:\Users\BenjaminTMilnes\Libraries\Web Design and Coding\My Libraries\KoreanRomanisation\KoreanRomanisation\bin\Debug\System.Net.Http.dll
 C:\Users\BenjaminTMilnes\Libraries\Web Design and Coding\My Libraries\KoreanRomanisation\KoreanRomanisation\bin\Debug\System.Net.Http.xml
 C:\Users\BenjaminTMilnes\Libraries\Programming\Websites and Code Libraries\KoreanRomanisation\KoreanRomanisation\bin\Debug\KoreanRomanisation.dll
