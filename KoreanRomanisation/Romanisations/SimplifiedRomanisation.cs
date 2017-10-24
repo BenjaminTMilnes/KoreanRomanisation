@@ -259,21 +259,11 @@ namespace KoreanRomanisation
                 }
             }
 
-            if (PrecedingSyllable == null)
-            {
-                var IsSInitial = (Syllable.Initial == KoreanLetter.Shiot || Syllable.Initial == KoreanLetter.SsangShiot);
+            var IsSInitial = (Syllable.Initial == KoreanLetter.Shiot || Syllable.Initial == KoreanLetter.SsangShiot);
 
-                if (IsSInitial && IsIMedial(Syllable.Medial))
-                {
-                    if (UseSh)
-                    {
-                        return "sh";
-                    }
-                    else
-                    {
-                        return "s";
-                    }
-                }
+            if (UseSh && IsSInitial && IsIMedial(Syllable.Medial))
+            {
+                return "sh";
             }
 
             return InitialRomanisationRules.First(r => r.Initial == Syllable.Initial).Romanisation;
