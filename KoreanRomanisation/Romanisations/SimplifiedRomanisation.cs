@@ -1,14 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace KoreanRomanisation
 {
-    public class SimplifiedRomanisation : Romanisation
+    /// <summary>
+    /// A class for romanising text according to the Simplified Romanisation of Korean.
+    /// </summary>
+    public sealed class SimplifiedRomanisation : Romanisation
     {
         public SimplifiedRomanisation()
+        {
+            SetRules();
+        }
+
+        protected override void SetRules()
         {
             var InitialRomanisationRulesList = new RomanisationRuleList(){
                 {KoreanLetter.Giyeok, "k"},
@@ -29,7 +35,7 @@ namespace KoreanRomanisation
                 {KoreanLetter.Kieuk, "k"},
                 {KoreanLetter.Tieut, "t"},
                 {KoreanLetter.Pieup, "p"},
-                {KoreanLetter.Hieut, "h" }
+                {KoreanLetter.Hieut, "h"}
             };
 
             var InitialPronunciationChangeRomanisationRulesList = new PronunciationChangeRomanisationRuleList(){
@@ -56,49 +62,48 @@ namespace KoreanRomanisation
                 {KoreanLetter.RieulBatchim, KoreanLetter.Bieup, "b"},
                 {KoreanLetter.RieulBatchim, KoreanLetter.Ieung, ""},
                 {KoreanLetter.RieulBatchim, KoreanLetter.Jieut, "j"},
-                {KoreanLetter.RieulBatchim, KoreanLetter.Hieut, "" }                ,
+                {KoreanLetter.RieulBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.MieumBatchim, KoreanLetter.Giyeok, "g"},
                 {KoreanLetter.MieumBatchim, KoreanLetter.Digeut, "d"},
                 {KoreanLetter.MieumBatchim, KoreanLetter.Rieul, "n"},
                 {KoreanLetter.MieumBatchim, KoreanLetter.Bieup, "b"},
                 {KoreanLetter.MieumBatchim, KoreanLetter.Jieut, "j"},
-                {KoreanLetter.MieumBatchim, KoreanLetter.Hieut, "" }                ,
+                {KoreanLetter.MieumBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.BieupBatchim, KoreanLetter.Rieul, "n"},
-                {KoreanLetter.BieupBatchim, KoreanLetter.Hieut, "" }                ,
+                {KoreanLetter.BieupBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.ShiotBatchim, KoreanLetter.Rieul, "n"},
-                {KoreanLetter.ShiotBatchim, KoreanLetter.Hieut, "" }                ,
+                {KoreanLetter.ShiotBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.SsangShiotBatchim, KoreanLetter.Rieul, "n"},
-                {KoreanLetter.SsangShiotBatchim, KoreanLetter.Hieut, "" }                ,
+                {KoreanLetter.SsangShiotBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.IeungBatchim, KoreanLetter.Giyeok, "g"},
                 {KoreanLetter.IeungBatchim, KoreanLetter.Digeut, "d"},
                 {KoreanLetter.IeungBatchim, KoreanLetter.Rieul, "n"},
                 {KoreanLetter.IeungBatchim, KoreanLetter.Bieup, "b"},
                 {KoreanLetter.IeungBatchim, KoreanLetter.Ieung, "'"},
-                {KoreanLetter.IeungBatchim, KoreanLetter.Jieut, "j" }                ,
+                {KoreanLetter.IeungBatchim, KoreanLetter.Jieut, "j" },
 
                 {KoreanLetter.JieutBatchim, KoreanLetter.Rieul, "n"},
-                {KoreanLetter.JieutBatchim, KoreanLetter.Hieut, "" }                ,
+                {KoreanLetter.JieutBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.ChieutBatchim, KoreanLetter.Rieul, "n"},
-                {KoreanLetter.ChieutBatchim, KoreanLetter.Hieut, "" }                ,
+                {KoreanLetter.ChieutBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.KieukBatchim, KoreanLetter.Rieul, "n"},
-                {KoreanLetter.KieukBatchim, KoreanLetter.Hieut, "" }                ,
+                {KoreanLetter.KieukBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.TieutBatchim, KoreanLetter.Rieul, "n"},
-                {KoreanLetter.TieutBatchim, KoreanLetter.Hieut, "" }                ,
+                {KoreanLetter.TieutBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.PieupBatchim, KoreanLetter.Rieul, "n"},
-                {KoreanLetter.PieupBatchim, KoreanLetter.Hieut, "" }                ,
+                {KoreanLetter.PieupBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.HieutBatchim, KoreanLetter.Rieul, "n"},
                 {KoreanLetter.HieutBatchim, KoreanLetter.Hieut, "" }
-
             };
 
             var MedialRomanisationRulesList = new RomanisationRuleList(){
@@ -220,74 +225,86 @@ namespace KoreanRomanisation
                 {KoreanLetter.HieutBatchim, KoreanLetter.Rieul, "n"},
                 {KoreanLetter.HieutBatchim, KoreanLetter.Mieum, "n"},
                 {KoreanLetter.HieutBatchim, KoreanLetter.Ieung, "h" }
+            };
 
-                            };
+            InitialRomanisationRules = InitialRomanisationRulesList.ToInitialRomanisationRules();
+            InitialPronunciationChangeRomanisationRules = InitialPronunciationChangeRomanisationRulesList.ToInitialPronunciationChangeRomanisationRules();
 
+            MedialRomanisationRules = MedialRomanisationRulesList.ToMedialRomanisationRules();
+
+            FinalRomanisationRules = FinalRomanisationRulesList.ToFinalRomanisationRules();
+            FinalPronunciationChangeRomanisationRules = FinalPronunciationChangeRomanisationRulesList.ToFinalPronunciationChangeRomanisationRules();
         }
 
-        public override string RomaniseSyllable(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null)
+        public override string RomaniseSyllable(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null)
         {
             var StringBuilder1 = new StringBuilder();
 
-            StringBuilder1.Append(RomaniseInitial(Syllable1, PrecedingSyllable, SucceedingSyllable));
-            StringBuilder1.Append(RomaniseMedial(Syllable1, PrecedingSyllable, SucceedingSyllable));
-            StringBuilder1.Append(RomaniseFinal(Syllable1, PrecedingSyllable, SucceedingSyllable));
+            StringBuilder1.Append(RomaniseInitial(Syllable, PrecedingSyllable, SucceedingSyllable));
+            StringBuilder1.Append(RomaniseMedial(Syllable, PrecedingSyllable, SucceedingSyllable));
+            StringBuilder1.Append(RomaniseFinal(Syllable, PrecedingSyllable, SucceedingSyllable));
 
             return StringBuilder1.ToString();
         }
 
-        private string RomaniseInitial(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
+        private string RomaniseInitial(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
         {
             if (PrecedingSyllable != null)
             {
-                if (InitialPronunciationChangesRomanisationRules.Any(c => c.PrecedingFinal == PrecedingSyllable.Value.Final && c.Initial == Syllable1.Initial))
+                var PronunciationChangeRomanisationRule = InitialPronunciationChangeRomanisationRules.FirstOrDefault(r => r.PrecedingFinal == PrecedingSyllable.Value.Final && r.Initial == Syllable.Initial);
+
+                if (PronunciationChangeRomanisationRule != null)
                 {
-                    return InitialPronunciationChangesRomanisationRules.First(c => c.PrecedingFinal == PrecedingSyllable.Value.Final && c.Initial == Syllable1.Initial).Romanisation;
+                    return PronunciationChangeRomanisationRule.Romanisation;
                 }
             }
 
             if (PrecedingSyllable == null)
             {
-                var IsIMedial = (Syllable1.Medial == KoreanLetter.I || Syllable1.Medial == KoreanLetter.Ya || Syllable1.Medial == KoreanLetter.Yae || Syllable1.Medial == KoreanLetter.Yeo || Syllable1.Medial == KoreanLetter.Ye || Syllable1.Medial == KoreanLetter.Yo || Syllable1.Medial == KoreanLetter.Yu);
+                var IsSInitial = (Syllable.Initial == KoreanLetter.Shiot || Syllable.Initial == KoreanLetter.SsangShiot);
 
-                if (UseSh && (Syllable1.Initial == KoreanLetter.Shiot || Syllable1.Initial == KoreanLetter.SsangShiot) && IsIMedial)
+                if (IsSInitial && IsIMedial(Syllable.Medial))
                 {
-                    return "sh";
-                }
-                else if ((Syllable1.Initial == KoreanLetter.Shiot || Syllable1.Initial == KoreanLetter.SsangShiot) && IsIMedial)
-                {
-                    return "s";
+                    if (UseSh)
+                    {
+                        return "sh";
+                    }
+                    else
+                    {
+                        return "s";
+                    }
                 }
             }
 
-            return InitialRomanisationRules.First(r => r.Initial == Syllable1.Initial).Romanisation;
+            return InitialRomanisationRules.First(r => r.Initial == Syllable.Initial).Romanisation;
         }
 
-        private string RomaniseMedial(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
+        private string RomaniseMedial(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
         {
-            return MedialRomanisationRules.First(m => m.Medial == Syllable1.Medial).Romanisation;
+            return MedialRomanisationRules.First(r => r.Medial == Syllable.Medial).Romanisation;
         }
 
-        private string RomaniseFinal(KoreanSyllable Syllable1, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
+        private string RomaniseFinal(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
         {
-            if (Syllable1.HasFinal)
+            if (Syllable.HasFinal)
             {
                 if (SucceedingSyllable != null)
                 {
-                    if (FinalPronunciationChangesRomanisationRules.Any(c => c.Final == Syllable1.Final && c.SucceedingInitial == SucceedingSyllable.Value.Initial))
-                    {
-                        return FinalPronunciationChangesRomanisationRules.First(c => c.Final == Syllable1.Final && c.SucceedingInitial == SucceedingSyllable.Value.Initial).Romanisation;
+                    var PronunciationChangeRomanisationRule = FinalPronunciationChangeRomanisationRules.FirstOrDefault(r => r.Final == Syllable.Final && r.SucceedingInitial == SucceedingSyllable.Value.Initial);
 
+                    if (PronunciationChangeRomanisationRule != null)
+                    {
+                        return PronunciationChangeRomanisationRule.Romanisation;
                     }
                 }
 
-                return FinalRomanisationRules.First(f => f.Final == Syllable1.Final).Romanisation;
+                return FinalRomanisationRules.First(r => r.Final == Syllable.Final).Romanisation;
             }
 
             return "";
         }
 
-        public override string RomaniseLetter(KoreanLetter Jamo1)
+        public override string RomaniseLetter(KoreanLetter Letter)
         {
             throw new NotImplementedException();
         }

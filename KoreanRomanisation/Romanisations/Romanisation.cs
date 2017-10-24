@@ -93,6 +93,18 @@ namespace KoreanRomanisation
             return TextBlock1;
         }
 
+        /// <summary>
+        /// Returns whether or not the given letter is an 'i' medial, which is useful for romanising the letters shiot and ssangshiot.
+        /// </summary>
+        /// <param name="Letter"></param>
+        /// <returns></returns>
+        protected bool IsIMedial(KoreanLetter Letter)
+        {
+            var IMedials = new List<KoreanLetter>() { KoreanLetter.I, KoreanLetter.Ya, KoreanLetter.Yae, KoreanLetter.Yeo, KoreanLetter.Ye, KoreanLetter.Yo, KoreanLetter.Yu };
+
+            return IMedials.Any(m => m == Letter);
+        }
+
         public string RomaniseText(string Text)
         {
             var TextBlock1 = GetTextBlock(Text);
