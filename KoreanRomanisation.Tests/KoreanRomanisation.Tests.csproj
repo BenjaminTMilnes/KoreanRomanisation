@@ -77,7 +77,7 @@
     <Compile Include="RevisedRomanisation\OneSyllableTests.cs" />
     <Compile Include="KoreanSyllableTests.cs" />
     <Compile Include="SimplifiedRomanisation\OneSyllableTests.cs" />
-    <Compile Include="YaleRomanisation\OneSyllableTests.cs" />
+    <Compile Include="YaleRomanisationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KoreanRomanisation\KoreanRomanisation.csproj">

@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
 namespace KoreanRomanisation.Tests
 {
-   public  class OneSyllableTests
+    /// <summary>
+    /// A set of tests for the Yale Romanisation converter.
+    /// </summary>
+    public sealed class YaleRomanisationTests
     {
-        private readonly YaleRomanisation YaleRomanisation1;
+        private YaleRomanisation YaleRomanisation1;
 
-        public OneSyllableTests()
+        public YaleRomanisationTests()
         {
             YaleRomanisation1 = new YaleRomanisation();
         }
@@ -72,10 +70,11 @@ namespace KoreanRomanisation.Tests
         [InlineData("같", "kath")]
         [InlineData("갚", "kaph")]
         [InlineData("갛", "kah")]
-        public void Romanise(string Korean, string Romanisation)
+        public void RomaniseTextTest(string Korean, string ExpectedRomanisation)
         {
             YaleRomanisation1.UseSh = false;
-            Assert.Equal(Romanisation, YaleRomanisation1.RomaniseText(Korean));
-        }        
+
+            Assert.Equal(ExpectedRomanisation, YaleRomanisation1.RomaniseText(Korean));
+        }
     }
 }
