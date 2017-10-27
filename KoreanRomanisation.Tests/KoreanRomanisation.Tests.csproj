@@ -70,7 +70,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="JamoTests.cs" />
+    <Compile Include="KoreanLetterTests.cs" />
     <Compile Include="McCuneReischauerRomanisation\OneSyllableTests.cs" />
     <Compile Include="McCuneReischauerRomanisation\TwoSyllableTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
