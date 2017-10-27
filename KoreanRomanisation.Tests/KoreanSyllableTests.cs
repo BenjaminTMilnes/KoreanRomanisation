@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace KoreanRomanisation.Tests
 {
+    /// <summary>
+    /// A set of tests for the KoreanSyllable structure.
+    /// </summary>
     [TestClass]
-    public class SyllableTests
+    public class KoreanSyllableTests
     {
+        #region Initial Character Codes Tests
+
         [TestMethod]
-        public void JamoCodesGaTest()
+        public void CharacterCodesGaTest()
         {
             var Syllable1 = new KoreanSyllable('가');
 
@@ -21,7 +21,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesNaTest()
+        public void CharacterCodesNaTest()
         {
             var Syllable1 = new KoreanSyllable('나');
 
@@ -31,7 +31,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesDaTest()
+        public void CharacterCodesDaTest()
         {
             var Syllable1 = new KoreanSyllable('다');
 
@@ -41,7 +41,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesMaTest()
+        public void CharacterCodesMaTest()
         {
             var Syllable1 = new KoreanSyllable('마');
 
@@ -51,7 +51,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesBaTest()
+        public void CharacterCodesBaTest()
         {
             var Syllable1 = new KoreanSyllable('바');
 
@@ -61,7 +61,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesSaTest()
+        public void CharacterCodesSaTest()
         {
             var Syllable1 = new KoreanSyllable('사');
 
@@ -71,7 +71,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesATest()
+        public void CharacterCodesATest()
         {
             var Syllable1 = new KoreanSyllable('아');
 
@@ -81,7 +81,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesJaTest()
+        public void CharacterCodesJaTest()
         {
             var Syllable1 = new KoreanSyllable('자');
 
@@ -91,7 +91,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesHaTest()
+        public void CharacterCodesHaTest()
         {
             var Syllable1 = new KoreanSyllable('하');
 
@@ -100,8 +100,12 @@ namespace KoreanRomanisation.Tests
             Assert.AreEqual(KoreanLetter.None, Syllable1.Final);
         }
 
+        #endregion
+
+        #region Medial Character Codes Tests
+
         [TestMethod]
-        public void JamoCodesGeoTest()
+        public void CharacterCodesGeoTest()
         {
             var Syllable1 = new KoreanSyllable('거');
 
@@ -111,7 +115,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesGoTest()
+        public void CharacterCodesGoTest()
         {
             var Syllable1 = new KoreanSyllable('고');
 
@@ -121,7 +125,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesGuTest()
+        public void CharacterCodesGuTest()
         {
             var Syllable1 = new KoreanSyllable('구');
 
@@ -131,7 +135,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesGeuTest()
+        public void CharacterCodesGeuTest()
         {
             var Syllable1 = new KoreanSyllable('그');
 
@@ -141,7 +145,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesGiTest()
+        public void CharacterCodesGiTest()
         {
             var Syllable1 = new KoreanSyllable('기');
 
@@ -150,8 +154,12 @@ namespace KoreanRomanisation.Tests
             Assert.AreEqual(KoreanLetter.None, Syllable1.Final);
         }
 
+        #endregion
+
+        #region Final Character Codes Tests
+
         [TestMethod]
-        public void JamoCodesGakTest()
+        public void CharacterCodesGakTest()
         {
             var Syllable1 = new KoreanSyllable('각');
 
@@ -161,7 +169,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesGanTest()
+        public void CharacterCodesGanTest()
         {
             var Syllable1 = new KoreanSyllable('간');
 
@@ -171,7 +179,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesGat1Test()
+        public void CharacterCodesGat1Test()
         {
             var Syllable1 = new KoreanSyllable('갇');
 
@@ -181,7 +189,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesGamTest()
+        public void CharacterCodesGamTest()
         {
             var Syllable1 = new KoreanSyllable('감');
 
@@ -191,7 +199,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesGapTest()
+        public void CharacterCodesGapTest()
         {
             var Syllable1 = new KoreanSyllable('갑');
 
@@ -201,7 +209,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesGat2Test()
+        public void CharacterCodesGat2Test()
         {
             var Syllable1 = new KoreanSyllable('갓');
 
@@ -211,7 +219,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesGangTest()
+        public void CharacterCodesGangTest()
         {
             var Syllable1 = new KoreanSyllable('강');
 
@@ -221,7 +229,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesGat3Test()
+        public void CharacterCodesGat3Test()
         {
             var Syllable1 = new KoreanSyllable('갖');
 
@@ -231,7 +239,7 @@ namespace KoreanRomanisation.Tests
         }
 
         [TestMethod]
-        public void JamoCodesGat4Test()
+        public void CharacterCodesGat4Test()
         {
             var Syllable1 = new KoreanSyllable('갛');
 
@@ -239,5 +247,7 @@ namespace KoreanRomanisation.Tests
             Assert.AreEqual(KoreanLetter.A, Syllable1.Medial);
             Assert.AreEqual(KoreanLetter.HieutBatchim, Syllable1.Final);
         }
+
+        #endregion
     }
 }
