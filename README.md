@@ -12,7 +12,7 @@ readability, writeability, and so on).
 
 The first part of the process is to divide the text that is given into the sections - the Korean text and the non-Korean text. The non-Korean sections are ignored by 
 the romanisation (and can either be left in the text as they are, or removed to leave only the romanised Korean). This part of the process
-is done by the _GetTextBlock()_ function in the base *Romanisation* class. This function takes a string, and returns a TextBlock object, which contains a list of TextSections, 
+is done by the **GetTextBlock()** function in the base **Romanisation** class. This function takes a string, and returns a TextBlock object, which contains a list of TextSections, 
 which are either of the type KoreanTextSection for where there is Korean text in the string, or NonKoreanTextSection for everything else.
 
 The RomaniseTextBlock() function within Romanisation then takes this TextBlock object, and goes through each section of it. For each KoreanTextSection, it will go through each 
