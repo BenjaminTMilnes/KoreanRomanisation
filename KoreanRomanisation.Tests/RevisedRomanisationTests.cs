@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
-namespace KoreanRomanisation.Tests.RevisedRomanisation
+namespace KoreanRomanisation.Tests
 {
-    public class OneSyllableTests
+    /// <summary>
+    /// A set of tests for the Revised Romanisation converter.
+    /// </summary>
+    public sealed class RevisedRomanisationTests
     {
-        private readonly KoreanRomanisation.RevisedRomanisation RevisedRomanisation1;
+        private RevisedRomanisation RevisedRomanisation1;
 
-        public OneSyllableTests()
+        public RevisedRomanisationTests()
         {
-            RevisedRomanisation1 = new KoreanRomanisation.RevisedRomanisation();
+            RevisedRomanisation1 = new RevisedRomanisation();
         }
 
         [Theory]
@@ -390,10 +388,11 @@ namespace KoreanRomanisation.Tests.RevisedRomanisation
         [InlineData("같하", "gatha")]
         [InlineData("갚하", "gapha")]
         [InlineData("갛하", "gatha")]
-        public void Romanise(string Korean, string Romanisation)
+        public void RomaniseTextTest(string Korean, string ExpectedRomanisation)
         {
             RevisedRomanisation1.UseSh = false;
-            Assert.Equal(Romanisation, RevisedRomanisation1.RomaniseText(Korean));
+
+            Assert.Equal(ExpectedRomanisation, RevisedRomanisation1.RomaniseText(Korean));
         }
 
         [Theory]
@@ -411,10 +410,11 @@ namespace KoreanRomanisation.Tests.RevisedRomanisation
         [InlineData("쎼", "sshye")]
         [InlineData("쑈", "sshyo")]
         [InlineData("쓔", "sshyu")]
-        public void RomaniseUsingSh(string Korean, string Romanisation)
+        public void RomaniseTextUsingShTest(string Korean, string ExpectedRomanisation)
         {
             RevisedRomanisation1.UseSh = true;
-            Assert.Equal(Romanisation, RevisedRomanisation1.RomaniseText(Korean));
+
+            Assert.Equal(ExpectedRomanisation, RevisedRomanisation1.RomaniseText(Korean));
         }
     }
 }
