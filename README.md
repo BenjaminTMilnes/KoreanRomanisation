@@ -1,4 +1,4 @@
-KoreanRomanisation
+﻿KoreanRomanisation
 ==================
 
 KoreanRomanisation is a C# class library for romanising Korean text.
@@ -17,3 +17,26 @@ This is useful for implementing some of the rules of romanisation.
 The KoreanSyllable struct encapsulates a syllable in the Korean language - which comprises of an initial, a medial, and a final letter, or just an initial and a medial letter.
 Every possible syllable that exists in Korean is stored as a separate character code in Unicode, but in order to romanise any Korean text, you need to know what the
 individual letters of the syllable are. The KoreanSyllable struct provides methods for identifying the letters within a syllable.
+
+### TupleList
+
+There are two TupleList classes, and they both simply represent a list of tuples.
+
+These simple classes allow for easy hardcoding of romanisation data into the class library. The shortest way to express a romanisation rule is as a tuple, which requires
+minimal markup. TupleList allows a large number of tuples to be added to a list with very little markup.
+
+### Romanisation
+
+The Romanisation class acts as a base class for other specific romanisation schemes. It encapsulates the basic properties of a romanisation converter, such as whether it will
+explicitly romanise ㅅ as 'sh' when it is followed by ㅣ. It also contains the functions used to deconstruct a passage of text into its Korean and non-Korean components, 
+as well as core, overridable functions that are used to romanise the text.
+
+### IRomanisation
+
+A further abstraction of the concept of a romanisation converter. There are only three official systems of romanisation for Korean, so it is unlikely that anyone would want
+to write a custom converter - even less so one that didn't implement the Romanisation base class. But if they did, the IRomanisation describes the basic features of a
+romanisation converter.
+
+### Unit Tests
+
+The KoreanRomanisation library is covered by a large number of unit tests - 1239 of them.
