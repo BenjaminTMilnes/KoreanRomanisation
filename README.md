@@ -3,6 +3,30 @@
 
 KoreanRomanisation is a C# class library for romanising Korean text.
 
+## Principle of Operation
+
+With this class library, it is possible to take a string of text, which contains some characters from the native Korean script - Hangeul - and convert it 
+into a string of text where the Korean characters have been replaced with a representation of their pronunciation using the English alphabet. This class library
+can romanise Korean text using any of four systems of romanisation (different romanisation systems have different advantages and disadvantages in terms of accuracy,
+readability, writeability, and so on).
+
+The first part of this process is to divide the string of text that is given into the sections of it that contain Korean text, and the sections of it that don't. Those
+sections which contain no Korean text are ignored by the romanisation converters (and can either be left in the text string as they are, or removed). This part of the process
+is done by the GetTextBlock() function in the base Romanisation class. This function takes a string, and returns a TextBlock object, which contains a list of TextSections, 
+which are either of the type KoreanTextSection for where there is Korean text in the string, or NonKoreanTextSection for everything else.
+
+The RomaniseTextBlock() function within Romanisation then takes this TextBlock object, and goes through each section of it. For each KoreanTextSection, it will go through each 
+of the Korean syllables within that section, and romanise each one based on the rules of the romanisation system.
+
+There are four derived classes: McCuneReischauerRomanisation, RevisedRomanisation, YaleRomanisation, and SimplifiedRomanisation, which each inherit from Romanisation, and can
+romanise text according to the rules of those four systems of romanisation. The majority of the rules for each system are defined in a set of five enumerable properties of the class;
+however, in several of the systems of romanisation there are certain rules which apply only under very specific circumstances, and depend on a very specific combination of initials, 
+medials, and finals over several syllables, and so the entirety of the rules cannot be expressed in this way, and finer rules are sometimes just defined as part of the 
+basic romanisation functions for each class.
+
+To romanise text according to a specific system, first create an instance of the romanisation class for the system you want to use, and then call the RomaniseText() function, which
+takes a string as its argument, and returns a single string with the romanised text.
+
 ## Key Components
 
 ### Structures to identify Korean characters
