@@ -72,11 +72,11 @@
   <ItemGroup>
     <Compile Include="KoreanLetterTests.cs" />
     <Compile Include="McCuneReischauerRomanisation\OneSyllableTests.cs" />
-    <Compile Include="McCuneReischauerRomanisation\TwoSyllableTests.cs" />
+    <Compile Include="McCuneReischauerRomanisationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RevisedRomanisation\OneSyllableTests.cs" />
+    <Compile Include="RevisedRomanisationTests.cs" />
     <Compile Include="KoreanSyllableTests.cs" />
-    <Compile Include="SimplifiedRomanisation\OneSyllableTests.cs" />
+    <Compile Include="SimplifiedRomanisationTests.cs" />
     <Compile Include="YaleRomanisationTests.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +91,7 @@
   <ItemGroup>
     <Analyzer Include="..\KoreanRomanisation\packages\xunit.analyzers.0.7.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

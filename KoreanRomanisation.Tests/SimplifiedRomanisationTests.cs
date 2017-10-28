@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
-namespace KoreanRomanisation.Tests.SimplifiedRomanisation
+namespace KoreanRomanisation.Tests
 {
-    public class OneSyllableTests
+    /// <summary>
+    /// A set of tests for the Simplified Romanisation converter.
+    /// </summary>
+    public sealed class SimplifiedRomanisationTests
     {
-        private readonly KoreanRomanisation.SimplifiedRomanisation SimplifiedRomanisation1;
+        private SimplifiedRomanisation SimplifiedRomanisation1;
 
-        public OneSyllableTests()
+        public SimplifiedRomanisationTests()
         {
-            SimplifiedRomanisation1 = new KoreanRomanisation.SimplifiedRomanisation();
+            SimplifiedRomanisation1 = new SimplifiedRomanisation();
         }
 
         [Theory]
@@ -390,10 +388,11 @@ namespace KoreanRomanisation.Tests.SimplifiedRomanisation
         [InlineData("같하", "kata")]
         [InlineData("갚하", "kapa")]
         [InlineData("갛하", "kata")]
-        public void Romanise(string Korean, string Romanisation)
+        public void RomaniseTextTest(string Korean, string ExpectedRomanisation)
         {
             SimplifiedRomanisation1.UseSh = false;
-            Assert.Equal(Romanisation, SimplifiedRomanisation1.RomaniseText(Korean));
+
+            Assert.Equal(ExpectedRomanisation, SimplifiedRomanisation1.RomaniseText(Korean));
         }
 
         [Theory]
@@ -411,10 +410,11 @@ namespace KoreanRomanisation.Tests.SimplifiedRomanisation
         [InlineData("쎼", "shyei")]
         [InlineData("쑈", "shyo")]
         [InlineData("쓔", "shyoo")]
-        public void RomaniseUsingSh(string Korean, string Romanisation)
+        public void RomaniseTextUsingShTest(string Korean, string ExpectedRomanisation)
         {
             SimplifiedRomanisation1.UseSh = true;
-            Assert.Equal(Romanisation, SimplifiedRomanisation1.RomaniseText(Korean));
+
+            Assert.Equal(ExpectedRomanisation, SimplifiedRomanisation1.RomaniseText(Korean));
         }
     }
 }
