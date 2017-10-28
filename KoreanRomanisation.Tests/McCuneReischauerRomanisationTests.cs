@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
-namespace KoreanRomanisation.Tests.McCuneReischauerRomanisation
+namespace KoreanRomanisation.Tests
 {
-    public class TwoSyllableTests
+    /// <summary>
+    /// A set of tests for the McCune-Reischauer Romanisation converter.
+    /// </summary>
+    public sealed class McCuneReischauerRomanisationTests
     {
-        private readonly KoreanRomanisation.McCuneReischauerRomanisation McCuneReischauerRomanisation1;
+        private McCuneReischauerRomanisation McCuneReischauerRomanisation1;
 
-        public TwoSyllableTests()
+        public McCuneReischauerRomanisationTests()
         {
-            McCuneReischauerRomanisation1 = new KoreanRomanisation.McCuneReischauerRomanisation();
+            McCuneReischauerRomanisation1 = new McCuneReischauerRomanisation();
         }
 
         [Theory]
@@ -378,9 +376,33 @@ namespace KoreanRomanisation.Tests.McCuneReischauerRomanisation
         [InlineData("같하", "katha")]
         [InlineData("갚하", "kapha")]
         [InlineData("갛하", "katha")]
-        public void Romanise(string Korean, string Romanisation)
+        public void RomaniseTextTest(string Korean, string ExpectedRomanisation)
         {
-            Assert.Equal(Romanisation, McCuneReischauerRomanisation1.RomaniseText(Korean));
+            McCuneReischauerRomanisation1.UseSh = false;
+
+            Assert.Equal(ExpectedRomanisation, McCuneReischauerRomanisation1.RomaniseText(Korean));
+        }
+
+        [Theory]
+        [InlineData("시", "shi")]
+        [InlineData("샤", "shya")]
+        [InlineData("셔", "shyŏ")]
+        [InlineData("섀", "shyae")]
+        [InlineData("셰", "shye")]
+        [InlineData("쇼", "shyo")]
+        [InlineData("슈", "shyu")]
+        [InlineData("씨", "sshi")]
+        [InlineData("쌰", "sshya")]
+        [InlineData("쎠", "sshyŏ")]
+        [InlineData("썌", "sshyae")]
+        [InlineData("쎼", "sshye")]
+        [InlineData("쑈", "sshyo")]
+        [InlineData("쓔", "sshyu")]
+        public void RomaniseTextUsingShTest(string Korean, string ExpectedRomanisation)
+        {
+            McCuneReischauerRomanisation1.UseSh = true;
+
+            Assert.Equal(ExpectedRomanisation, McCuneReischauerRomanisation1.RomaniseText(Korean));
         }
     }
 }

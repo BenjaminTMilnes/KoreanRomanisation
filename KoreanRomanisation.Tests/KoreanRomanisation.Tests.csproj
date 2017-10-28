@@ -71,7 +71,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="KoreanLetterTests.cs" />
-    <Compile Include="McCuneReischauerRomanisation\OneSyllableTests.cs" />
     <Compile Include="McCuneReischauerRomanisationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RevisedRomanisationTests.cs" />
