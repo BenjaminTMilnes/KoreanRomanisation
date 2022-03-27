@@ -53,3 +53,5 @@ C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\b
 C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\xunit.assert.xml
 C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\xunit.core.xml
 C:\Users\Ben\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\xunit.execution.desktop.xml
+C:\Users\benja\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\obj\Debug\KoreanRomanisation.Tests.csprojAssemblyReference.cache
+C:\Users\benja\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\obj\Debug\KoreanRomanisation.Tests.csproj.CoreCompileInputs.cache

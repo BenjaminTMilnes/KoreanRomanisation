@@ -92,15 +92,6 @@ namespace KoreanRomanisation.Tests
         [InlineData("갏아", "kalh.a")]
         [InlineData("값가", "kapska")]
         [InlineData("값아", "kaps.a")]
-        [InlineData("", "")]
-        [InlineData("", "")]
-        [InlineData("", "")]
-        [InlineData("", "")]
-        [InlineData("", "")]
-        [InlineData("", "")]
-        [InlineData("", "")]
-        [InlineData("", "")]
-        [InlineData("", "")]
         public void RomaniseTextTest(string Korean, string ExpectedRomanisation)
         {
             YaleRomanisation1.UseSh = false;
