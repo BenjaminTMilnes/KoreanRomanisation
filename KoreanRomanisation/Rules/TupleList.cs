@@ -18,7 +18,7 @@ namespace KoreanRomanisation
     }
 
     /// <summary>
-    /// Represents a list of three-item tuples. Makes it easier to hard-coded romanisation rules.
+    /// Represents a list of three-item tuples. Makes it easier to hard-code romanisation rules.
     /// </summary>
     /// <typeparam name="T1"></typeparam>
     /// <typeparam name="T2"></typeparam>
