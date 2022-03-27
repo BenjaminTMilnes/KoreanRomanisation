@@ -6,6 +6,7 @@ namespace KoreanRomanisation
 {
     /// <summary>
     /// A class for romanising text according to the Simplified Romanisation of Korean.
+    /// The Simplified Romanisation of Korean is a system of romanisation created by me (B. T. Milnes). It's designed to be easy to read for people who have no knowledge of Korean at all. One of the problems with the Revised Romanisation of Korean is that it contains many vowel clusters that English speakers have difficulty knowing how to pronounce - like eo and eu. The Simplified Romanisation uses vowel and consonant clusters that first-language English speakers are more likely to recognise (at the cost of being a less useful romanisation system for experienced Korean speakers).
     /// </summary>
     public sealed class SimplifiedRomanisation : Romanisation
     {
@@ -27,10 +28,10 @@ namespace KoreanRomanisation
                 {KoreanLetter.Bieup, "p"},
                 {KoreanLetter.SsangBieup, "pp"},
                 {KoreanLetter.Shiot, "s"},
-                {KoreanLetter.SsangShiot, "ts"},
+                {KoreanLetter.SsangShiot, "ts"}, // Using 'ts' for ㅆ helps non-Korean-speakers understand the tenseness of it.
                 {KoreanLetter.Ieung, ""},
                 {KoreanLetter.Jieut, "ch"},
-                {KoreanLetter.SsangJieut, "tch"},
+                {KoreanLetter.SsangJieut, "tch"}, // Using 'tch' for ㅉ helps non-Korean-speakers understand the tenseness of it.
                 {KoreanLetter.Chieut, "ch"},
                 {KoreanLetter.Kieuk, "k"},
                 {KoreanLetter.Tieut, "t"},
@@ -249,6 +250,8 @@ namespace KoreanRomanisation
 
         private string RomaniseInitial(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
         {
+            // First check if the romanisation must change based on the preceding syllable. 
+
             if (PrecedingSyllable != null)
             {
                 var PronunciationChangeRomanisationRule = InitialPronunciationChangeRomanisationRules.FirstOrDefault(r => r.PrecedingFinal == PrecedingSyllable.Value.Final && r.Initial == Syllable.Initial);
@@ -259,12 +262,16 @@ namespace KoreanRomanisation
                 }
             }
 
+            // Then check if the initial should be romanised as sh, if the UseSh property is set to true, and the following medial is i.
+
             var IsSInitial = (Syllable.Initial == KoreanLetter.Shiot || Syllable.Initial == KoreanLetter.SsangShiot);
 
             if (UseSh && IsSInitial && IsIMedial(Syllable.Medial))
             {
                 return "sh";
             }
+
+            // Otherwise use the default initial romanisation.
 
             return InitialRomanisationRules.First(r => r.Initial == Syllable.Initial).Romanisation;
         }
@@ -278,6 +285,8 @@ namespace KoreanRomanisation
         {
             if (Syllable.HasFinal)
             {
+                // First check if the romanisation must change based on the succeeding syllable.
+
                 if (SucceedingSyllable != null)
                 {
                     var PronunciationChangeRomanisationRule = FinalPronunciationChangeRomanisationRules.FirstOrDefault(r => r.Final == Syllable.Final && r.SucceedingInitial == SucceedingSyllable.Value.Initial);
@@ -287,6 +296,8 @@ namespace KoreanRomanisation
                         return PronunciationChangeRomanisationRule.Romanisation;
                     }
                 }
+
+                // Otherwise use the default final romanisation.
 
                 return FinalRomanisationRules.First(r => r.Final == Syllable.Final).Romanisation;
             }

@@ -230,6 +230,8 @@ namespace KoreanRomanisation
 
         private string RomaniseInitial(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
         {
+            // First check if the romanisation must change based on the preceding syllable.
+
             if (PrecedingSyllable != null)
             {
                 var PronunciationChangeRomanisationRule = InitialPronunciationChangeRomanisationRules.FirstOrDefault(r => r.PrecedingFinal == PrecedingSyllable.Value.Final && r.Initial == Syllable.Initial);
@@ -240,6 +242,8 @@ namespace KoreanRomanisation
                 }
             }
 
+            // Then check if the initial should be romanised as sh or ssh, if the UseSh property is set to true, and the following medial is i.
+
             if (UseSh && Syllable.Initial == KoreanLetter.Shiot && IsIMedial(Syllable.Medial))
             {
                 return "sh";
@@ -248,6 +252,8 @@ namespace KoreanRomanisation
             {
                 return "ssh";
             }
+
+            // Otherwise use the default initial romanisation.
 
             return InitialRomanisationRules.First(r => r.Initial == Syllable.Initial).Romanisation;
         }
@@ -261,6 +267,8 @@ namespace KoreanRomanisation
         {
             if (Syllable.HasFinal)
             {
+                // First check if the romanisation must change based on the succeeding syllable.
+
                 if (SucceedingSyllable != null)
                 {
                     var PronunciationChangeRomanisationRule = FinalPronunciationChangeRomanisationRules.FirstOrDefault(r => r.Final == Syllable.Final && r.SucceedingInitial == SucceedingSyllable.Value.Initial);
@@ -270,6 +278,8 @@ namespace KoreanRomanisation
                         return PronunciationChangeRomanisationRule.Romanisation;
                     }
                 }
+
+                // Otherwise use the default final romanisation.
 
                 return FinalRomanisationRules.First(r => r.Final == Syllable.Final).Romanisation;
             }

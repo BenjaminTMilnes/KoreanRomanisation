@@ -161,6 +161,8 @@ namespace KoreanRomanisation
         {
             if (Syllable.HasFinal)
             {
+                // First check if the romanisation must change based on the succeeding syllable.
+
                 if (SucceedingSyllable != null)
                 {
                     var PronunciationChangeRomanisationRule = FinalPronunciationChangeRomanisationRules.FirstOrDefault(r => r.Final == Syllable.Final && r.SucceedingInitial == SucceedingSyllable.Value.Initial);
@@ -170,6 +172,8 @@ namespace KoreanRomanisation
                         return PronunciationChangeRomanisationRule.Romanisation;
                     }
                 }
+
+                // Otherwise use the default final romanisation.
 
                 return FinalRomanisationRules.First(r => r.Final == Syllable.Final).Romanisation;
             }
