@@ -11,9 +11,9 @@ namespace KoreanRomanisation
     /// <typeparam name="T2"></typeparam>
     public class TupleList<T1, T2> : List<Tuple<T1, T2>>
     {
-        public void Add(T1 Item1, T2 Item2)
+        public void Add(T1 item1, T2 item2)
         {
-            Add(new Tuple<T1, T2>(Item1, Item2));
+            Add(new Tuple<T1, T2>(item1, item2));
         }
     }
 
@@ -25,9 +25,9 @@ namespace KoreanRomanisation
     /// <typeparam name="T3"></typeparam>
     public class TupleList<T1, T2, T3> : List<Tuple<T1, T2, T3>>
     {
-        public void Add(T1 Item1, T2 Item2, T3 Item3)
+        public void Add(T1 item1, T2 item2, T3 item3)
         {
-            Add(new Tuple<T1, T2, T3>(Item1, Item2, Item3));
+            Add(new Tuple<T1, T2, T3>(item1, item2, item3));
         }
     }
 

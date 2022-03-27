@@ -7,9 +7,9 @@
     {
         public string Romanisation { get; protected set; }
 
-        public RomanisationRule(string Romanisation1)
+        public RomanisationRule(string romanisation)
         {
-            Romanisation = Romanisation1;
+            Romanisation = romanisation;
         }
     }
 }

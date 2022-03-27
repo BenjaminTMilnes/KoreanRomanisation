@@ -12,9 +12,9 @@
 
         public NonKoreanTextSection() { }
 
-        public NonKoreanTextSection(string Content1)
+        public NonKoreanTextSection(string content)
         {
-            Content = Content1;
+            Content = content;
         }
     }
 }

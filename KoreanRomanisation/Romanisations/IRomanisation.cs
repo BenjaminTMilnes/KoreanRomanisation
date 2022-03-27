@@ -20,31 +20,31 @@
         /// <summary>
         /// Romanise a given text string.
         /// </summary>
-        /// <param name="Text"></param>
+        /// <param name="text"></param>
         /// <returns></returns>
-        string RomaniseText(string Text);
+        string RomaniseText(string text);
 
         /// <summary>
         /// Romanise a given text block.
         /// </summary>
-        /// <param name="TextBlock1"></param>
+        /// <param name="textBlock"></param>
         /// <returns></returns>
-        string RomaniseTextBlock(TextBlock TextBlock1);
+        string RomaniseTextBlock(TextBlock textBlock);
 
         /// <summary>
         /// Romanise a given Korean syllable.
         /// </summary>
-        /// <param name="Syllable"></param>
-        /// <param name="PrecedingSyllable"></param>
-        /// <param name="SucceedingSyllable"></param>
+        /// <param name="syllable"></param>
+        /// <param name="precedingSyllable"></param>
+        /// <param name="succeedingSyllable"></param>
         /// <returns></returns>
-        string RomaniseSyllable(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null);
+        string RomaniseSyllable(KoreanSyllable syllable, KoreanSyllable? precedingSyllable = null, KoreanSyllable? succeedingSyllable = null);
 
         /// <summary>
         /// Romanise a given Korean letter.
         /// </summary>
-        /// <param name="Letter"></param>
+        /// <param name="letter"></param>
         /// <returns></returns>
-        string RomaniseLetter(KoreanLetter Letter);
+        string RomaniseLetter(KoreanLetter letter);
     }
 }

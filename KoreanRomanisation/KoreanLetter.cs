@@ -110,105 +110,105 @@ namespace KoreanRomanisation
 
         #region Operator Overloads
 
-        public static bool operator ==(KoreanLetter KoreanLetter1, KoreanLetter KoreanLetter2)
+        public static bool operator ==(KoreanLetter koreanLetter1, KoreanLetter koreanLetter2)
         {
-            return KoreanLetter1.CharacterCode == KoreanLetter2.CharacterCode;
+            return koreanLetter1.CharacterCode == koreanLetter2.CharacterCode;
         }
 
-        public static bool operator !=(KoreanLetter KoreanLetter1, KoreanLetter KoreanLetter2)
+        public static bool operator !=(KoreanLetter koreanLetter1, KoreanLetter koreanLetter2)
         {
-            return KoreanLetter1.CharacterCode != KoreanLetter2.CharacterCode;
+            return koreanLetter1.CharacterCode != koreanLetter2.CharacterCode;
         }
 
         #endregion
 
         #region Constructors
 
-        public KoreanLetter(int CharacterCode1)
+        public KoreanLetter(int characterCode)
         {
-            if (!IsAKoreanLetter(CharacterCode1) && CharacterCode1 != -1)
+            if (!IsAKoreanLetter(characterCode) && characterCode != -1)
             {
-                var Message = $"Korean letters have character codes between {FirstKoreanLetterCharacterCode} and {LastKoreanLetterCharacterCode}.";
+                var message = $"Korean letters have character codes between {FirstKoreanLetterCharacterCode} and {LastKoreanLetterCharacterCode}.";
 
-                throw new ArgumentOutOfRangeException(nameof(CharacterCode1), Message);
+                throw new ArgumentOutOfRangeException(nameof(characterCode), message);
             }
 
-            _CharacterCode = CharacterCode1;
+            _CharacterCode = characterCode;
         }
 
-        public static KoreanLetter GetKoreanLetterFromInitialCharacterCode(int InitialCharacterCode1)
+        public static KoreanLetter GetKoreanLetterFromInitialCharacterCode(int initialCharacterCode)
         {
-            if (!IsACommonInitial(FirstCommonInitialCharacterCode + InitialCharacterCode1))
+            if (!IsACommonInitial(FirstCommonInitialCharacterCode + initialCharacterCode))
             {
-                var Message = $"Korean initials are numbered between 0 and { LastCommonInitialCharacterCode - FirstCommonInitialCharacterCode }";
+                var message = $"Korean initials are numbered between 0 and { LastCommonInitialCharacterCode - FirstCommonInitialCharacterCode }";
 
-                throw new ArgumentOutOfRangeException(nameof(InitialCharacterCode1), Message);
+                throw new ArgumentOutOfRangeException(nameof(initialCharacterCode), message);
             }
 
-            return new KoreanLetter(FirstCommonInitialCharacterCode + InitialCharacterCode1);
+            return new KoreanLetter(FirstCommonInitialCharacterCode + initialCharacterCode);
         }
 
-        public static KoreanLetter GetKoreanLetterFromMedialCharacterCode(int MedialCharacterCode1)
+        public static KoreanLetter GetKoreanLetterFromMedialCharacterCode(int medialCharacterCode)
         {
-            if (!IsACommonMedial(FirstCommonMedialCharacterCode + MedialCharacterCode1))
+            if (!IsACommonMedial(FirstCommonMedialCharacterCode + medialCharacterCode))
             {
-                var Message = $"Korean medials are numbered between 0 and { LastCommonMedialCharacterCode - FirstCommonMedialCharacterCode }";
+                var message = $"Korean medials are numbered between 0 and { LastCommonMedialCharacterCode - FirstCommonMedialCharacterCode }";
 
-                throw new ArgumentOutOfRangeException(nameof(MedialCharacterCode1), Message);
+                throw new ArgumentOutOfRangeException(nameof(medialCharacterCode), message);
             }
 
-            return new KoreanLetter(FirstCommonMedialCharacterCode + MedialCharacterCode1);
+            return new KoreanLetter(FirstCommonMedialCharacterCode + medialCharacterCode);
         }
 
-        public static KoreanLetter GetKoreanLetterFromFinalCharacterCode(int FinalCharacterCode1)
+        public static KoreanLetter GetKoreanLetterFromFinalCharacterCode(int finalCharacterCode)
         {
-            if (FinalCharacterCode1 == 0)
+            if (finalCharacterCode == 0)
             {
                 return new KoreanLetter(-1);
             }
 
-            if (!IsACommonFinal(FirstCommonFinalCharacterCode + FinalCharacterCode1 - 1))
+            if (!IsACommonFinal(FirstCommonFinalCharacterCode + finalCharacterCode - 1))
             {
-                var Message = $"Korean finals are numbered between 1 and { LastCommonFinalCharacterCode - FirstCommonFinalCharacterCode + 1 }";
+                var message = $"Korean finals are numbered between 1 and { LastCommonFinalCharacterCode - FirstCommonFinalCharacterCode + 1 }";
 
-                throw new ArgumentOutOfRangeException(nameof(FinalCharacterCode1), Message);
+                throw new ArgumentOutOfRangeException(nameof(finalCharacterCode), message);
             }
 
-            return new KoreanLetter(FirstCommonFinalCharacterCode + FinalCharacterCode1 - 1);
+            return new KoreanLetter(FirstCommonFinalCharacterCode + finalCharacterCode - 1);
         }
 
-        public static bool IsAKoreanLetter(int CharacterCode1)
+        public static bool IsAKoreanLetter(int characterCode)
         {
-            return (CharacterCode1 >= FirstKoreanLetterCharacterCode && CharacterCode1 <= LastKoreanLetterCharacterCode);
+            return (characterCode >= FirstKoreanLetterCharacterCode && characterCode <= LastKoreanLetterCharacterCode);
         }
 
-        public static bool IsACommonInitial(int CharacterCode1)
+        public static bool IsACommonInitial(int characterCode)
         {
-            return (CharacterCode1 >= FirstCommonInitialCharacterCode && CharacterCode1 <= LastCommonInitialCharacterCode);
+            return (characterCode >= FirstCommonInitialCharacterCode && characterCode <= LastCommonInitialCharacterCode);
         }
 
-        public static bool IsACommonMedial(int CharacterCode1)
+        public static bool IsACommonMedial(int characterCode)
         {
-            return (CharacterCode1 >= FirstCommonMedialCharacterCode && CharacterCode1 <= LastCommonMedialCharacterCode);
+            return (characterCode >= FirstCommonMedialCharacterCode && characterCode <= LastCommonMedialCharacterCode);
         }
 
-        public static bool IsACommonFinal(int CharacterCode1)
+        public static bool IsACommonFinal(int characterCode)
         {
-            return (CharacterCode1 >= FirstCommonFinalCharacterCode && CharacterCode1 <= LastCommonFinalCharacterCode);
+            return (characterCode >= FirstCommonFinalCharacterCode && characterCode <= LastCommonFinalCharacterCode);
         }
 
         #endregion
 
         #region Comparisons
 
-        public bool Equals(KoreanLetter KoreanLetter1)
+        public bool Equals(KoreanLetter koreanLetter)
         {
-            if (KoreanLetter1 == null)
+            if (koreanLetter == null)
             {
                 return false;
             }
 
-            return CharacterCode == KoreanLetter1.CharacterCode;
+            return CharacterCode == koreanLetter.CharacterCode;
         }
 
         public bool Equals(char c)
@@ -221,9 +221,9 @@ namespace KoreanRomanisation
             return CharacterCode == i;
         }
 
-        public int CompareTo(KoreanLetter KoreanLetter1)
+        public int CompareTo(KoreanLetter koreanLetter)
         {
-            return CharacterCode.CompareTo(KoreanLetter1.CharacterCode);
+            return CharacterCode.CompareTo(koreanLetter.CharacterCode);
         }
 
         public int CompareTo(char c)
@@ -245,16 +245,16 @@ namespace KoreanRomanisation
             return ToString("H");
         }
 
-        public string ToString(string Format)
+        public string ToString(string format)
         {
-            return ToString(Format, CultureInfo.CurrentCulture);
+            return ToString(format, CultureInfo.CurrentCulture);
         }
 
-        public string ToString(string Format, IFormatProvider FormatProvider)
+        public string ToString(string format, IFormatProvider formatProvider)
         {
-            Format = Format.Replace("H", ((char)_CharacterCode).ToString());
+            format = format.Replace("H", ((char)_CharacterCode).ToString());
 
-            return Format;
+            return format;
         }
 
         #endregion

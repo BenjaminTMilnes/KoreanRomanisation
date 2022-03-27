@@ -7,9 +7,9 @@
     {
         public KoreanLetter Medial { get; private set; }
 
-        public MedialRomanisationRule(KoreanLetter Medial1, string Romanisation1) : base(Romanisation1)
+        public MedialRomanisationRule(KoreanLetter medial, string romanisation) : base(romanisation)
         {
-            Medial = Medial1;
+            Medial = medial;
         }
     }
 }

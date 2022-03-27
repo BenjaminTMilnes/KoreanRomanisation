@@ -69,71 +69,71 @@ namespace KoreanRomanisation
 
         #region Operator Overloads
 
-        public static bool operator ==(KoreanSyllable KoreanSyllable1, KoreanSyllable KoreanSyllable2)
+        public static bool operator ==(KoreanSyllable koreanSyllable1, KoreanSyllable koreanSyllable2)
         {
-            return KoreanSyllable1.CharacterCode == KoreanSyllable2.CharacterCode;
+            return koreanSyllable1.CharacterCode == koreanSyllable2.CharacterCode;
         }
 
-        public static bool operator !=(KoreanSyllable KoreanSyllable1, KoreanSyllable KoreanSyllable2)
+        public static bool operator !=(KoreanSyllable koreanSyllable1, KoreanSyllable koreanSyllable2)
         {
-            return KoreanSyllable1.CharacterCode != KoreanSyllable2.CharacterCode;
+            return koreanSyllable1.CharacterCode != koreanSyllable2.CharacterCode;
         }
 
         #endregion
 
         #region Constructors
 
-        public KoreanSyllable(int CharacterCode1)
+        public KoreanSyllable(int characterCode)
         {
-            if (!IsAKoreanSyllable(CharacterCode1))
+            if (!IsAKoreanSyllable(characterCode))
             {
-                var Message = $"Korean syllables have character codes between {FirstKoreanSyllableCharacterCode} and {LastKoreanSyllableCharacterCode}.";
+                var message = $"Korean syllables have character codes between {FirstKoreanSyllableCharacterCode} and {LastKoreanSyllableCharacterCode}.";
 
-                throw new ArgumentOutOfRangeException(nameof(CharacterCode1), Message);
+                throw new ArgumentOutOfRangeException(nameof(characterCode), message);
             }
 
-            _CharacterCode = CharacterCode1;
+            _CharacterCode = characterCode;
         }
 
-        public KoreanSyllable(int Initial1, int Medial1) : this(Initial1, Medial1, 0) { }
+        public KoreanSyllable(int initial, int medial) : this(initial, medial, 0) { }
 
-        public KoreanSyllable(int Initial1, int Medial1, int Final1)
+        public KoreanSyllable(int initial, int medial, int final)
         {
-            if (Initial1 < 0 || Initial1 >= NumberOfInitials)
+            if (initial < 0 || initial >= NumberOfInitials)
             {
-                throw new ArgumentOutOfRangeException(nameof(Initial1), $"The initial character code must be between 0 and {NumberOfInitials - 1}");
+                throw new ArgumentOutOfRangeException(nameof(initial), $"The initial character code must be between 0 and {NumberOfInitials - 1}");
             }
 
-            if (Medial1 < 0 || Medial1 >= NumberOfMedials)
+            if (medial < 0 || medial >= NumberOfMedials)
             {
-                throw new ArgumentOutOfRangeException(nameof(Medial1), $"The medial character code must be between 0 and {NumberOfMedials - 1}");
+                throw new ArgumentOutOfRangeException(nameof(medial), $"The medial character code must be between 0 and {NumberOfMedials - 1}");
             }
 
-            if (Final1 < 0 || Final1 >= NumberOfFinals)
+            if (final < 0 || final >= NumberOfFinals)
             {
-                throw new ArgumentOutOfRangeException(nameof(Final1), $"The final character code must be between 0 and {NumberOfFinals - 1}");
+                throw new ArgumentOutOfRangeException(nameof(final), $"The final character code must be between 0 and {NumberOfFinals - 1}");
             }
 
-            _CharacterCode = Initial1 * NumberOfMedials * NumberOfFinals + Medial1 * NumberOfFinals + Final1;
+            _CharacterCode = initial * NumberOfMedials * NumberOfFinals + medial * NumberOfFinals + final;
         }
 
-        public static bool IsAKoreanSyllable(int CharacterCode1)
+        public static bool IsAKoreanSyllable(int characterCode)
         {
-            return (CharacterCode1 >= FirstKoreanSyllableCharacterCode && CharacterCode1 <= LastKoreanSyllableCharacterCode);
+            return (characterCode >= FirstKoreanSyllableCharacterCode && characterCode <= LastKoreanSyllableCharacterCode);
         }
 
         #endregion
 
         #region Comparisons
 
-        public bool Equals(KoreanSyllable KoreanSyllable1)
+        public bool Equals(KoreanSyllable koreanSyllable)
         {
-            if (KoreanSyllable1 == null)
+            if (koreanSyllable == null)
             {
                 return false;
             }
 
-            return CharacterCode == KoreanSyllable1.CharacterCode;
+            return CharacterCode == koreanSyllable.CharacterCode;
         }
 
         public bool Equals(char c)
@@ -146,9 +146,9 @@ namespace KoreanRomanisation
             return CharacterCode == i;
         }
 
-        public int CompareTo(KoreanSyllable KoreanSyllable1)
+        public int CompareTo(KoreanSyllable koreanSyllable)
         {
-            return CharacterCode.CompareTo(KoreanSyllable1.CharacterCode);
+            return CharacterCode.CompareTo(koreanSyllable.CharacterCode);
         }
 
         public int CompareTo(char c)
@@ -170,16 +170,16 @@ namespace KoreanRomanisation
             return ToString("S");
         }
 
-        public string ToString(string Format)
+        public string ToString(string format)
         {
-            return ToString(Format, CultureInfo.CurrentCulture);
+            return ToString(format, CultureInfo.CurrentCulture);
         }
 
-        public string ToString(string Format, IFormatProvider FormatProvider)
+        public string ToString(string format, IFormatProvider formatProvider)
         {
-            Format = Format.Replace("S", ((char)_CharacterCode).ToString());
+            format = format.Replace("S", ((char)_CharacterCode).ToString());
 
-            return Format;
+            return format;
         }
 
         #endregion

@@ -46,127 +46,127 @@ namespace KoreanRomanisation
         /// <summary>
         /// Takes a text string and converts it into a text block of Korean and non-Korean text sections.
         /// </summary>
-        /// <param name="Text"></param>
+        /// <param name="text"></param>
         /// <returns></returns>
-        public TextBlock GetTextBlock(string Text)
+        public TextBlock GetTextBlock(string text)
         {
-            var TextBlock1 = new TextBlock();
-            var KoreanTextSection1 = new KoreanTextSection();
-            var NonKoreanTextSection1 = new NonKoreanTextSection();
+            var textBlock = new TextBlock();
+            var koreanTextSection = new KoreanTextSection();
+            var nonKoreanTextSection = new NonKoreanTextSection();
 
-            foreach (var Character in Text)
+            foreach (var character in text)
             {
-                if (KoreanSyllable.IsAKoreanSyllable(Character))
+                if (KoreanSyllable.IsAKoreanSyllable(character))
                 {
-                    var Syllable = new KoreanSyllable(Character);
+                    var syllable = new KoreanSyllable(character);
 
-                    if (NonKoreanTextSection1.Content != "")
+                    if (nonKoreanTextSection.Content != "")
                     {
-                        TextBlock1.TextSections.Add(NonKoreanTextSection1);
-                        NonKoreanTextSection1 = new NonKoreanTextSection();
+                        textBlock.TextSections.Add(nonKoreanTextSection);
+                        nonKoreanTextSection = new NonKoreanTextSection();
                     }
 
-                    KoreanTextSection1.Syllables.Add(Syllable);
+                    koreanTextSection.Syllables.Add(syllable);
                 }
                 else
                 {
-                    if (KoreanTextSection1.Syllables.Any())
+                    if (koreanTextSection.Syllables.Any())
                     {
-                        TextBlock1.TextSections.Add(KoreanTextSection1);
-                        KoreanTextSection1 = new KoreanTextSection();
+                        textBlock.TextSections.Add(koreanTextSection);
+                        koreanTextSection = new KoreanTextSection();
                     }
 
-                    NonKoreanTextSection1.Content += Character;
+                    nonKoreanTextSection.Content += character;
                 }
             }
 
-            if (NonKoreanTextSection1.Content != "")
+            if (nonKoreanTextSection.Content != "")
             {
-                TextBlock1.TextSections.Add(NonKoreanTextSection1);
+                textBlock.TextSections.Add(nonKoreanTextSection);
             }
 
-            if (KoreanTextSection1.Syllables.Any())
+            if (koreanTextSection.Syllables.Any())
             {
-                TextBlock1.TextSections.Add(KoreanTextSection1);
+                textBlock.TextSections.Add(koreanTextSection);
             }
 
-            return TextBlock1;
+            return textBlock;
         }
 
         /// <summary>
         /// Returns whether or not the given letter is an 'i' medial, which is useful for romanising the letters shiot and ssangshiot.
         /// </summary>
-        /// <param name="Letter"></param>
+        /// <param name="letter"></param>
         /// <returns></returns>
-        protected bool IsIMedial(KoreanLetter Letter)
+        protected bool IsIMedial(KoreanLetter letter)
         {
-            var IMedials = new List<KoreanLetter>() { KoreanLetter.I, KoreanLetter.Ya, KoreanLetter.Yae, KoreanLetter.Yeo, KoreanLetter.Ye, KoreanLetter.Yo, KoreanLetter.Yu };
+            var iMedials = new List<KoreanLetter>() { KoreanLetter.I, KoreanLetter.Ya, KoreanLetter.Yae, KoreanLetter.Yeo, KoreanLetter.Ye, KoreanLetter.Yo, KoreanLetter.Yu };
 
-            return IMedials.Any(m => m == Letter);
+            return iMedials.Any(m => m == letter);
         }
 
-        public string RomaniseText(string Text)
+        public string RomaniseText(string text)
         {
-            var TextBlock1 = GetTextBlock(Text);
+            var textBlock = GetTextBlock(text);
 
-            return RomaniseTextBlock(TextBlock1);
+            return RomaniseTextBlock(textBlock);
         }
 
-        public string RomaniseTextBlock(TextBlock TextBlock1)
+        public string RomaniseTextBlock(TextBlock textBlock)
         {
-            var StringBuilder1 = new StringBuilder();
+            var stringBuilder = new StringBuilder();
 
-            foreach (var TextSection in TextBlock1.TextSections)
+            foreach (var textSection in textBlock.TextSections)
             {
-                if (TextSection is KoreanTextSection)
+                if (textSection is KoreanTextSection)
                 {
-                    var KoreanTextSection1 = TextSection as KoreanTextSection;
-                    var Syllables = KoreanTextSection1.Syllables.ToArray();
+                    var koreanTextSection = textSection as KoreanTextSection;
+                    var syllables = koreanTextSection.Syllables.ToArray();
 
-                    if (Syllables.Length > 1)
+                    if (syllables.Length > 1)
                     {
-                        for (var i = 0; i < Syllables.Length; i++)
+                        for (var i = 0; i < syllables.Length; i++)
                         {
-                            KoreanSyllable? PrecedingSyllable = null;
-                            KoreanSyllable Syllable = Syllables[i];
-                            KoreanSyllable? SucceedingSyllable = null;
+                            KoreanSyllable? precedingSyllable = null;
+                            KoreanSyllable syllable = syllables[i];
+                            KoreanSyllable? succeedingSyllable = null;
 
-                            var RomanisedText = "";
+                            var romanisedText = "";
 
                             if (i > 0)
                             {
-                                PrecedingSyllable = Syllables[i - 1];
+                                precedingSyllable = syllables[i - 1];
                             }
-                            else if (i < Syllables.Length - 1)
+                            else if (i < syllables.Length - 1)
                             {
-                                SucceedingSyllable = Syllables[i + 1];
+                                succeedingSyllable = syllables[i + 1];
                             }
 
-                            RomanisedText = RomaniseSyllable(Syllable, PrecedingSyllable, SucceedingSyllable);
+                            romanisedText = RomaniseSyllable(syllable, precedingSyllable, succeedingSyllable);
 
-                            StringBuilder1.Append(RomanisedText);
+                            stringBuilder.Append(romanisedText);
                         }
                     }
-                    else if (Syllables.Length == 1)
+                    else if (syllables.Length == 1)
                     {
-                        var RomanisedText = RomaniseSyllable(Syllables[0]);
+                        var romanisedText = RomaniseSyllable(syllables[0]);
 
-                        StringBuilder1.Append(RomanisedText);
+                        stringBuilder.Append(romanisedText);
                     }
                 }
-                else if (TextSection is NonKoreanTextSection)
+                else if (textSection is NonKoreanTextSection)
                 {
-                    var Content = (TextSection as NonKoreanTextSection).Content;
+                    var content = (textSection as NonKoreanTextSection).Content;
 
-                    StringBuilder1.Append(Content);
+                    stringBuilder.Append(content);
                 }
             }
 
-            return StringBuilder1.ToString();
+            return stringBuilder.ToString();
         }
 
-        public abstract string RomaniseSyllable(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null);
-        public abstract string RomaniseLetter(KoreanLetter Letter);
+        public abstract string RomaniseSyllable(KoreanSyllable syllable, KoreanSyllable? precedingSyllable = null, KoreanSyllable? succeedingSyllable = null);
+        public abstract string RomaniseLetter(KoreanLetter letter);
 
         #endregion
     }

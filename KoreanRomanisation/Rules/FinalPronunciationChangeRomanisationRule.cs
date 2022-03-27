@@ -8,10 +8,10 @@
         public KoreanLetter Final { get; private set; }
         public KoreanLetter SucceedingInitial { get; private set; }
 
-        public FinalPronunciationChangeRomanisationRule(KoreanLetter Final1, KoreanLetter SucceedingInitial1, string Romanisation1) : base(Romanisation1)
+        public FinalPronunciationChangeRomanisationRule(KoreanLetter final, KoreanLetter succeedingInitial, string romanisation) : base(romanisation)
         {
-            Final = Final1;
-            SucceedingInitial = SucceedingInitial1;
+            Final = final;
+            SucceedingInitial = succeedingInitial;
         }
     }
 }
