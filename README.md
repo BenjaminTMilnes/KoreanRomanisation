@@ -5,8 +5,8 @@ KoreanRomanisation is a C# library for correctly romanising Korean text (taking 
 
 ## Table of Contents
 
-- [#usage](Usage)
-- [#testing](Testing)
+- [Usage](#usage)
+- [Testing](#testing)
 
 ## Usage 
 
