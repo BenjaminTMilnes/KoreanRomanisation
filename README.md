@@ -53,7 +53,7 @@ The Simplified Romanisation of Korean is a system of romanisation created by me 
 
 ## Testing 
 
-This library is covered by 1261 unit tests, all passing as of the latest release.
+This library is covered by 1263 unit tests, all passing as of the latest release.
 
 The majority of these tests are of the four main romanisation classes (`McCuneReischauerRomanisation`, `RevisedRomanisation`, `SimplifiedRomanisation`, and `YaleRomanisation`), and they simply check: if the romanisation class is given some Korean text, does it return the correct romanised text.
 

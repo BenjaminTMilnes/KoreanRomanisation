@@ -388,6 +388,7 @@ namespace KoreanRomanisation.Tests
         [InlineData("같하", "kata")]
         [InlineData("갚하", "kapa")]
         [InlineData("갛하", "kata")]
+        [InlineData("서울", "so-ool")]
         public void RomaniseTextTest(string Korean, string ExpectedRomanisation)
         {
             SimplifiedRomanisation1.UseSh = false;

@@ -278,7 +278,20 @@ namespace KoreanRomanisation
 
         private string RomaniseMedial(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
         {
-            return MedialRomanisationRules.First(r => r.Medial == Syllable.Medial).Romanisation;
+            var t = "";
+
+            // Because this system overloads the letter o a lot, if ㅓ, ㅗ, or ㅜ appear next to each other, put a hyphen in between.
+
+            if (PrecedingSyllable.HasValue &&
+                         (PrecedingSyllable.Value.Medial == KoreanLetter.Eo || PrecedingSyllable.Value.Medial == KoreanLetter.O || PrecedingSyllable.Value.Medial == KoreanLetter.U) &&
+                         (Syllable.Medial == KoreanLetter.Eo || Syllable.Medial == KoreanLetter.O || Syllable.Medial == KoreanLetter.U))
+            {
+                t += "-";
+            }
+
+            t += MedialRomanisationRules.First(r => r.Medial == Syllable.Medial).Romanisation;
+
+            return t;
         }
 
         private string RomaniseFinal(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
