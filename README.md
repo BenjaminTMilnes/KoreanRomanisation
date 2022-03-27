@@ -18,7 +18,7 @@ var romanisation = new McCuneReischauerRomanisation();
 var koreanText = "안녕 하세요";
 var romanisedText = romanisation.RomaniseText(koreanText);
 
-Console.WriteLine(romanisedText); // annyeong haseyo
+Console.WriteLine(romanisedText); // annyŏng haseyo
 ```
 
 The other romanisation classes are `RevisedRomanisation`, `SimplifiedRomanisation`, and `YaleRomanisation`. The Revised Romanisation is the official one for South Korea, so probably most often the one you want to use, but the McCune-Reischauer Romanisation is the most accurate, the Simplified Romanisation is the easiest for non-Korean-speakers, and the Yale Romanisation is for academia.
@@ -31,12 +31,12 @@ var romanisation = new McCuneReischauerRomanisation();
 romanisation.PreserveNonKoreanText = false;
 ```
 
-Additionally, it's often convenient to romanise ㅅ as _sh_ and ㅆ as _ssh_ when they are followed by ㅣ _i_. Setting the `UseSh` property to `true` will make the romanisation classes do this. (It is `true` by default.)
+Additionally, it's often convenient to romanise ㅅ as _sh_ and ㅆ as _ssh_ when they are followed by ㅣ _i_. The romanisation classes do this by default. If you don't want them to do this, set the `UseSh` property to `false`.
 
 ```csharp
 var romanisation = new McCuneReischauerRomanisation();
 
-romanisation.UseSh = true;
+romanisation.UseSh = false;
 ```
 
 You can also choose to romanise ㅚ as _oi_ instead of _oe_, which, although a less accurate representation of the pronunciation, tends to be less confusing for non-Korean-speakers. 
@@ -46,6 +46,10 @@ var romanisation = new McCuneReischauerRomanisation();
 
 romanisation.UseOi = true;
 ```
+
+## The Simplified Romanisation of Korean
+
+The Simplified Romanisation of Korean is a system of romanisation created by me (B. T. Milnes). It's designed to be easier to read for people who have no knowledge of Korean whatsoever. The Revised Romanisation uses some digraphs that often confuse non-Korean-speakers, such as _eo_ and _eu_. The Simplified Romanisation of Korean uses digraphs that should be more intuitive for those unfamiliar with the language.
 
 ## Testing 
 
