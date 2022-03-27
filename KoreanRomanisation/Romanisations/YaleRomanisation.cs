@@ -136,52 +136,52 @@ namespace KoreanRomanisation
             FinalPronunciationChangeRomanisationRules = FinalPronunciationChangeRomanisationRulesList.ToFinalPronunciationChangeRomanisationRules();
         }
 
-        public override string RomaniseSyllable(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null)
+        public override string RomaniseSyllable(KoreanSyllable syllable, KoreanSyllable? precedingSyllable = null, KoreanSyllable? succeedingSyllable = null)
         {
-            var StringBuilder1 = new StringBuilder();
+            var stringBuilder = new StringBuilder();
 
-            StringBuilder1.Append(RomaniseInitial(Syllable));
-            StringBuilder1.Append(RomaniseMedial(Syllable));
-            StringBuilder1.Append(RomaniseFinal(Syllable, PrecedingSyllable, SucceedingSyllable));
+            stringBuilder.Append(RomaniseInitial(syllable));
+            stringBuilder.Append(RomaniseMedial(syllable));
+            stringBuilder.Append(RomaniseFinal(syllable, precedingSyllable, succeedingSyllable));
 
-            return StringBuilder1.ToString();
+            return stringBuilder.ToString();
         }
 
-        private string RomaniseInitial(KoreanSyllable Syllable)
+        private string RomaniseInitial(KoreanSyllable syllable)
         {
-            return InitialRomanisationRules.First(r => r.Initial == Syllable.Initial).Romanisation;
+            return InitialRomanisationRules.First(r => r.Initial == syllable.Initial).Romanisation;
         }
 
-        private string RomaniseMedial(KoreanSyllable Syllable)
+        private string RomaniseMedial(KoreanSyllable syllable)
         {
-            return MedialRomanisationRules.First(r => r.Medial == Syllable.Medial).Romanisation;
+            return MedialRomanisationRules.First(r => r.Medial == syllable.Medial).Romanisation;
         }
                 
-        private string RomaniseFinal(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable, KoreanSyllable? SucceedingSyllable)
+        private string RomaniseFinal(KoreanSyllable syllable, KoreanSyllable? precedingSyllable, KoreanSyllable? succeedingSyllable)
         {
-            if (Syllable.HasFinal)
+            if (syllable.HasFinal)
             {
                 // First check if the romanisation must change based on the succeeding syllable.
 
-                if (SucceedingSyllable != null)
+                if (succeedingSyllable != null)
                 {
-                    var PronunciationChangeRomanisationRule = FinalPronunciationChangeRomanisationRules.FirstOrDefault(r => r.Final == Syllable.Final && r.SucceedingInitial == SucceedingSyllable.Value.Initial);
+                    var pronunciationChangeRomanisationRule = FinalPronunciationChangeRomanisationRules.FirstOrDefault(r => r.Final == syllable.Final && r.SucceedingInitial == succeedingSyllable.Value.Initial);
 
-                    if (PronunciationChangeRomanisationRule != null)
+                    if (pronunciationChangeRomanisationRule != null)
                     {
-                        return PronunciationChangeRomanisationRule.Romanisation;
+                        return pronunciationChangeRomanisationRule.Romanisation;
                     }
                 }
 
                 // Otherwise use the default final romanisation.
 
-                return FinalRomanisationRules.First(r => r.Final == Syllable.Final).Romanisation;
+                return FinalRomanisationRules.First(r => r.Final == syllable.Final).Romanisation;
             }
 
             return "";
         }
 
-        public override string RomaniseLetter(KoreanLetter Letter)
+        public override string RomaniseLetter(KoreanLetter letter)
         {
             throw new NotImplementedException();
         }
