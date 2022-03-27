@@ -1,7 +1,7 @@
 ﻿KoreanRomanisation
 ==================
 
-KoreanRomanisation is a C# class library for romanising Korean text.
+KoreanRomanisation is a C# library for correctly romanising Korean text.
 
 ## Principle of Operation
 
@@ -44,44 +44,51 @@ The KoreanSyllable struct encapsulates a syllable in the Korean language - which
 Every possible syllable that exists in Korean is stored as a separate character code in Unicode, but in order to romanise any Korean text, you need to know what the
 individual letters of the syllable are. The KoreanSyllable struct provides methods for identifying the letters within a syllable.
 
-### Structures for processing input text
 
-#### TextBlock
 
-Represents a generic block of text, which can be described in terms of Korean and non-Korean sections. Any text that is passed through to the romanisation converters is first
-converted into a TextBlock object.
+## Usage 
 
-#### KoreanTextSection
+To romanise some Korean text, simply create an instance of the relevant romanisation class, and then call the `RomaniseText()` function.
 
-Represents a section of Korean text, which is made up of syllabic blocks.
+```csharp
+var romanisation = new McCuneReischauerRomanisation();
 
-#### NonKoreanTextSection
+var koreanText = "안녕 하세요";
+var romanisedText = romanisation.RomaniseText(koreanText);
 
-Represents a section of non-Korean text. This is just a text string, and it is ignored by the romanisation converter.
+Console.WriteLine(romanisedText); // annyeong haseyo
+```
 
-### Defining romanisation rules
+The other romanisation classes are `RevisedRomanisation`, `SimplifiedRomanisation`, and `YaleRomanisation`. The Revised Romanisation is the official one for South Korea, so probably most often the one you want to use, but the McCune-Reischauer Romanisation is the most accurate, the Simplified Romanisation is the easiest for non-Korean-speakers, and the Yale Romanisation is for academia.
 
-#### TupleList
+Any non-Korean text will, by default, be preserved. If you want to remove any non-Korean text, set the `PreserveNonKoreanText` property on the romanisation class to `false`.
 
-There are two TupleList classes, and they both simply represent a list of tuples.
+```csharp
+var romanisation = new McCuneReischauerRomanisation();
 
-These simple classes allow for easy hardcoding of romanisation data into the class library. The shortest way to express a romanisation rule is as a tuple, which requires
-minimal markup. TupleList allows a large number of tuples to be added to a list with very little markup.
+romanisation.PreserveNonKoreanText = false;
+```
 
-### Romanisation Converters
+Additionally, it's often convenient to romanise ㅅ as _sh_ and ㅆ as _ssh_ when they are followed by ㅣ _i_. Setting the `UseSh` property to `true` will make the romanisation classes do this. (It is `true` by default.)
 
-#### Romanisation
+```csharp
+var romanisation = new McCuneReischauerRomanisation();
 
-The Romanisation class acts as a base class for other specific romanisation schemes. It encapsulates the basic properties of a romanisation converter, such as whether it will
-explicitly romanise ㅅ as 'sh' when it is followed by ㅣ. It also contains the functions used to deconstruct a passage of text into its Korean and non-Korean components, 
-as well as core, overridable functions that are used to romanise the text.
+romanisation.UseSh = true;
+```
 
-#### IRomanisation
+You can also choose to romanise ㅚ as _oi_ instead of _oe_, which, although a less accurate representation of the pronunciation, tends to be less confusing for non-Korean-speakers. 
 
-A further abstraction of the concept of a romanisation converter. There are only three official systems of romanisation for Korean, so it is unlikely that anyone would want
-to write a custom converter - even less so one that didn't implement the Romanisation base class. But if they did, the IRomanisation describes the basic features of a
-romanisation converter.
+```csharp
+var romanisation = new McCuneReischauerRomanisation();
 
-## Unit Tests
+romanisation.UseOi = true;
+```
 
-The KoreanRomanisation library is covered by a large number of unit tests - 1239 of them.
+## Testing 
+
+This library is covered by 1261 unit tests, all passing as of the latest release.
+
+The majority of these tests are of the four main romanisation classes (`McCuneReischauerRomanisation`, `RevisedRomanisation`, `SimplifiedRomanisation`, and `YaleRomanisation`), and they simply check: if the romanisation class is given some Korean text, does it return the correct romanised text.
+
+There are also a small number of unit tests for the `KoreanLetter` and `KoreanSyllable` structs.
