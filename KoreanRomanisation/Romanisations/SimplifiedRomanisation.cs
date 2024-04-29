@@ -21,16 +21,16 @@ namespace KoreanRomanisation
                 {KoreanLetter.Giyeok, "k"},
                 {KoreanLetter.SsangGiyeok, "kk"},
                 {KoreanLetter.Nieun, "n"},
-                {KoreanLetter.Digeut, "t"},
+                {KoreanLetter.Digeut, "d"},
                 {KoreanLetter.SsangDigeut, "tt"},
                 {KoreanLetter.Rieul, "r"},
                 {KoreanLetter.Mieum, "m"},
-                {KoreanLetter.Bieup, "p"},
+                {KoreanLetter.Bieup, "b"},
                 {KoreanLetter.SsangBieup, "pp"},
                 {KoreanLetter.Shiot, "s"},
                 {KoreanLetter.SsangShiot, "ts"}, // Using 'ts' for ㅆ helps non-Korean-speakers understand the tenseness of it.
                 {KoreanLetter.Ieung, ""},
-                {KoreanLetter.Jieut, "ch"},
+                {KoreanLetter.Jieut, "j"},
                 {KoreanLetter.SsangJieut, "tch"}, // Using 'tch' for ㅉ helps non-Korean-speakers understand the tenseness of it.
                 {KoreanLetter.Chieut, "ch"},
                 {KoreanLetter.Kieuk, "k"},
@@ -87,6 +87,11 @@ namespace KoreanRomanisation
                 {KoreanLetter.IeungBatchim, KoreanLetter.Bieup, "b"},
                 {KoreanLetter.IeungBatchim, KoreanLetter.Ieung, "'"},
                 {KoreanLetter.IeungBatchim, KoreanLetter.Jieut, "j" },
+
+                {KoreanLetter.None, KoreanLetter.Giyeok, "g"},
+                {KoreanLetter.None, KoreanLetter.Digeut, "d"},
+                {KoreanLetter.None, KoreanLetter.Bieup, "b"},
+                {KoreanLetter.None, KoreanLetter.Jieut, "j" },
 
                 {KoreanLetter.JieutBatchim, KoreanLetter.Rieul, "n"},
                 {KoreanLetter.JieutBatchim, KoreanLetter.Hieut, "" },
@@ -283,7 +288,7 @@ namespace KoreanRomanisation
             // Because this system overloads the letter o a lot, if ㅓ, ㅗ, or ㅜ appear next to each other, put a hyphen in between.
 
             if (precedingSyllable.HasValue &&
-                         (precedingSyllable.Value.Medial == KoreanLetter.Eo || precedingSyllable.Value.Medial == KoreanLetter.O || precedingSyllable.Value.Medial == KoreanLetter.U) &&
+                         (precedingSyllable.Value.Medial == KoreanLetter.Eo || precedingSyllable.Value.Medial == KoreanLetter.O || precedingSyllable.Value.Medial == KoreanLetter.U) && syllable.Initial == KoreanLetter.Ieung &&
                          (syllable.Medial == KoreanLetter.Eo || syllable.Medial == KoreanLetter.O || syllable.Medial == KoreanLetter.U))
             {
                 t += "-";
