@@ -64,7 +64,6 @@ C:\Users\benja\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests
 C:\Users\benja\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\xunit.assert.xml
 C:\Users\benja\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\xunit.core.xml
 C:\Users\benja\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\xunit.execution.desktop.xml
-C:\Users\benja\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\obj\Debug\KoreanRomanisation.Tests.csprojAssemblyReference.cache
 C:\Users\benja\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\obj\Debug\KoreanRomanisation.Tests.csproj.CoreCompileInputs.cache
 C:\Users\benja\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\obj\Debug\KoreanRomanisation.Tests.csproj.CopyComplete
 C:\Users\benja\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\obj\Debug\KoreanRomanisation.Tests.dll
@@ -73,3 +72,4 @@ C:\Users\benja\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests
 C:\Users\benja\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\xunit.runner.utility.net452.dll
 C:\Users\benja\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\KoreanRomanisation.Tests.dll
 C:\Users\benja\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\bin\Debug\KoreanRomanisation.Tests.pdb
+C:\Users\benja\Libraries\Programming\KoreanRomanisation\KoreanRomanisation.Tests\obj\Debug\KoreanRomanisation.Tests.csproj.AssemblyReference.cache
