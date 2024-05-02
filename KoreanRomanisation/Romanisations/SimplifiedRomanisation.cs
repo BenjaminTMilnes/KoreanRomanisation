@@ -10,8 +10,21 @@ namespace KoreanRomanisation
     /// </summary>
     public sealed class SimplifiedRomanisation : Romanisation
     {
-        public SimplifiedRomanisation()
+        /// <summary>
+        /// By default, SimplifiedRomanisation romanises ㅐ as 'e'. Setting this to true will cause it to romanise ㅐ as 'ae', which is standard in the revised and McCune-Reischauer systems.
+        /// </summary>
+        public bool UseAe { get; set; }
+
+        /// <summary>
+        /// By default, SimplifiedRomanisation romanises ㅔ as 'ei'. Setting this to true will cause it to romanise ㅔ as 'e', which is standard in the revised and McCune-Reischauer systems.
+        /// </summary>
+        public bool UseE { get; set; }
+
+        public SimplifiedRomanisation(bool useAe = false, bool useE = false)
         {
+            UseAe = useAe;
+            UseE = useE;
+
             SetRules();
         }
 
@@ -109,26 +122,31 @@ namespace KoreanRomanisation
                 {KoreanLetter.PieupBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.HieutBatchim, KoreanLetter.Rieul, "n"},
-                {KoreanLetter.HieutBatchim, KoreanLetter.Hieut, "" }
+                {KoreanLetter.HieutBatchim, KoreanLetter.Hieut, "" },
+
+                {KoreanLetter.RieulHieutBatchim, KoreanLetter.Giyeok, "g" }
             };
+
+            var ae = UseAe ? "ae" : "e";
+            var e = UseE ? "e" : "ei";
 
             var MedialRomanisationRulesList = new RomanisationRuleList(){
                 {KoreanLetter.A, "a"},
-                {KoreanLetter.Ae, "e"},
+                {KoreanLetter.Ae, ae},
                 {KoreanLetter.Ya, "ya"},
-                {KoreanLetter.Yae, "ye"},
+                {KoreanLetter.Yae, "y" + ae},
                 {KoreanLetter.Eo, "o"},
-                {KoreanLetter.E, "ei"},
+                {KoreanLetter.E, e},
                 {KoreanLetter.Yeo, "yo"},
-                {KoreanLetter.Ye, "yei"},
+                {KoreanLetter.Ye, "y" + e},
                 {KoreanLetter.O, "o"},
                 {KoreanLetter.Wa, "wa"},
-                {KoreanLetter.Wae, "we"},
+                {KoreanLetter.Wae, "w" + ae},
                 {KoreanLetter.Oe, "we"},
                 {KoreanLetter.Yo, "yo"},
                 {KoreanLetter.U, "oo"},
                 {KoreanLetter.Wo, "wo"},
-                {KoreanLetter.We, "wei"},
+                {KoreanLetter.We, "w" + e},
                 {KoreanLetter.Wi, "wi"},
                 {KoreanLetter.Yu, "yoo"},
                 {KoreanLetter.Eu, "u"},
@@ -152,7 +170,8 @@ namespace KoreanRomanisation
                 {KoreanLetter.KieukBatchim, "k"},
                 {KoreanLetter.TieutBatchim, "t"},
                 {KoreanLetter.PieupBatchim, "p"},
-                {KoreanLetter.HieutBatchim, "t" }
+                {KoreanLetter.HieutBatchim, "t" },
+                {KoreanLetter.RieulHieutBatchim, "l" }
             };
 
             var FinalPronunciationChangeRomanisationRulesList = new PronunciationChangeRomanisationRuleList(){
@@ -288,7 +307,7 @@ namespace KoreanRomanisation
             // Because this system overloads the letter o a lot, if ㅓ, ㅗ, or ㅜ appear next to each other, put a hyphen in between.
 
             if (precedingSyllable.HasValue &&
-                         (precedingSyllable.Value.Medial == KoreanLetter.Eo || precedingSyllable.Value.Medial == KoreanLetter.O || precedingSyllable.Value.Medial == KoreanLetter.U) && syllable.Initial == KoreanLetter.Ieung &&
+                         (precedingSyllable.Value.Medial == KoreanLetter.Eo || precedingSyllable.Value.Medial == KoreanLetter.O || precedingSyllable.Value.Medial == KoreanLetter.U) && !precedingSyllable.Value.HasFinal && syllable.Initial == KoreanLetter.Ieung &&
                          (syllable.Medial == KoreanLetter.Eo || syllable.Medial == KoreanLetter.O || syllable.Medial == KoreanLetter.U))
             {
                 t += "-";
