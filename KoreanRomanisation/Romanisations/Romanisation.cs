@@ -137,7 +137,8 @@ namespace KoreanRomanisation
                             {
                                 precedingSyllable = syllables[i - 1];
                             }
-                            else if (i < syllables.Length - 1)
+
+                            if (i < syllables.Length - 1)
                             {
                                 succeedingSyllable = syllables[i + 1];
                             }

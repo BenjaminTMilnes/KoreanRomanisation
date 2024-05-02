@@ -59,7 +59,7 @@ namespace KoreanRomanisation
                 {KoreanLetter.SsangGiyeokBatchim, KoreanLetter.Rieul, "n"},
                 {KoreanLetter.SsangGiyeokBatchim, KoreanLetter.Hieut, ""},
 
-                {KoreanLetter.NieunBatchim, KoreanLetter.Giyeok, "'g"},
+                {KoreanLetter.NieunBatchim, KoreanLetter.Giyeok, "g"},
                 {KoreanLetter.NieunBatchim, KoreanLetter.Digeut, "d"},
                 {KoreanLetter.NieunBatchim, KoreanLetter.Rieul, "l"},
                 {KoreanLetter.NieunBatchim, KoreanLetter.Bieup, "b"},
@@ -67,6 +67,7 @@ namespace KoreanRomanisation
                 {KoreanLetter.NieunBatchim, KoreanLetter.Hieut, ""},
 
                 {KoreanLetter.DigeutBatchim, KoreanLetter.Rieul, "n"},
+                {KoreanLetter.DigeutBatchim, KoreanLetter.Digeut, "t"},
                 {KoreanLetter.DigeutBatchim, KoreanLetter.Hieut, ""},
 
                 {KoreanLetter.RieulBatchim, KoreanLetter.Giyeok, "g"},
@@ -86,19 +87,22 @@ namespace KoreanRomanisation
                 {KoreanLetter.MieumBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.BieupBatchim, KoreanLetter.Rieul, "n"},
+                {KoreanLetter.BieupBatchim, KoreanLetter.Bieup, "p"},
                 {KoreanLetter.BieupBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.ShiotBatchim, KoreanLetter.Rieul, "n"},
+                {KoreanLetter.ShiotBatchim, KoreanLetter.Digeut, "t"},
                 {KoreanLetter.ShiotBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.SsangShiotBatchim, KoreanLetter.Rieul, "n"},
+                {KoreanLetter.SsangShiotBatchim, KoreanLetter.Digeut, "t"},
                 {KoreanLetter.SsangShiotBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.IeungBatchim, KoreanLetter.Giyeok, "g"},
                 {KoreanLetter.IeungBatchim, KoreanLetter.Digeut, "d"},
                 {KoreanLetter.IeungBatchim, KoreanLetter.Rieul, "n"},
                 {KoreanLetter.IeungBatchim, KoreanLetter.Bieup, "b"},
-                {KoreanLetter.IeungBatchim, KoreanLetter.Ieung, "'"},
+                {KoreanLetter.IeungBatchim, KoreanLetter.Ieung, "-"},
                 {KoreanLetter.IeungBatchim, KoreanLetter.Jieut, "j" },
 
                 {KoreanLetter.None, KoreanLetter.Giyeok, "g"},
@@ -107,21 +111,26 @@ namespace KoreanRomanisation
                 {KoreanLetter.None, KoreanLetter.Jieut, "j" },
 
                 {KoreanLetter.JieutBatchim, KoreanLetter.Rieul, "n"},
+                {KoreanLetter.JieutBatchim, KoreanLetter.Digeut, "t"},
                 {KoreanLetter.JieutBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.ChieutBatchim, KoreanLetter.Rieul, "n"},
+                {KoreanLetter.ChieutBatchim, KoreanLetter.Digeut, "t"},
                 {KoreanLetter.ChieutBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.KieukBatchim, KoreanLetter.Rieul, "n"},
                 {KoreanLetter.KieukBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.TieutBatchim, KoreanLetter.Rieul, "n"},
+                {KoreanLetter.TieutBatchim, KoreanLetter.Digeut, "t"},
                 {KoreanLetter.TieutBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.PieupBatchim, KoreanLetter.Rieul, "n"},
+                {KoreanLetter.PieupBatchim, KoreanLetter.Bieup, "p"},
                 {KoreanLetter.PieupBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.HieutBatchim, KoreanLetter.Rieul, "n"},
+                {KoreanLetter.HieutBatchim, KoreanLetter.Digeut, "t"},
                 {KoreanLetter.HieutBatchim, KoreanLetter.Hieut, "" },
 
                 {KoreanLetter.RieulHieutBatchim, KoreanLetter.Giyeok, "g" }
@@ -171,7 +180,9 @@ namespace KoreanRomanisation
                 {KoreanLetter.TieutBatchim, "t"},
                 {KoreanLetter.PieupBatchim, "p"},
                 {KoreanLetter.HieutBatchim, "t" },
-                {KoreanLetter.RieulHieutBatchim, "l" }
+                {KoreanLetter.RieulHieutBatchim, "l" },
+                {KoreanLetter.RieulBieupBatchim, "l" },
+                {KoreanLetter.NieunJieutBatchim, "n" }
             };
 
             var FinalPronunciationChangeRomanisationRulesList = new PronunciationChangeRomanisationRuleList(){
@@ -306,9 +317,14 @@ namespace KoreanRomanisation
 
             // Because this system overloads the letter o a lot, if ㅓ, ㅗ, or ㅜ appear next to each other, put a hyphen in between.
 
-            if (precedingSyllable.HasValue &&
-                         (precedingSyllable.Value.Medial == KoreanLetter.Eo || precedingSyllable.Value.Medial == KoreanLetter.O || precedingSyllable.Value.Medial == KoreanLetter.U) && !precedingSyllable.Value.HasFinal && syllable.Initial == KoreanLetter.Ieung &&
-                         (syllable.Medial == KoreanLetter.Eo || syllable.Medial == KoreanLetter.O || syllable.Medial == KoreanLetter.U))
+            if (precedingSyllable.HasValue && (precedingSyllable.Value.Medial == KoreanLetter.Eo || precedingSyllable.Value.Medial == KoreanLetter.O || precedingSyllable.Value.Medial == KoreanLetter.U) && !precedingSyllable.Value.HasFinal && syllable.Initial == KoreanLetter.Ieung && (syllable.Medial == KoreanLetter.Eo || syllable.Medial == KoreanLetter.O || syllable.Medial == KoreanLetter.U))
+            {
+                t += "-";
+            }
+
+            // We also want to avoid vowel clusters like 'aoo', 'eoo', 'ioo'.
+
+            if (precedingSyllable.HasValue && (precedingSyllable.Value.Medial == KoreanLetter.A || precedingSyllable.Value.Medial == KoreanLetter.Ae || precedingSyllable.Value.Medial == KoreanLetter.E || precedingSyllable.Value.Medial == KoreanLetter.I) && !precedingSyllable.Value.HasFinal && syllable.Initial == KoreanLetter.Ieung && (syllable.Medial == KoreanLetter.U))
             {
                 t += "-";
             }
