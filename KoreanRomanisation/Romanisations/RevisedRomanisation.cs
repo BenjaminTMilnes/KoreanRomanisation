@@ -127,7 +127,10 @@ namespace KoreanRomanisation
                 {KoreanLetter.KieukBatchim, "k"},
                 {KoreanLetter.TieutBatchim, "t"},
                 {KoreanLetter.PieupBatchim, "p"},
-                {KoreanLetter.HieutBatchim, "t"}
+                {KoreanLetter.HieutBatchim, "t"},
+                {KoreanLetter.RieulHieutBatchim, "l" },
+                {KoreanLetter.RieulBieupBatchim, "l" },
+                {KoreanLetter.NieunJieutBatchim, "n" }
             };
 
             var FinalPronunciationChangeRomanisationRulesList = new PronunciationChangeRomanisationRuleList(){
